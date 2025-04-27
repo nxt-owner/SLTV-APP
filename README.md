@@ -32,7 +32,7 @@ SLTV is your go-to app for watching 50+ local and international channels with a 
 ---
 
 
-🔗 **Link** : [Download](https://github.com/nxt-owner/SLTV-APP/releases/download/V.2.0/SLTV.2.0.apk)
+🔗 **Link** : [Download](https://github.com/nxt-owner/SLTV-APP/releases)
 ---
 🌍 **Telegram File** [Download](https://t.me/sltvapp)
 ---
