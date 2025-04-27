@@ -6,7 +6,7 @@ SLTV is your go-to app for watching 50+ local and international channels with a 
 
 ---
 
-## 🚀 What's New in SLTV 2.0?  
+## 🚀 What's New in SLTV 2.5?  
 
 ✅ **🍃 Landscape Mode Support** – Enjoy TV in both portrait and landscape mode for a better viewing experience.  
 
