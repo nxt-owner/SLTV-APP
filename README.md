@@ -1,9 +1,10 @@
 ![retouch_2025032422502520](https://github.com/user-attachments/assets/7a0400d5-d50b-4542-8cdc-85d93ee68a96)
 
-# SLTV 2.0 – The Best Sri Lankan TV Experience! 📺🔥  
+# SLTV  – The Best Sri Lankan TV Experience! 📺🔥  
 
 SLTV is your go-to app for watching 50+ local and international channels with a sleek, fast, and user-friendly interface. Experience live TV like never before with improved performance and exciting new features in **SLTV 2.0**!  
 
+### Official Website [VISIT LINK](www.sltvapp.techlasiya.lk)
 ---
 
 ## 🚀 What's New in SLTV 2.5?  
