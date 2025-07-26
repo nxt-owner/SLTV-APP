@@ -1,0 +1,16 @@
+{
+  "latestVersion": "2.6.3",
+  "updates": [
+    {
+      "version": "2.6.3",
+      "date": "2025-07-25",
+      "features": [
+        "🆕 Added 5 new Tamil channels",
+        "🚀 Optimized video loading speed",
+        "🛠️ Bug fixes on TV devices"
+      ],
+      "apk": "https://yourdomain.com/apks/sltv-2.6.3.apk",
+      "mirror": "https://mirrorlink.com/sltv.apk"
+    }
+  ]
+}
