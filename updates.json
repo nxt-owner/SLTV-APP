@@ -11,12 +11,7 @@
       ],
       "apk": "https://yourdomain.com/apks/sltv-2.6.3.apk",
       "mirror": "https://mirrorlink.com/sltv.apk"
-    }
-  ]
-},
-{
-  "latestVersion": "2.6.3",
-  "updates": [
+    },
     {
       "version": "2.6.3",
       "date": "2025-07-25",
