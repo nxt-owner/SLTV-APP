@@ -1,16 +1,24 @@
 {
-  "latestVersion": "2.6.4",
+  "latestVersion": "2.7",
   "updates": [
     {
-      "version": "2.6.4",
-      "date": "2025-07-27",
+      "version": "2.7",
+      "date": "2025-07-31",
       "features": [
-        "📺 Added 10 new Sinhala HD channels",
+        "📺 Added new HD channels",
         "🔊 Improved audio sync for live sports",
-        "🧹 Cleaned up old code & cache issues"
+        "🧹 Cleaned up old code & cache issues",
+        "♻️ Updated Info Page",
+        "🔗 Deep Linked App",
+        "🙂‍↔️ Improved User Functions",
+        "🆓 Still Free",
+        "🤝 Donations Open",
+        "🎬 New Splash Screen",
+        "🧠 Code Optimized"
+        
       ],
       "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V2.7/SLTV.V2.7.apk",
-      "mirror": "https://www.mediafire.com/file/rn4k86jw2t4f5ix/SLTV_V2.7.apk/file"
+      "mirror": "https://www.mediafire.com/file/v7xr64eo0m4sn7j/SLTV_V2.7.apk/file"
     },
     {
       "version": "2.6.3",
@@ -20,8 +28,8 @@
         "🚀 Optimized video loading speed",
         "🛠️ Bug fixes on TV devices"
       ],
-      "apk": "https://yourdomain.com/apks/sltv-2.6.3.apk",
-      "mirror": "https://mirrorlink.com/sltv.apk"
+      "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V2.6/SLTV_V2.6.apk",
+      "mirror": "https://github.com/nxt-owner/SLTV-APP/releases/download/V2.6/SLTV_V2.6.apk"
     }
   ]
 }
