@@ -1,6 +1,23 @@
 {
-  "latestVersion": "2.7",
+  "latestVersion": "2.8",
   "updates": [
+    {
+      "version": "2.8",
+      "date": "2025-07-31",
+      "features": [
+        "📺 More Channels Added",
+        "🔄 Auto-Rotation Support",
+        "🎮 Multi-Player Options",
+        "🎨 Theme Changer",
+        "🧱 More Stable UI",
+        "🚀 Performance Boost",
+        "🆓 Still Free",
+        "🤝 Donations Open",
+        "🌟 Thanks for Your Support!"
+      ],
+      "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V2.8/SLTV_V2.8.apk",
+      "mirror": "https://www.mediafire.com/file/md9yqly8gddmdb1/SLTV_V2.8.apk/file"
+    },
     {
       "version": "2.7",
       "date": "2025-07-31",
