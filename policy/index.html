@@ -256,7 +256,7 @@
 
   <div class="header">
     <div class="logo">SLTV <span class="legal-badge">LEGAL</span></div>
-    <button class="back-button" onclick="goBack()">← Back</button>
+    
   </div>
 
   <div class="policy-container">
@@ -400,13 +400,6 @@
     </div>
   </div>
 
-  <footer class="footer-controls">
-    <button class="control-button" onclick="goBack()" title="Back">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-    <button class="control-button" onclick="goHome()" title="Home">
-      <i class="fas fa-home"></i>
-    </button>
     <button class="control-button" onclick="scrollToTop()" title="Scroll to Top">
       <i class="fas fa-arrow-up"></i>
     </button>
@@ -419,14 +412,6 @@
       month: 'long', 
       day: 'numeric' 
     });
-
-    function goBack() {
-      window.history.back();
-    }
-
-    function goHome() {
-      window.location.href = "index.html";
-    }
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
