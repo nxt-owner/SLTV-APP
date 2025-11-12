@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLTV - Legal Policy & Disclaimer</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* FUTURISTIC PREMIUM THEME - Matching your existing style */
+    body {
+      background: linear-gradient(135deg, #0a0a0f, #11111a, #0e0e14);
+      color: #e2f1ff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: rgba(10, 14, 20, 0.85);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #00ffff;
+      letter-spacing: 1.2px;
+    }
+
+    .legal-badge {
+      background: #ff4444;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-left: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 0 6px rgba(255, 68, 68, 0.5);
+    }
+
+    .back-button {
+      background: none;
+      border: 2px solid #00CAFF;
+      color: #00CAFF;
+      font-size: 16px;
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: rgba(0, 202, 255, 0.1);
+      color: #00FFDE;
+      border-color: #00FFDE;
+      box-shadow: 0 0 10px #00FFDE;
+    }
+
+    .policy-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .policy-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      border-left: 5px solid #ff4444;
+    }
+
+    .policy-header h1 {
+      background: linear-gradient(90deg, #ff4444, #ff6b6b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+    }
+
+    .policy-header p {
+      opacity: 0.8;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .policy-section {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #00f7ff;
+      box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+      backdrop-filter: blur(6px);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+
+    .policy-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 255, 222, 0.15);
+    }
+
+    .policy-section h2 {
+      background: linear-gradient(90deg, #38d7ff, #3575ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .policy-section h2 i {
+      font-size: 1.2rem;
+    }
+
+    .policy-section p, .policy-section li {
+      opacity: 0.9;
+      margin-bottom: 0.8rem;
+    }
+
+    .policy-section ul {
+      padding-left: 1.5rem;
+    }
+
+    .policy-section li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .policy-section li::before {
+      content: "•";
+      color: #00f7ff;
+      font-weight: bold;
+      position: absolute;
+      left: -0.75rem;
+    }
+
+    .warning-box {
+      background: rgba(255, 68, 68, 0.1);
+      border: 1px solid rgba(255, 68, 68, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid #ff4444;
+    }
+
+    .warning-box h3 {
+      color: #ff6b6b;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-box {
+      background: rgba(0, 202, 255, 0.1);
+      border: 1px solid rgba(0, 202, 255, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 5px solid #00CAFF;
+    }
+
+    .info-box h3 {
+      color: #00CAFF;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 202, 255, 0.2);
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: #00CAFF;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-controls {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(20, 25, 30, 0.85);
+      text-align: center;
+      padding: 12px 0;
+      backdrop-filter: blur(8px);
+    }
+
+    .footer-controls .control-button {
+      background: none;
+      border: none;
+      color: #00CAFF;
+      font-size: 22px;
+      margin: 0 15px;
+      cursor: pointer;
+      transition: color 0.2s, text-shadow 0.3s;
+    }
+    .footer-controls .control-button:hover {
+      color: #00FFDE;
+      text-shadow: 0 0 6px #00FFDE;
+    }
+
+    @media (max-width: 768px) {
+      .policy-container {
+        padding: 15px;
+      }
+      
+      .policy-section {
+        padding: 1rem 1.5rem;
+      }
+      
+      .policy-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">SLTV <span class="legal-badge">LEGAL</span></div>
+    <button class="back-button" onclick="goBack()">← Back</button>
+  </div>
+
+  <div class="policy-container">
+    <div class="policy-header">
+      <h1><i class="fas fa-gavel"></i> Legal Policy & Disclaimer</h1>
+      <p>Important information about your use of SLTV application</p>
+    </div>
+
+    <div class="warning-box">
+      <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+      <p>SLTV is a media aggregation application that provides access to publicly available streaming content. The application itself does not host, store, or transmit any video/audio content.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-ban"></i> Content Disclaimer</h2>
+      <p><strong>SLTV is a media aggregation application</strong> that provides access to publicly available streaming content. All streaming links are sourced from:</p>
+      <ul>
+        <li>Publicly available repositories and forums</li>
+        <li>Open-source projects and community contributions</li>
+        <li>Publicly indexed internet sources</li>
+        <li>User-contributed content</li>
+      </ul>
+      <p><strong>We do not claim ownership</strong> of any streaming content available through the application. All trademarks, logos, and brand names are the property of their respective owners.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-external-link-alt"></i> Third-Party Content</h2>
+      <p>The application acts as a <strong>content aggregator and player</strong> for streams that are:</p>
+      <ul>
+        <li>Already publicly available on the internet</li>
+        <li>Provided "as-is" without modification</li>
+        <li>Accessed through direct links to external servers</li>
+      </ul>
+      <p><strong>We have no control over:</strong></p>
+      <ul>
+        <li>Content availability or quality</li>
+        <li>Copyright status of individual streams</li>
+        <li>Geographic restrictions imposed by content providers</li>
+        <li>Changes or removal of external content</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-user-shield"></i> User Responsibility</h2>
+      <p>By using SLTV, you acknowledge and agree that:</p>
+      <ul>
+        <li>You are solely responsible for determining the legality of streams in your jurisdiction</li>
+        <li>You will use the application in compliance with all applicable local, national, and international laws</li>
+        <li>You understand that streaming copyright-protected content without proper authorization may be illegal in your country</li>
+        <li>You will cease using any stream immediately if you do not have the legal right to view it</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-copyright"></i> Copyright Compliance</h2>
+      <p><strong>DMCA/Copyright Notice Procedure:</strong></p>
+      <p>If you are a copyright owner and believe your content is being streamed without authorization:</p>
+      <ol>
+        <li><strong>Contact the streaming source directly</strong> - We do not host content</li>
+        <li><strong>For app-related concerns</strong>, contact us using the information below</li>
+        <li>Provide:
+          <ul>
+            <li>Identification of copyrighted work</li>
+            <li>The specific streaming URL(s)</li>
+            <li>Your contact information</li>
+            <li>Statement of good faith belief</li>
+          </ul>
+        </li>
+      </ol>
+      <p>Upon valid notice, we will promptly remove or disable access to the identified streams.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-shield-alt"></i> No Warranty & Liability</h2>
+      <p>SLTV is provided <strong>"as is" without any warranties</strong>:</p>
+      <ul>
+        <li>No guarantee of content availability or quality</li>
+        <li>No assurance of uninterrupted service</li>
+        <li>No responsibility for content accuracy or legality</li>
+        <li>User assumes all risks associated with app usage</li>
+      </ul>
+      <div class="info-box">
+        <h3><i class="fas fa-info-circle"></i> Limitation of Liability</h3>
+        <p><strong>The developers and distributors of SLTV shall not be liable</strong> for any copyright infringement by users, loss or damage resulting from app usage, legal consequences of streaming copyrighted content, technical issues, or actions taken by third-party content providers.</p>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-globe-americas"></i> Geographic Considerations</h2>
+      <p>Users are responsible for:</p>
+      <ul>
+        <li>Understanding streaming laws in their country/region</li>
+        <li>Using VPN services if legally permissible</li>
+        <li>Compliance with local copyright regulations</li>
+        <li>Age restrictions and content ratings compliance</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-balance-scale"></i> Fair Use & Content Removal</h2>
+      <p>This application may be used for:</p>
+      <ul>
+        <li>Educational purposes</li>
+        <li>Personal, non-commercial use</li>
+        <li>Access to freely available public domain content</li>
+        <li>Streaming content where you hold viewing rights</li>
+      </ul>
+      <p>We will promptly remove streams upon:</p>
+      <ul>
+        <li>Valid copyright infringement notices</li>
+        <li>Court orders or legal requirements</li>
+        <li>Discovery of illegal or harmful content</li>
+        <li>Request from legitimate content owners</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+      <p>For legal inquiries or content removal requests:</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>Rukshanrodrigo@outlook.com</p>
+          <small>Response Time: 2-3 business days</small>
+        </div>
+        
+        <div class="contact-item">
+          <i class="fas fa-file-contract"></i>
+          <h3>Required Information</h3>
+          <p>Valid identification and proof of ownership required for content removal requests</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3><i class="fas fa-clock"></i> Policy Updates</h3>
+      <p>This policy may be updated periodically. Users are encouraged to review this page regularly for any changes. Continued use of the application after changes constitutes acceptance of the updated policy.</p>
+      <p><strong>Last updated:</strong> <span id="currentDate"></span></p>
+    </div>
+  </div>
+
+  <footer class="footer-controls">
+    <button class="control-button" onclick="goBack()" title="Back">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <button class="control-button" onclick="goHome()" title="Home">
+      <i class="fas fa-home"></i>
+    </button>
+    <button class="control-button" onclick="scrollToTop()" title="Scroll to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </footer>
+
+  <script>
+    // Set current date
+    document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+
+    function goBack() {
+      window.history.back();
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Block key combos
+    document.addEventListener('keydown', function(e) {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'C', 'J'].includes(e.key.toUpperCase())) ||
+        (e.ctrlKey && e.key.toUpperCase() === 'U')
+      ) {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
