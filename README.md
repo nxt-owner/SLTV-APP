@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7a0400d5-d50b-4542-8cdc-85d93ee68a96" width="300" height="300" alt="SLTV Logo"/>
+  <img src="images/logo/logo.png" width="300" height="300" alt="SLTV Logo"/>
 </p>
-
+ 
 <div align="center">
 
 # 📺 SLTV V3.0 – Ultimate Sri Lankan TV Experience
