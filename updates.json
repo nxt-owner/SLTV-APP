@@ -1,7 +1,19 @@
 
 {
-  "latestVersion": "2.8.1",
+  "latestVersion": "3.0",
   "updates": [
+    {
+      "version": "3.0",
+      "date": "2025-12-12",
+      "features": [
+        "▶️ pip video playback",
+        "✨ More Advanced Channel Options",
+        "🔄 Auto Updating channels",
+        "♻️ Re branded"
+      ],
+      "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V3.0/SLTV-V3.0.apk",
+      "mirror": "https://sltvapp.techlasiya.com/#download"
+    },
     {
       "version": "2.8",
       "date": "2025-10-31",
