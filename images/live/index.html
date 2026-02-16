@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLTV – Live Channel Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/shaka-player.ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/controls.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- === PLAYER SECTION === -->
+        <div class="player-section">
+            <div class="video-wrapper" data-shaka-player-container>
+                <video data-shaka-player id="video" autoplay playsinline></video>
+
+                <!-- === WATERMARK (bottom-left, clickable) === -->
+                <div class="watermark">
+                    <a>
+                        <img src="https://raw.githubusercontent.com/nxt-owner/SLTV-APP/refs/heads/main/images/logo/logo.png"
+                            alt="Watermark Logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search channels..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- === CHANNEL GRID (populated by JS) === -->
+        <div class="channels-container" id="channelsContainer"></div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
