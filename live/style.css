@@ -218,3 +218,31 @@ body {
         width: 40px;
     }
 }
+
+/* === LOADING SPINNER === */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-top: 6px solid #0056b3;
+    /* Blue color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 20;
+    display: none;
+    /* Hidden by default */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
