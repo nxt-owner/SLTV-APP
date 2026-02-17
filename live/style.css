@@ -50,7 +50,9 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    position: relative;
+    position: sticky;
+    top: 20px;
+    z-index: 100;
 }
 
 .video-wrapper {
@@ -244,5 +246,36 @@ body {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* === LARGE SCREENS (Desktop/Landscape) === */
+@media (min-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        /* Player (Left) | Channels (Right) */
+        gap: 30px;
+        align-items: start;
+        max-width: 1600px;
+        /* Allow wider layout */
+    }
+
+    .player-section {
+        position: sticky;
+        top: 20px;
+        margin-bottom: 0;
+        height: fit-content;
+        /* Ensure player section doesn't become too tall */
+    }
+
+    .channels-container {
+        margin-top: 0;
+        /* Make channels container scrollable if needed, or let page scroll */
+    }
+
+    .app-grid {
+        /* Adjust grid for the narrower column */
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     }
 }
