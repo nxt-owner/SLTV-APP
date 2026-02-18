@@ -8,12 +8,320 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/shaka-player.ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/controls.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+    <style>
+        /* Overlay styles */
+        #subscription-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .overlay-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .overlay-content p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .subscribe-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .subscribe-btn:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        .subscribe-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .close-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success-message {
+            color: #4CAF50;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Loading spinner for video */
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+            z-index: 10;
+        }
+
+        /* Video wrapper */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 20;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .watermark:hover {
+            opacity: 1;
+        }
+
+        .watermark img {
+            width: 60px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Search container */
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #searchInput {
+            width: 80%;
+            max-width: 400px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #searchInput:focus {
+            border-color: #4CAF50;
+        }
+
+        /* Channels container */
+        .channels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .channel-item {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .channel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-color: #4CAF50;
+        }
+
+        .channel-item.active {
+            border-color: #4CAF50;
+            background: #e8f5e9;
+        }
+
+        .channel-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Telegram Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: slideIn 0.5s ease;
+        }
+
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .popup-header h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .close-btn {
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .join-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0088cc;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .join-btn:hover {
+            background: #0077b5;
+        }
+
+        .join-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+
     <script>
-        var _0x1f75b9 = _0x44f5; function _0x39b5() { var _0x58ed84 = ['99LhysIA', '218951TOkHor', '882GlmxUu', '11443663fsMOAZ', '32272tjdvPt', '272820ABmjPr', 'web.onesignal.auto.66c6cf5f-f4e2-4fcc-bb6d-d84762ec1541', '33366jRWQpZ', '45460MqjZKa', '7515960wxjgXq', '36SumqBo', 'OneSignalDeferred', '2pGpcXk', 'init', '990EidVcH']; _0x39b5 = function () { return _0x58ed84; }; return _0x39b5(); } function _0x44f5(_0x349c40, _0x4cd1bf) { _0x349c40 = _0x349c40 - 0x84; var _0x39b553 = _0x39b5(); var _0x44f514 = _0x39b553[_0x349c40]; return _0x44f514; } (function (_0x197640, _0x5237dc) { var _0x28590f = _0x44f5, _0x13f895 = _0x197640(); while (!![]) { try { var _0xb9fb13 = -parseInt(_0x28590f(0x8b)) / 0x1 * (parseInt(_0x28590f(0x87)) / 0x2) + parseInt(_0x28590f(0x8a)) / 0x3 * (-parseInt(_0x28590f(0x8e)) / 0x4) + parseInt(_0x28590f(0x8f)) / 0x5 + parseInt(_0x28590f(0x91)) / 0x6 * (-parseInt(_0x28590f(0x8c)) / 0x7) + -parseInt(_0x28590f(0x84)) / 0x8 + -parseInt(_0x28590f(0x89)) / 0x9 * (parseInt(_0x28590f(0x92)) / 0xa) + -parseInt(_0x28590f(0x8d)) / 0xb * (-parseInt(_0x28590f(0x85)) / 0xc); if (_0xb9fb13 === _0x5237dc) break; else _0x13f895['push'](_0x13f895['shift']()); } catch (_0x1ff0af) { _0x13f895['push'](_0x13f895['shift']()); } } }(_0x39b5, 0x864ef), window['OneSignalDeferred'] = window[_0x1f75b9(0x86)] || [], OneSignalDeferred['push'](function (_0x4e96c0) { var _0xe2fa0b = _0x1f75b9; _0x4e96c0[_0xe2fa0b(0x88)]({ 'appId': 'd605d07d-6fe4-4e92-b23e-fe792150d888', 'safari_web_id': _0xe2fa0b(0x90), 'autoRegister': ![], 'autoResubscribe': ![], 'notifyButton': { 'enable': ![] }, 'allowLocalhostAsSecureOrigin': !![] }); }));
+        var _0x37b37c = _0x7ea4; function _0x310d() { var _0x3d29b1 = ['119317OCnlNu', '3508057KkWZER', '1767225zmjXYS', 'log', '540477XiHKlE', 'web.onesignal.auto.66c6cf5f-f4e2-4fcc-bb6d-d84762ec1541', 'OneSignalSDKWorker.js', 'OneSignalDeferred', 'd605d07d-6fe4-4e92-b23e-fe792150d888', 'init', '10214904UxAExc', '11750760kmzTWZ', '/live/', 'push', '12AiwSFr', '8poBvPh', '112818ZqVFyK', '2CYIEun', 'OneSignal\x20initialized\x20for\x20GitHub\x20Pages']; _0x310d = function () { return _0x3d29b1; }; return _0x310d(); } function _0x7ea4(_0x2e64dd, _0x13df31) { _0x2e64dd = _0x2e64dd - 0x6a; var _0x310d27 = _0x310d(); var _0x7ea42c = _0x310d27[_0x2e64dd]; return _0x7ea42c; } (function (_0x548d63, _0x8c9a40) { var _0x6cb310 = _0x7ea4, _0x2dc435 = _0x548d63(); while (!![]) { try { var _0x24f2df = parseInt(_0x6cb310(0x6e)) / 0x1 * (-parseInt(_0x6cb310(0x6c)) / 0x2) + -parseInt(_0x6cb310(0x6b)) / 0x3 + parseInt(_0x6cb310(0x6a)) / 0x4 * (-parseInt(_0x6cb310(0x70)) / 0x5) + parseInt(_0x6cb310(0x7c)) / 0x6 * (-parseInt(_0x6cb310(0x6f)) / 0x7) + parseInt(_0x6cb310(0x78)) / 0x8 + parseInt(_0x6cb310(0x72)) / 0x9 + parseInt(_0x6cb310(0x79)) / 0xa; if (_0x24f2df === _0x8c9a40) break; else _0x2dc435['push'](_0x2dc435['shift']()); } catch (_0x1cd7ca) { _0x2dc435['push'](_0x2dc435['shift']()); } } }(_0x310d, 0x9daf5), window[_0x37b37c(0x75)] = window['OneSignalDeferred'] || [], OneSignalDeferred[_0x37b37c(0x7b)](function (_0x5b8039) { var _0x514109 = _0x37b37c; _0x5b8039[_0x514109(0x77)]({ 'appId': _0x514109(0x76), 'safari_web_id': _0x514109(0x73), 'autoRegister': ![], 'autoResubscribe': ![], 'notifyButton': { 'enable': ![] }, 'serviceWorkerParam': { 'scope': _0x514109(0x7a) }, 'serviceWorkerPath': _0x514109(0x74), 'serviceWorkerUpdaterPath': _0x514109(0x74), 'allowLocalhostAsSecureOrigin': !![], 'persistNotification': !![], 'welcomeNotification': { 'disable': !![] } }), console[_0x514109(0x71)](_0x514109(0x6d)); }));
     </script>
 </head>
 
 <body>
+    <!-- Subscription Overlay -->
     <div id="subscription-overlay">
         <div class="overlay-content">
             <div class="icon">🔔</div>
@@ -26,13 +334,12 @@
                     Enable Notifications
                 </button>
             </div>
-            <p class="success-message" id="success-message">✓ Thanks for subscribing! Redirecting...</p>
+            <p class="success-message" id="success-message">✓ Thanks for subscribing! Loading content...</p>
             <p class="close-note">You must enable notifications to use this site</p>
         </div>
     </div>
 
     <div class="container">
-
         <!-- === PLAYER SECTION === -->
         <div class="player-section">
             <div class="video-wrapper" data-shaka-player-container>
@@ -59,7 +366,6 @@
         <!-- === CHANNEL GRID (populated by JS) === -->
         <div class="channels-container" id="channelsContainer"></div>
     </div>
-    <script src="script.js"></script>
 
     <!-- === TELEGRAM POPUP === -->
     <div id="telegramPopup" class="popup-overlay">
@@ -79,10 +385,17 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
+
     <script>
-        function _0xbae8() { const _0x4aa864 = ['showNativePrompt', 'notifications_subscribed', '3047716KhkatW', 'auto', 'Error\x20checking\x20subscription:', 'removeItem', 'isPushNotificationsEnabled', 'permission', 'getElementById', 'Error\x20requesting\x20permission:', 'style', 'body', 'Error:', 'display', 'Welcome!\x20🎉', 'hidden', 'User\x20ID:', 'This\x20browser\x20does\x20not\x20support\x20notifications.\x20Please\x20use\x20a\x20modern\x20browser\x20like\x20Chrome,\x20Firefox,\x20or\x20Edge.', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>ℹ️</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>How\x20to\x20Unblock\x20Notifications</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22text-align:left;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Chrome:</strong>\x20Click\x20the\x20lock\x20icon\x20in\x20the\x20address\x20bar\x20→\x20Site\x20Settings\x20→\x20Notifications\x20→\x20Allow<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Firefox:</strong>\x20Click\x20the\x20lock\x20icon\x20→\x20Connection\x20Secure\x20→\x20More\x20Information\x20→\x20Permissions\x20→\x20Allow\x20Notifications<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Edge:</strong>\x20Click\x20the\x20lock\x20icon\x20→\x20Permissions\x20→\x20Notifications\x20→\x20Allow<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Safari:</strong>\x20Safari\x20→\x20Preferences\x20→\x20Websites\x20→\x20Notifications\x20→\x20Allow\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22subscribe-btn\x22\x20onclick=\x22window.location.reload()\x22\x20style=\x22margin-top:20px;\x22>Reload\x20Page</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20', 'flex', 'granted', '14TgcFfC', 'subscription-overlay', 'Subscription\x20changed:', '45525IHTimk', 'load', 'getUserId', 'subscriptionChange', 'sendSelfNotification', 'href', '3777045DQpNsH', '1808548PCMXpL', 'log', 'opacity', 'setSubscription', 'Enable\x20Notifications', 'force-subscribe-btn', 'getItem', 'Thanks\x20for\x20subscribing!\x20You\x20now\x20have\x20full\x20access.', 'block', 'success-message', 'overflow', '8890960JxPjtt', 'loading-spinner', 'showSlidedownPrompt', '75532bZJimA', 'innerHTML', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>🔕</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>Notifications\x20Blocked</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>You\x20have\x20blocked\x20notifications.\x20Please\x20unblock\x20them\x20in\x20your\x20browser\x20settings\x20to\x20access\x20this\x20site.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22subscribe-btn\x22\x20onclick=\x22window.location.reload()\x22>Check\x20Again</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22close-note\x22\x20style=\x22margin-top:20px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22#\x22\x20onclick=\x22showInstructions()\x22\x20style=\x22color:#4CAF50;\x22>How\x20to\x20unblock\x20notifications</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'onesignal_user_id', 'Subscription\x20status:', '3695550OXsuFs', 'push', 'An\x20error\x20occurred.\x20Please\x20try\x20again.', 'disabled', 'location', 'true', 'none', 'addEventListener', 'setItem']; _0xbae8 = function () { return _0x4aa864; }; return _0xbae8(); } const _0x5a87b3 = _0xdc37; (function (_0x4f83fc, _0x204ab2) { const _0x2ef3d2 = _0xdc37, _0x285575 = _0x4f83fc(); while (!![]) { try { const _0x59399d = -parseInt(_0x2ef3d2(0x151)) / 0x1 + -parseInt(_0x2ef3d2(0x174)) / 0x2 * (parseInt(_0x2ef3d2(0x177)) / 0x3) + parseInt(_0x2ef3d2(0x143)) / 0x4 + -parseInt(_0x2ef3d2(0x142)) / 0x5 + -parseInt(_0x2ef3d2(0x156)) / 0x6 + parseInt(_0x2ef3d2(0x161)) / 0x7 + parseInt(_0x2ef3d2(0x14e)) / 0x8; if (_0x59399d === _0x204ab2) break; else _0x285575['push'](_0x285575['shift']()); } catch (_0x40721d) { _0x285575['push'](_0x285575['shift']()); } } }(_0xbae8, 0x6cd6c)); function _0xdc37(_0x4b0a78, _0x5f33ee) { _0x4b0a78 = _0x4b0a78 - 0x140; const _0xbae8b0 = _0xbae8(); let _0xdc37f = _0xbae8b0[_0x4b0a78]; return _0xdc37f; } async function checkSubscriptionStatus() { const _0xc111c7 = _0xdc37; try { OneSignalDeferred['push'](async function (_0xff297) { const _0x55619e = _0xdc37, _0x3f18df = await _0xff297['isPushNotificationsEnabled'](), _0x210227 = await _0xff297[_0x55619e(0x179)](); console[_0x55619e(0x144)](_0x55619e(0x155), _0x3f18df, _0x55619e(0x16f), _0x210227), _0x3f18df && _0x210227 ? (document[_0x55619e(0x167)]('subscription-overlay')['style'][_0x55619e(0x16c)] = 'none', document[_0x55619e(0x16a)][_0x55619e(0x169)][_0x55619e(0x14d)] = 'auto', localStorage[_0x55619e(0x15e)](_0x55619e(0x160), _0x55619e(0x15b)), localStorage[_0x55619e(0x15e)](_0x55619e(0x154), _0x210227)) : (document[_0x55619e(0x167)](_0x55619e(0x175))[_0x55619e(0x169)][_0x55619e(0x16c)] = 'flex', document['body']['style'][_0x55619e(0x14d)] = _0x55619e(0x16e)); }); } catch (_0x221f5e) { console['error'](_0xc111c7(0x163), _0x221f5e); } } async function requestNotificationPermission() { const _0x26aedc = _0xdc37, _0x3a4cd1 = document['getElementById'](_0x26aedc(0x148)), _0x1be5c3 = document[_0x26aedc(0x167)](_0x26aedc(0x14f)), _0x44a9a5 = document[_0x26aedc(0x167)](_0x26aedc(0x14c)); _0x3a4cd1[_0x26aedc(0x159)] = !![], _0x1be5c3[_0x26aedc(0x169)][_0x26aedc(0x16c)] = 'inline-block', _0x3a4cd1[_0x26aedc(0x152)] = 'Processing...'; try { OneSignalDeferred['push'](async function (_0x3b1679) { const _0xf48e0d = _0x26aedc, _0x4cd8e3 = await _0x3b1679[_0xf48e0d(0x15f)](); _0x4cd8e3 === _0xf48e0d(0x173) ? (await _0x3b1679['setSubscription'](!![]), setTimeout(async () => { const _0x42477a = _0xf48e0d, _0x8fa487 = await _0x3b1679[_0x42477a(0x165)](), _0x23b70c = await _0x3b1679[_0x42477a(0x179)](); _0x8fa487 && (_0x1be5c3[_0x42477a(0x169)][_0x42477a(0x16c)] = _0x42477a(0x15c), _0x44a9a5[_0x42477a(0x169)][_0x42477a(0x16c)] = _0x42477a(0x14b), _0x3a4cd1[_0x42477a(0x169)][_0x42477a(0x16c)] = _0x42477a(0x15c), setTimeout(() => { const _0x3c1ea0 = _0x42477a; document[_0x3c1ea0(0x167)]('subscription-overlay')[_0x3c1ea0(0x169)][_0x3c1ea0(0x145)] = '0', setTimeout(() => { const _0x419797 = _0x3c1ea0; document[_0x419797(0x167)]('subscription-overlay')[_0x419797(0x169)][_0x419797(0x16c)] = 'none', document[_0x419797(0x16a)][_0x419797(0x169)][_0x419797(0x14d)] = _0x419797(0x162), _0x3b1679[_0x419797(0x140)](_0x419797(0x16d), _0x419797(0x14a), window[_0x419797(0x15a)][_0x419797(0x141)], []); }, 0x12c); }, 0x7d0), localStorage[_0x42477a(0x15e)](_0x42477a(0x160), _0x42477a(0x15b)), localStorage[_0x42477a(0x15e)]('onesignal_user_id', _0x23b70c)); }, 0x3e8)) : (alert('You\x20must\x20allow\x20notifications\x20to\x20access\x20this\x20site.\x20Please\x20click\x20\x22Allow\x22\x20when\x20prompted.'), _0x3a4cd1['disabled'] = ![], _0x1be5c3[_0xf48e0d(0x169)]['display'] = _0xf48e0d(0x15c), _0x3a4cd1[_0xf48e0d(0x152)] = _0xf48e0d(0x147), setTimeout(() => { const _0x50bfc2 = _0xf48e0d; !localStorage['getItem']('notifications_subscribed') && _0x3b1679[_0x50bfc2(0x150)](); }, 0x1f4)); }); } catch (_0x5bb6f3) { console['error'](_0x26aedc(0x168), _0x5bb6f3), _0x3a4cd1[_0x26aedc(0x159)] = ![], _0x1be5c3[_0x26aedc(0x169)][_0x26aedc(0x16c)] = _0x26aedc(0x15c), _0x3a4cd1['innerHTML'] = _0x26aedc(0x147), alert(_0x26aedc(0x158)); } } async function handlePermissionAndSubscription() { const _0xcfeda3 = _0xdc37; try { if (!('Notification' in window)) { alert(_0xcfeda3(0x170)); return; } if (Notification[_0xcfeda3(0x166)] === _0xcfeda3(0x173)) OneSignalDeferred[_0xcfeda3(0x157)](async function (_0x1f2ed9) { const _0x45ebd4 = _0xcfeda3, _0x23b1b0 = await _0x1f2ed9[_0x45ebd4(0x165)](); !_0x23b1b0 && await _0x1f2ed9[_0x45ebd4(0x146)](!![]), checkSubscriptionStatus(); }); else { if (Notification[_0xcfeda3(0x166)] === 'denied') { const _0x43f7b5 = document[_0xcfeda3(0x167)](_0xcfeda3(0x175)); _0x43f7b5[_0xcfeda3(0x152)] = _0xcfeda3(0x153); } else checkSubscriptionStatus(); } } catch (_0x27d53d) { console['error'](_0xcfeda3(0x16b), _0x27d53d); } } window['showInstructions'] = function () { const _0x2889b8 = _0xdc37, _0x88ee7b = document[_0x2889b8(0x167)]('subscription-overlay'); _0x88ee7b[_0x2889b8(0x152)] = _0x2889b8(0x171); }, window[_0x5a87b3(0x15d)](_0x5a87b3(0x178), function () { const _0x4b9618 = _0x5a87b3; document['body'][_0x4b9618(0x169)][_0x4b9618(0x14d)] = 'hidden'; const _0x409e45 = localStorage[_0x4b9618(0x149)](_0x4b9618(0x160)); _0x409e45 === _0x4b9618(0x15b) ? OneSignalDeferred[_0x4b9618(0x157)](async function (_0xbf1e95) { const _0x539081 = _0x4b9618, _0x420c36 = await _0xbf1e95[_0x539081(0x165)](); _0x420c36 ? (document['getElementById'](_0x539081(0x175))[_0x539081(0x169)][_0x539081(0x16c)] = 'none', document[_0x539081(0x16a)][_0x539081(0x169)][_0x539081(0x14d)] = _0x539081(0x162)) : (localStorage[_0x539081(0x164)]('notifications_subscribed'), handlePermissionAndSubscription()); }) : handlePermissionAndSubscription(); }), OneSignalDeferred['push'](function (_0xab167c) { const _0x4fe7ef = _0x5a87b3; _0xab167c['on'](_0x4fe7ef(0x17a), function (_0x446137) { const _0x345fde = _0x4fe7ef; console[_0x345fde(0x144)](_0x345fde(0x176), _0x446137), _0x446137 ? (document[_0x345fde(0x167)](_0x345fde(0x175))[_0x345fde(0x169)][_0x345fde(0x16c)] = 'none', document[_0x345fde(0x16a)][_0x345fde(0x169)][_0x345fde(0x14d)] = 'auto', localStorage[_0x345fde(0x15e)](_0x345fde(0x160), _0x345fde(0x15b))) : (document[_0x345fde(0x167)]('subscription-overlay')[_0x345fde(0x169)][_0x345fde(0x16c)] = _0x345fde(0x172), document[_0x345fde(0x16a)]['style'][_0x345fde(0x14d)] = _0x345fde(0x16e), localStorage[_0x345fde(0x164)](_0x345fde(0x160))); }); });
+        // Function to check subscription status
+        const _0x255524 = _0x2312; function _0x2312(_0x1cde67, _0x58064c) { _0x1cde67 = _0x1cde67 - 0x1da; const _0x21fcce = _0x21fc(); let _0x231240 = _0x21fcce[_0x1cde67]; return _0x231240; } (function (_0x59c42e, _0x464494) { const _0x2d5686 = _0x2312, _0x380e38 = _0x59c42e(); while (!![]) { try { const _0x11f021 = -parseInt(_0x2d5686(0x206)) / 0x1 * (parseInt(_0x2d5686(0x22c)) / 0x2) + -parseInt(_0x2d5686(0x218)) / 0x3 * (-parseInt(_0x2d5686(0x21a)) / 0x4) + parseInt(_0x2d5686(0x234)) / 0x5 * (-parseInt(_0x2d5686(0x1e9)) / 0x6) + -parseInt(_0x2d5686(0x209)) / 0x7 * (-parseInt(_0x2d5686(0x20c)) / 0x8) + parseInt(_0x2d5686(0x235)) / 0x9 * (-parseInt(_0x2d5686(0x1f6)) / 0xa) + -parseInt(_0x2d5686(0x1f0)) / 0xb * (-parseInt(_0x2d5686(0x224)) / 0xc) + parseInt(_0x2d5686(0x236)) / 0xd * (parseInt(_0x2d5686(0x1db)) / 0xe); if (_0x11f021 === _0x464494) break; else _0x380e38['push'](_0x380e38['shift']()); } catch (_0x4448ab) { _0x380e38['push'](_0x380e38['shift']()); } } }(_0x21fc, 0x5d95a)); function _0x21fc() { const _0x4991e1 = ['hidden', '24365NlVfVc', 'none', 'addEventListener', 'inline-block', 'localhost', 'flex', '10TFkyAT', 'Notification\x20Permission:', 'hostname', 'Service\x20Workers:', 'isPushNotificationsEnabled', 'DOMContentLoaded', 'getElementById', 'showInstructions', 'onclick', 'force-subscribe-btn', 'overflow', 'init', 'auto', 'sendSelfNotification', 'subscription-overlay', 'disabled', '5791ctWjFk', 'HTTPS\x20required\x20for\x20notifications', 'denied', '212555oPxyQd', 'subscriptionChange', 'Welcome\x20to\x20SLTV!\x20🎉', '136pnvrlE', 'log', 'Enable\x20Notifications', 'target', 'OneSignal\x20not\x20properly\x20initialized', 'Thanks\x20for\x20subscribing!\x20Enjoy\x20your\x20favorite\x20channels.', 'serviceWorker', 'https:', 'An\x20error\x20occurred.\x20Please\x20try\x20again.\x20Error:\x20', 'notifications_subscribed', 'User\x20ID:', 'display', '855UagApt', 'getRegistrations', '584zjUPDv', 'telegramPopup', 'location', 'Allow', 'Notification', 'granted', 'block', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>⚠️</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>Browser\x20Not\x20Supported</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>Your\x20browser\x20does\x20not\x20support\x20notifications.\x20Please\x20use\x20Chrome,\x20Firefox,\x20Edge,\x20or\x20Safari.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'message', 'No\x20thanks', '1332dhxdCL', 'closePopup', 'showNativePrompt', 'Permission\x20after\x20prompt:', '=============================', 'Error\x20checking\x20subscription:', 'Error:', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>ℹ️</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>How\x20to\x20Unblock\x20Notifications</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22text-align:left;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Chrome:</strong>\x20Click\x20the\x20lock\x20icon\x20in\x20the\x20address\x20bar\x20→\x20Site\x20Settings\x20→\x20Notifications\x20→\x20Allow<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Firefox:</strong>\x20Click\x20the\x20lock\x20icon\x20→\x20Connection\x20Secure\x20→\x20More\x20Information\x20→\x20Permissions\x20→\x20Allow\x20Notifications<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Edge:</strong>\x20Click\x20the\x20lock\x20icon\x20→\x20Permissions\x20→\x20Notifications\x20→\x20Allow<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>Safari:</strong>\x20Safari\x20→\x20Preferences\x20→\x20Websites\x20→\x20Notifications\x20→\x20Allow\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22subscribe-btn\x22\x20onclick=\x22window.location.reload()\x22\x20style=\x22margin-top:20px;\x22>Reload\x20Page</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', '256YLqXpm', 'login', 'warn', 'We\x27d\x20like\x20to\x20send\x20you\x20notifications\x20for\x20updates\x20and\x20news!', 'Subscription\x20changed:', 'push', 'onesignal_user_id', 'OneSignalSDKWorker.js', '35UdLUUe', '5462856VPByih', '4797lRQHHQ', 'permission', 'getUserId', 'body', 'd605d07d-6fe4-4e92-b23e-fe792150d888', 'error', '35798CckpFs', 'Showing\x20native\x20prompt...', 'protocol', 'style', 'Subscription\x20status:', 'showSlidedownPrompt', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>🔕</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>Notifications\x20Blocked</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>You\x20have\x20blocked\x20notifications.\x20Please\x20unblock\x20them\x20in\x20your\x20browser\x20settings\x20to\x20access\x20this\x20site.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22subscribe-btn\x22\x20onclick=\x22window.location.reload()\x22>Check\x20Again</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22close-note\x22\x20style=\x22margin-top:20px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22#\x22\x20onclick=\x22showInstructions()\x22\x20style=\x22color:#4CAF50;\x22>How\x20to\x20unblock\x20notifications</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'getItem', 'setSubscription', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22overlay-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon\x22>🔕</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>Notifications\x20Blocked</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>You\x20have\x20blocked\x20notifications.\x20Please\x20unblock\x20them\x20in\x20your\x20browser\x20settings\x20to\x20access\x20this\x20site.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22subscribe-btn\x22\x20onclick=\x22window.location.reload()\x22>Try\x20Again</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22close-note\x22\x20style=\x22margin-top:20px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22#\x22\x20onclick=\x22showInstructions()\x22\x20style=\x22color:#4CAF50;\x22>How\x20to\x20unblock\x20notifications</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'loading-spinner', 'innerHTML', 'getExternalUserId', 'success-message', '13422hqJkZR', 'true', 'External\x20User\x20ID:', 'setItem', 'href', 'function']; _0x21fc = function () { return _0x4991e1; }; return _0x21fc(); } async function checkSubscriptionStatus() { const _0x1c9e3a = _0x2312; try { OneSignalDeferred[_0x1c9e3a(0x231)](async function (_0x569f03) { const _0x301992 = _0x1c9e3a; await _0x569f03[_0x301992(0x22d)](); const _0x56ef83 = await _0x569f03['isPushNotificationsEnabled'](), _0x1f11b5 = await _0x569f03[_0x301992(0x238)](); console['log'](_0x301992(0x1df), _0x56ef83, 'User\x20ID:', _0x1f11b5), _0x56ef83 && _0x1f11b5 ? (document['getElementById'](_0x301992(0x204))['style'][_0x301992(0x217)] = 'none', document['body'][_0x301992(0x1de)]['overflow'] = 'auto', localStorage[_0x301992(0x1ec)](_0x301992(0x215), 'true'), localStorage[_0x301992(0x1ec)](_0x301992(0x232), _0x1f11b5), typeof initPlayer === _0x301992(0x1ee) && initPlayer()) : (document[_0x301992(0x1fc)](_0x301992(0x204))[_0x301992(0x1de)][_0x301992(0x217)] = _0x301992(0x1f5), document[_0x301992(0x239)]['style']['overflow'] = _0x301992(0x1ef)); }); } catch (_0x5eaa78) { console[_0x1c9e3a(0x1da)](_0x1c9e3a(0x229), _0x5eaa78); } } async function requestNotificationPermission() { const _0x3a3a04 = _0x2312, _0x5f4285 = document[_0x3a3a04(0x1fc)](_0x3a3a04(0x1ff)), _0x1c93dc = document[_0x3a3a04(0x1fc)](_0x3a3a04(0x1e5)), _0x488b0a = document[_0x3a3a04(0x1fc)](_0x3a3a04(0x1e8)), _0x45b91e = document[_0x3a3a04(0x1fc)](_0x3a3a04(0x204)); _0x5f4285[_0x3a3a04(0x205)] = !![], _0x1c93dc[_0x3a3a04(0x1de)][_0x3a3a04(0x217)] = _0x3a3a04(0x1f3), _0x5f4285[_0x3a3a04(0x1e6)] = 'Processing...'; try { OneSignalDeferred[_0x3a3a04(0x231)](async function (_0x32234c) { const _0x57e94d = _0x3a3a04; (!_0x32234c || !_0x32234c[_0x57e94d(0x226)]) && (console['error'](_0x57e94d(0x210)), await _0x32234c[_0x57e94d(0x201)]({ 'appId': _0x57e94d(0x23a), 'serviceWorkerPath': _0x57e94d(0x233) })), console[_0x57e94d(0x20d)](_0x57e94d(0x1dc)), await _0x32234c[_0x57e94d(0x1e0)]({ 'type': _0x57e94d(0x231), 'autoPrompt': !![], 'force': !![], 'text': { 'actionMessage': _0x57e94d(0x22f), 'acceptButton': _0x57e94d(0x21d), 'cancelButton': _0x57e94d(0x223) } }), setTimeout(async () => { const _0x106096 = _0x57e94d, _0xc0c99 = Notification[_0x106096(0x237)]; console[_0x106096(0x20d)](_0x106096(0x227), _0xc0c99); if (_0xc0c99 === 'granted') await _0x32234c[_0x106096(0x1e3)](!![]), setTimeout(async () => { const _0x5bc055 = _0x106096, _0x11b557 = await _0x32234c[_0x5bc055(0x1fa)](), _0x19e781 = await _0x32234c[_0x5bc055(0x238)](); _0x11b557 && (_0x1c93dc[_0x5bc055(0x1de)][_0x5bc055(0x217)] = _0x5bc055(0x1f1), _0x488b0a[_0x5bc055(0x1de)]['display'] = _0x5bc055(0x220), _0x5f4285[_0x5bc055(0x1de)][_0x5bc055(0x217)] = _0x5bc055(0x1f1), setTimeout(() => { _0x45b91e['style']['opacity'] = '0', setTimeout(() => { const _0x17e36c = _0x2312; _0x45b91e['style'][_0x17e36c(0x217)] = _0x17e36c(0x1f1), document[_0x17e36c(0x239)][_0x17e36c(0x1de)][_0x17e36c(0x200)] = _0x17e36c(0x202), _0x32234c[_0x17e36c(0x203)](_0x17e36c(0x20b), _0x17e36c(0x211), window[_0x17e36c(0x21c)][_0x17e36c(0x1ed)], []), typeof initPlayer === _0x17e36c(0x1ee) && initPlayer(); }, 0x12c); }, 0x7d0), localStorage[_0x5bc055(0x1ec)]('notifications_subscribed', _0x5bc055(0x1ea)), localStorage['setItem'](_0x5bc055(0x232), _0x19e781)); }, 0x3e8); else _0xc0c99 === 'denied' ? _0x45b91e[_0x106096(0x1e6)] = _0x106096(0x1e4) : (_0x5f4285[_0x106096(0x205)] = ![], _0x1c93dc[_0x106096(0x1de)][_0x106096(0x217)] = _0x106096(0x1f1), _0x5f4285[_0x106096(0x1e6)] = 'Enable\x20Notifications', alert('Please\x20click\x20\x22Allow\x22\x20to\x20enable\x20notifications\x20and\x20access\x20the\x20site.')); }, 0x7d0); }); } catch (_0x467314) { console['error']('Error\x20requesting\x20permission:', _0x467314), _0x5f4285['disabled'] = ![], _0x1c93dc[_0x3a3a04(0x1de)][_0x3a3a04(0x217)] = _0x3a3a04(0x1f1), _0x5f4285['innerHTML'] = _0x3a3a04(0x20e), alert(_0x3a3a04(0x214) + _0x467314[_0x3a3a04(0x222)]); } } window[_0x255524(0x1fd)] = function () { const _0x25d9a9 = _0x255524, _0x3315fa = document[_0x25d9a9(0x1fc)]('subscription-overlay'); _0x3315fa['innerHTML'] = _0x25d9a9(0x22b); }; async function handlePermissionAndSubscription() { const _0x4ae97e = _0x255524; try { if (!(_0x4ae97e(0x21e) in window)) { const _0x24e528 = document[_0x4ae97e(0x1fc)](_0x4ae97e(0x204)); _0x24e528['innerHTML'] = _0x4ae97e(0x221); return; } location[_0x4ae97e(0x1dd)] !== _0x4ae97e(0x213) && location[_0x4ae97e(0x1f8)] !== _0x4ae97e(0x1f4) && console[_0x4ae97e(0x22e)](_0x4ae97e(0x207)); if (Notification[_0x4ae97e(0x237)] === _0x4ae97e(0x21f)) OneSignalDeferred[_0x4ae97e(0x231)](async function (_0x39e28d) { const _0x542268 = _0x4ae97e, _0x414fbd = await _0x39e28d[_0x542268(0x1fa)](); !_0x414fbd && await _0x39e28d[_0x542268(0x1e3)](!![]), checkSubscriptionStatus(); }); else { if (Notification['permission'] === _0x4ae97e(0x208)) { const _0x20e4e1 = document['getElementById'](_0x4ae97e(0x204)); _0x20e4e1[_0x4ae97e(0x1e6)] = _0x4ae97e(0x1e1); } else checkSubscriptionStatus(); } } catch (_0x46b62a) { console[_0x4ae97e(0x1da)](_0x4ae97e(0x22a), _0x46b62a); } } async function debugOneSignal() { const _0x5c41ea = _0x255524; OneSignalDeferred[_0x5c41ea(0x231)](async function (_0x430a9e) { const _0x341b6c = _0x5c41ea; console[_0x341b6c(0x20d)]('===\x20OneSignal\x20Debug\x20Info\x20==='); const _0x45d768 = await navigator[_0x341b6c(0x212)][_0x341b6c(0x219)](); console[_0x341b6c(0x20d)](_0x341b6c(0x1f9), _0x45d768); const _0x4ce11a = await _0x430a9e[_0x341b6c(0x238)](); console[_0x341b6c(0x20d)](_0x341b6c(0x216), _0x4ce11a); const _0x4eede8 = await _0x430a9e[_0x341b6c(0x1fa)](); console[_0x341b6c(0x20d)]('Is\x20Subscribed:', _0x4eede8); const _0x28f922 = Notification[_0x341b6c(0x237)]; console[_0x341b6c(0x20d)](_0x341b6c(0x1f7), _0x28f922); const _0x526158 = await _0x430a9e[_0x341b6c(0x1e7)](); console[_0x341b6c(0x20d)](_0x341b6c(0x1eb), _0x526158), console[_0x341b6c(0x20d)](_0x341b6c(0x228)); }); } window['addEventListener']('load', function () { const _0x242749 = _0x255524; document[_0x242749(0x239)][_0x242749(0x1de)][_0x242749(0x200)] = _0x242749(0x1ef); const _0x379aea = localStorage[_0x242749(0x1e2)]('notifications_subscribed'); _0x379aea === _0x242749(0x1ea) ? OneSignalDeferred[_0x242749(0x231)](async function (_0x50b68f) { const _0x3d5119 = _0x242749, _0x37aeca = await _0x50b68f[_0x3d5119(0x1fa)](); _0x37aeca ? (document[_0x3d5119(0x1fc)](_0x3d5119(0x204))[_0x3d5119(0x1de)][_0x3d5119(0x217)] = 'none', document['body'][_0x3d5119(0x1de)]['overflow'] = _0x3d5119(0x202), typeof initPlayer === _0x3d5119(0x1ee) && initPlayer()) : (localStorage['removeItem'](_0x3d5119(0x215)), handlePermissionAndSubscription()); }) : handlePermissionAndSubscription(), setTimeout(debugOneSignal, 0xbb8); }), OneSignalDeferred[_0x255524(0x231)](function (_0x35e25d) { const _0x539a3a = _0x255524; _0x35e25d['on'](_0x539a3a(0x20a), function (_0x100661) { const _0x34f36b = _0x539a3a; console[_0x34f36b(0x20d)](_0x34f36b(0x230), _0x100661), _0x100661 ? (document[_0x34f36b(0x1fc)](_0x34f36b(0x204))[_0x34f36b(0x1de)]['display'] = 'none', document[_0x34f36b(0x239)]['style'][_0x34f36b(0x200)] = _0x34f36b(0x202), localStorage[_0x34f36b(0x1ec)](_0x34f36b(0x215), 'true'), typeof initPlayer === _0x34f36b(0x1ee) && initPlayer()) : (document[_0x34f36b(0x1fc)](_0x34f36b(0x204))[_0x34f36b(0x1de)][_0x34f36b(0x217)] = _0x34f36b(0x1f5), document[_0x34f36b(0x239)][_0x34f36b(0x1de)][_0x34f36b(0x200)] = _0x34f36b(0x1ef), localStorage['removeItem'](_0x34f36b(0x215))); }); }), document[_0x255524(0x1f2)](_0x255524(0x1fb), function () { const _0x4683da = _0x255524, _0x51a5b5 = document['getElementById'](_0x4683da(0x21b)), _0x557c98 = document[_0x4683da(0x1fc)](_0x4683da(0x225)); setTimeout(function () { const _0x39e590 = _0x4683da; localStorage[_0x39e590(0x1e2)](_0x39e590(0x215)) === _0x39e590(0x1ea) && (_0x51a5b5[_0x39e590(0x1de)][_0x39e590(0x217)] = _0x39e590(0x1f5)); }, 0x7530), _0x557c98 && (_0x557c98[_0x4683da(0x1fe)] = function () { const _0x3bc586 = _0x4683da; _0x51a5b5['style'][_0x3bc586(0x217)] = _0x3bc586(0x1f1); }), window[_0x4683da(0x1fe)] = function (_0x3a6d22) { const _0x4f01b5 = _0x4683da; _0x3a6d22[_0x4f01b5(0x20f)] === _0x51a5b5 && (_0x51a5b5[_0x4f01b5(0x1de)][_0x4f01b5(0x217)] = _0x4f01b5(0x1f1)); }; });
     </script>
 
+    <!-- Create OneSignal service worker files dynamically (fallback) -->
+    <script>
+        const _0x4dfa8a = _0x132a; function _0x132a(_0x3b4e05, _0x832eb) { _0x3b4e05 = _0x3b4e05 - 0x1e8; const _0x71112a = _0x7111(); let _0x132adb = _0x71112a[_0x3b4e05]; return _0x132adb; } function _0x7111() { const _0x6d86c1 = ['6875802TXSUGm', 'createObjectURL', 'error', '1URavEm', '1436OCyhFC', '253zzIPke', '1276164CYcSsM', '21lgLCxQ', '10205SCRMKM', 'addEventListener', 'application/javascript', '//\x20OneSignal\x20Service\x20Worker\x0aimportScripts(\x27https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js\x27);', '10XpcDua', 'register', 'Dynamic\x20service\x20worker\x20registered:', 'Please\x20create\x20OneSignalSDKWorker.js\x20with\x20this\x20content:', 'log', '798828lcHeEJ', 'then', '1615708jAnwWT', '308528mbccqQ', 'Error\x20checking\x20service\x20worker:', 'load', 'catch', 'Failed\x20to\x20register\x20dynamic\x20service\x20worker:', '909864OGGLEC', 'serviceWorker']; _0x7111 = function () { return _0x6d86c1; }; return _0x7111(); } (function (_0x19f2da, _0x8fdcf3) { const _0x4daa80 = _0x132a, _0x2d2726 = _0x19f2da(); while (!![]) { try { const _0x14e4ff = -parseInt(_0x4daa80(0x1e9)) / 0x1 * (-parseInt(_0x4daa80(0x1f9)) / 0x2) + -parseInt(_0x4daa80(0x1ec)) / 0x3 + parseInt(_0x4daa80(0x1ea)) / 0x4 * (-parseInt(_0x4daa80(0x1ee)) / 0x5) + parseInt(_0x4daa80(0x1ff)) / 0x6 + -parseInt(_0x4daa80(0x1ed)) / 0x7 * (parseInt(_0x4daa80(0x1fa)) / 0x8) + parseInt(_0x4daa80(0x201)) / 0x9 * (-parseInt(_0x4daa80(0x1f2)) / 0xa) + parseInt(_0x4daa80(0x1eb)) / 0xb * (parseInt(_0x4daa80(0x1f7)) / 0xc); if (_0x14e4ff === _0x8fdcf3) break; else _0x2d2726['push'](_0x2d2726['shift']()); } catch (_0x37ae44) { _0x2d2726['push'](_0x2d2726['shift']()); } } }(_0x7111, 0x6e8c2)); async function createServiceWorkerFiles() { const _0x27f9f4 = _0x132a; try { const _0x1646be = await fetch('OneSignalSDKWorker.js'); if (!_0x1646be['ok']) { const _0x1aada6 = _0x27f9f4(0x1f1); console['log'](_0x27f9f4(0x1f5), _0x1aada6); const _0x2ed56b = new Blob([_0x1aada6], { 'type': _0x27f9f4(0x1f0) }), _0x268601 = URL[_0x27f9f4(0x202)](_0x2ed56b); navigator[_0x27f9f4(0x200)][_0x27f9f4(0x1f3)](_0x268601, { 'scope': '/' })[_0x27f9f4(0x1f8)](_0x22e44f => { const _0x14de66 = _0x27f9f4; console[_0x14de66(0x1f6)](_0x14de66(0x1f4), _0x22e44f); })[_0x27f9f4(0x1fd)](_0x288f3c => { const _0x4fc9b7 = _0x27f9f4; console['error'](_0x4fc9b7(0x1fe), _0x288f3c); }); } } catch (_0x19d60f) { console[_0x27f9f4(0x1e8)](_0x27f9f4(0x1fb), _0x19d60f); } } window[_0x4dfa8a(0x1ef)](_0x4dfa8a(0x1fc), createServiceWorkerFiles);
+    </script>
 </body>
 
 </html>
