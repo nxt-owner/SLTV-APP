@@ -1,7 +1,18 @@
-
 {
   "latestVersion": "3.0",
   "updates": [
+    {
+      "version": "3.2",
+      "date": "2025-12-12",
+      "features": [
+        "▶️ pip video playback",
+        "✨ More Advanced Channel Options",
+        "🔄 Auto Updating channels",
+        "♻️ Re branded"
+      ],
+      "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V3.2/SLTV3.2-MOBILE.apk",
+      "mirror": "https://t.me/sltvapp/232"
+    },
     {
       "version": "3.0",
       "date": "2025-12-12",
@@ -57,7 +68,6 @@
         "🤝 Donations Open",
         "🎬 New Splash Screen",
         "🧠 Code Optimized"
-        
       ],
       "apk": "https://github.com/nxt-owner/SLTV-APP/releases/download/V2.7/SLTV.V2.7.apk",
       "mirror": "https://www.mediafire.com/file/v7xr64eo0m4sn7j/SLTV_V2.7.apk/file"
