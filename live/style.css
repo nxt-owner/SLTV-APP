@@ -385,3 +385,81 @@ body {
 .join-btn svg {
     fill: currentColor;
 }
+
+/* === NOTIFICATION LOCK STYLES === */
+.notification-lock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    /* High opacity to block view */
+    /* Highest z-index */
+    display: flex;
+    /* Default visible (blocked), hidden by JS if subscribed */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.lock-content {
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+    max-width: 500px;
+    background: #1a2a36;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.lock-icon {
+    color: #0056b3;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.lock-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.lock-content p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #b0c0d0;
+}
+
+.lock-content .small-text {
+    font-size: 0.9rem;
+    color: #8899a6;
+    margin-bottom: 30px;
+}
+
+.subscribe-btn {
+    background: #e50914;
+    /* Red color for attention */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.05);
+    background: #f40612;
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+body {
+    user-select: none;
+}

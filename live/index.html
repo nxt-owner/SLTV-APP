@@ -4,10 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLTV – Live Channel Player</title>
+
+    <title>SLTV – Watch Sri Lankan Live TV Channels Online</title>
+
+    <meta name="description"
+        content="Watch Sri Lankan live TV channels online for free. Stream Hiru TV, Derana, ITN, Rupavahini, Sirasa TV, Swarnavahini and many more channels live in HD on SLTV. No signup required.">
+
+    <meta name="keywords"
+        content="SLTV, Sri Lanka live TV, watch Sri Lankan TV online, Hiru TV live, Derana live stream, ITN live, Rupavahini live, Sri Lanka IPTV, Sinhala TV live">
+
+    <meta name="author" content="SLTV">
+
+    <!-- Open Graph (Facebook / WhatsApp / Telegram) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SLTV – Watch Sri Lankan Live TV Channels Online">
+    <meta property="og:description"
+        content="Stream Sri Lankan TV channels live in HD. Watch Hiru TV, Derana, ITN, Rupavahini, Sirasa TV and more for free.">
+    <meta property="og:image" content="https://sltvapp.techlasiya.com/live/image.jpg">
+    <meta property="og:url" content="https://sltvapp.techlasiya.com/live/">
+    <meta property="og:site_name" content="SLTV">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SLTV – Sri Lankan Live TV Channels">
+    <meta name="twitter:description"
+        content="Watch Sri Lankan TV channels live online. HD streaming of popular Sinhala TV channels.">
+    <meta name="twitter:image" content="https://sltvapp.techlasiya.com/live/image.jpg">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/shaka-player.ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.1/controls.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function _0x5d19(_0x3c9642, _0x181340) { _0x3c9642 = _0x3c9642 - 0x140; const _0x40f489 = _0x40f4(); let _0x5d19b1 = _0x40f489[_0x3c9642]; return _0x5d19b1; } function _0x40f4() { const _0x3069cf = ['5893884TvJsYs', 'contextmenu', '2530XdVpVk', 'body', 'innerHeight', '3TYXfmW', 'DevTools\x20is\x20not\x20allowed.', '988154mfivIB', '7110ULxNVX', 'innerHTML', 'addEventListener', '29205252aTvDYD', '1968OZcjgA', '42203YLVxAt', 'innerWidth', '12298YNOlzA', 'preventDefault', '7583248vqNSFT', '13938YWbYrp', '2rfqcFg']; _0x40f4 = function () { return _0x3069cf; }; return _0x40f4(); } const _0x3f28d5 = _0x5d19; (function (_0x3e2d18, _0x262c7b) { const _0x465c7e = _0x5d19, _0x35ba6e = _0x3e2d18(); while (!![]) { try { const _0x4350cf = -parseInt(_0x465c7e(0x14e)) / 0x1 * (parseInt(_0x465c7e(0x146)) / 0x2) + parseInt(_0x465c7e(0x14c)) / 0x3 * (parseInt(_0x465c7e(0x144)) / 0x4) + -parseInt(_0x465c7e(0x149)) / 0x5 * (-parseInt(_0x465c7e(0x145)) / 0x6) + parseInt(_0x465c7e(0x140)) / 0x7 * (parseInt(_0x465c7e(0x153)) / 0x8) + parseInt(_0x465c7e(0x147)) / 0x9 + parseInt(_0x465c7e(0x14f)) / 0xa * (-parseInt(_0x465c7e(0x142)) / 0xb) + -parseInt(_0x465c7e(0x152)) / 0xc; if (_0x4350cf === _0x262c7b) break; else _0x35ba6e['push'](_0x35ba6e['shift']()); } catch (_0x37793b) { _0x35ba6e['push'](_0x35ba6e['shift']()); } } }(_0x40f4, 0xf24b5), setInterval(function () { const _0x18838d = _0x5d19, _0x44d2fc = window['outerWidth'] - window[_0x18838d(0x141)] > 0xa0, _0x47df90 = window['outerHeight'] - window[_0x18838d(0x14b)] > 0xa0; (_0x44d2fc || _0x47df90) && (document[_0x18838d(0x14a)][_0x18838d(0x150)] = _0x18838d(0x14d)); }, 0x3e8), document[_0x3f28d5(0x151)](_0x3f28d5(0x148), function (_0x439554) { const _0x2855d2 = _0x3f28d5; _0x439554[_0x2855d2(0x143)](); }));
+    </script>
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
 </head>
 
 <body>
@@ -23,7 +57,7 @@
 
                 <!-- === WATERMARK (bottom-left, clickable) === -->
                 <div class="watermark">
-                    <a>
+                    <a href="#" onclick="return false;">
                         <img src="https://raw.githubusercontent.com/nxt-owner/SLTV-APP/refs/heads/main/images/logo/logo.png"
                             alt="Watermark Logo">
                     </a>
@@ -39,6 +73,8 @@
         <!-- === CHANNEL GRID (populated by JS) === -->
         <div class="channels-container" id="channelsContainer"></div>
     </div>
+    <script src="script.js"></script>
+
     <!-- === TELEGRAM POPUP === -->
     <div id="telegramPopup" class="popup-overlay">
         <div class="popup-content">
@@ -56,9 +92,6 @@
             </a>
         </div>
     </div>
-    <script src="script.js"></script>
-
-
 
 </body>
 
