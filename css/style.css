@@ -210,83 +210,92 @@ nav {
 }
 
 .features {
-    padding: 150px 0;
-    background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+    padding: 80px 0;
+    background: rgba(10, 10, 10, 0.4);
     overflow: hidden;
     position: relative;
-    height: 900px;
-    perspective: 1200px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.zoom-viewport {
+.h-viewport {
     position: relative;
     width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
+    perspective: 1500px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    /* justify-content removed to focus in center via JS math */
 }
 
-.zoom-item {
-    position: absolute;
-    width: 80%;
-    max-width: 800px;
+.h-track {
+    display: flex;
+    gap: 3rem;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    /* padding removed to ensure translateX starts from 0 */
+}
+
+.h-item {
+    min-width: 600px;
+    width: 600px;
     aspect-ratio: 16/9;
     background: var(--bg-card);
-    border-radius: 30px;
+    border-radius: 24px;
     border: 1px solid var(--glass-border);
-    box-shadow: 0 0 50px rgba(0,0,0,0.8);
-    transition: transform 0.1s ease-out, opacity 0.5s ease;
     overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     backface-visibility: hidden;
-    pointer-events: none;
+    position: relative;
 }
 
-.zoom-item.active {
-    pointer-events: auto;
-    border-color: var(--primary);
-    box-shadow: 0 0 80px var(--primary-glow);
-}
-
-.zoom-item img {
+.h-item img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.5s ease;
 }
 
-.zoom-item:hover img {
-    transform: scale(1.05);
+.h-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 20px 60px var(--primary-glow);
+    z-index: 10;
 }
 
-/* Indicators on the side */
-.zoom-controls {
+/* Indicators at the bottom */
+.h-dots {
     position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     z-index: 100;
 }
 
-.zoom-dot {
-    width: 14px;
-    height: 14px;
+.h-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--glass-border);
     cursor: pointer;
     transition: var(--transition);
-    border: 2px solid transparent;
 }
 
-.zoom-dot.active {
+.h-dot.active {
     background: var(--primary);
-    border-color: white;
-    box-shadow: 0 0 20px var(--primary);
-    transform: scale(1.4);
+    box-shadow: 0 0 10px var(--primary);
+    transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .h-item {
+        min-width: 90vw;
+        width: 90vw;
+    }
+
+
 }
 
 /* Download Section */

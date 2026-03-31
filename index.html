@@ -86,45 +86,47 @@
             </p>
         </div>
 
-        <div class="zoom-viewport">
-            <div class="zoom-item active" data-index="0">
-                <img src="images/doc/introducing.jpg" alt="Introducing SLTV">
-            </div>
-            <div class="zoom-item" data-index="1">
-                <img src="images/doc/ultimate_stream_platform.jpg" alt="Ultimate Stream Platform">
-            </div>
-            <div class="zoom-item" data-index="2">
-                <img src="images/doc/unlimited_live_tv_&_films.jpg" alt="Unlimited Content">
-            </div>
-            <div class="zoom-item" data-index="3">
-                <img src="images/doc/Stream_with_confidance.jpg" alt="Stream with Confidence">
-            </div>
-            <div class="zoom-item" data-index="4">
-                <img src="images/doc/bigscreen_smart_control.jpg" alt="Smart Control">
-            </div>
-            <div class="zoom-item" data-index="5">
-                <img src="images/doc/poword_at_your_fingerprints.jpg" alt="Player Control">
-            </div>
-            <div class="zoom-item" data-index="6">
-                <img src="images/doc/find_it_in_flash.jpg" alt="Fast Search">
-            </div>
-            <div class="zoom-item" data-index="7">
-                <img src="images/doc/yourstyle_yourstatus.jpg" alt="Personalization">
-            </div>
-            <div class="zoom-item" data-index="8">
-                <img src="images/doc/always_improving.jpg" alt="Regular Updates">
+        <div class="h-viewport">
+            <div class="h-track">
+                <div class="h-item active" data-index="0">
+                    <img src="images/doc/introducing.jpg" alt="Introducing SLTV">
+                </div>
+                <div class="h-item" data-index="1">
+                    <img src="images/doc/ultimate_stream_platform.jpg" alt="Ultimate Stream Platform">
+                </div>
+                <div class="h-item" data-index="2">
+                    <img src="images/doc/unlimited_live_tv_&_films.jpg" alt="Unlimited Content">
+                </div>
+                <div class="h-item" data-index="3">
+                    <img src="images/doc/Stream_with_confidance.jpg" alt="Stream with Confidence">
+                </div>
+                <div class="h-item" data-index="4">
+                    <img src="images/doc/bigscreen_smart_control.jpg" alt="Smart Control">
+                </div>
+                <div class="h-item" data-index="5">
+                    <img src="images/doc/poword_at_your_fingerprints.jpg" alt="Player Control">
+                </div>
+                <div class="h-item" data-index="6">
+                    <img src="images/doc/find_it_in_flash.jpg" alt="Fast Search">
+                </div>
+                <div class="h-item" data-index="7">
+                    <img src="images/doc/yourstyle_yourstatus.jpg" alt="Personalization">
+                </div>
+                <div class="h-item" data-index="8">
+                    <img src="images/doc/always_improving.jpg" alt="Regular Updates">
+                </div>
             </div>
 
-            <div class="zoom-controls">
-                <div class="zoom-dot active" data-index="0"></div>
-                <div class="zoom-dot" data-index="1"></div>
-                <div class="zoom-dot" data-index="2"></div>
-                <div class="zoom-dot" data-index="3"></div>
-                <div class="zoom-dot" data-index="4"></div>
-                <div class="zoom-dot" data-index="5"></div>
-                <div class="zoom-dot" data-index="6"></div>
-                <div class="zoom-dot" data-index="7"></div>
-                <div class="zoom-dot" data-index="8"></div>
+            <div class="h-dots">
+                <div class="h-dot active" data-index="0"></div>
+                <div class="h-dot" data-index="1"></div>
+                <div class="h-dot" data-index="2"></div>
+                <div class="h-dot" data-index="3"></div>
+                <div class="h-dot" data-index="4"></div>
+                <div class="h-dot" data-index="5"></div>
+                <div class="h-dot" data-index="6"></div>
+                <div class="h-dot" data-index="7"></div>
+                <div class="h-dot" data-index="8"></div>
             </div>
         </div>
 
@@ -261,88 +263,102 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.zoom-item, .dl-card, .section-title').forEach(el => {
+        document.querySelectorAll('.h-item, .dl-card, .section-title').forEach(el => {
             el.style.opacity = "0";
             el.style.transform = "translateY(30px)";
             el.style.transition = "all 0.6s ease-out";
             observer.observe(el);
         });
 
-        // 3D Zoom Tunnel Logic
-        const zoomItems = document.querySelectorAll('.zoom-item');
-        const zoomDots = document.querySelectorAll('.zoom-dot');
-        const zoomSection = document.querySelector('.features');
-        let zoomIndex = 0;
-        let isZooming = false;
+        // 3D Horizontal Slider Logic
+        const hTrack = document.querySelector('.h-track');
+        const hItems = document.querySelectorAll('.h-item');
+        const hDots = document.querySelectorAll('.h-dot');
+        const hSection = document.querySelector('.features');
+        let hIndex = 0;
+        let isHScrolling = false;
 
-        function updateZoom() {
-            zoomItems.forEach((item, i) => {
-                const diff = i - zoomIndex;
-                let z = diff * -400; // items in the distance
-                let opacity = 1 - (Math.abs(diff) * 0.4);
-                let filter = `blur(${Math.abs(diff) * 4}px)`;
+        function updateHScroller() {
+            const itemWidth = hItems[0].offsetWidth;
+            const gap = 48; // 3rem gap matching CSS
+            const scrollX = (window.innerWidth / 2) - (hIndex * (itemWidth + gap)) - (itemWidth / 2);
 
-                if (diff < 0) {
-                    // Item has "zoomed past" the camera
-                    z = Math.abs(diff) * 800;
-                    opacity = 1 - (Math.abs(diff) * 0.8);
-                }
+            hTrack.style.transform = `translateX(${scrollX}px)`;
 
-                item.style.transform = `translateZ(${z}px)`;
-                item.style.opacity = Math.max(0, opacity);
-                item.style.filter = filter;
-                item.classList.toggle('active', i === zoomIndex);
-                item.style.zIndex = 100 - Math.abs(diff);
-                item.style.visibility = opacity <= 0 ? 'hidden' : 'visible';
+            hItems.forEach((item, i) => {
+                const diff = i - hIndex;
+                const absDiff = Math.abs(diff);
+                
+                // 3D Effect for side items
+                const rotateY = diff * -15;
+                const scale = 1 - (absDiff * 0.15);
+                const opacity = 1 - (absDiff * 0.3);
+                const translateZ = absDiff * -100;
+
+                item.style.transform = `rotateY(${rotateY}deg) scale(${scale}) translateZ(${translateZ}px)`;
+                item.style.opacity = opacity;
+                item.classList.toggle('active', i === hIndex);
             });
 
-            zoomDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === zoomIndex);
+            hDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === hIndex);
             });
         }
 
-        function nextZoom() {
-            if (zoomIndex < zoomItems.length - 1) {
-                zoomIndex++;
-                updateZoom();
+        function nextH() {
+            if (hIndex < hItems.length - 1) {
+                hIndex++;
+                updateHScroller();
             }
         }
 
-        function prevZoom() {
-            if (zoomIndex > 0) {
-                zoomIndex--;
-                updateZoom();
+        function prevH() {
+            if (hIndex > 0) {
+                hIndex--;
+                updateHScroller();
             }
         }
 
-        zoomSection.addEventListener('wheel', (e) => {
+        // Mouse Wheel (Vertical to Horizontal)
+        hSection.addEventListener('wheel', (e) => {
+            // Check if we can scroll further horizontally
+            const isAtEnd = hIndex === hItems.length - 1;
+            const isAtStart = hIndex === 0;
+
+            if ((e.deltaY > 0 && isAtEnd) || (e.deltaY < 0 && isAtStart)) {
+                // Let the browser handle standard vertical scroll
+                return;
+            }
+
             e.preventDefault();
-            if (isZooming) return;
+            if (isHScrolling) return;
 
-            isZooming = true;
-            if (e.deltaY > 0) nextZoom();
-            else prevZoom();
+            isHScrolling = true;
+            if (e.deltaY > 0) nextH();
+            else prevH();
 
-            setTimeout(() => { isZooming = false; }, 600);
+            setTimeout(() => { isHScrolling = false; }, 600);
         }, { passive: false });
 
-        zoomDots.forEach(dot => {
+        // Dot Navigation
+        hDots.forEach(dot => {
             dot.addEventListener('click', () => {
-                zoomIndex = parseInt(dot.dataset.index);
-                updateZoom();
+                hIndex = parseInt(dot.dataset.index);
+                updateHScroller();
             });
         });
 
         // Touch Support
-        let zoomTouchY = 0;
-        zoomSection.addEventListener('touchstart', e => { zoomTouchY = e.touches[0].clientY; });
-        zoomSection.addEventListener('touchend', e => {
-            const endY = e.changedTouches[0].clientY;
-            if (zoomTouchY - endY > 50) nextZoom();
-            if (endY - zoomTouchY > 50) prevZoom();
+        let hTouchStartX = 0;
+        hSection.addEventListener('touchstart', e => { hTouchStartX = e.touches[0].clientX; });
+        hSection.addEventListener('touchend', e => {
+            const hTouchEndX = e.changedTouches[0].clientX;
+            if (hTouchStartX - hTouchEndX > 50) nextH();
+            if (hTouchEndX - hTouchStartX > 50) prevH();
         });
 
-        updateZoom();
+        window.addEventListener('resize', updateHScroller);
+        updateHScroller();
     </script>
 </body>
 
