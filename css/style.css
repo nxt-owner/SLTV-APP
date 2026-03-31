@@ -43,8 +43,15 @@ body {
     opacity: 0.5;
 }
 
-.blob-1 { top: -200px; right: -100px; }
-.blob-2 { bottom: -200px; left: -100px; }
+.blob-1 {
+    top: -200px;
+    right: -100px;
+}
+
+.blob-2 {
+    bottom: -200px;
+    left: -100px;
+}
 
 /* Navigation */
 nav {
@@ -105,6 +112,7 @@ nav {
     margin-bottom: 1.5rem;
     background: var(--gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
 }
@@ -130,8 +138,15 @@ nav {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 /* Buttons */
@@ -194,30 +209,93 @@ nav {
     border-radius: 2px;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+.features {
+    padding: 100px 0;
+    background: rgba(10, 10, 10, 0.5);
+    overflow: hidden;
+    position: relative;
+    height: 800px; /* Viewport height for scroller */
 }
 
-.feature-card {
-    background: var(--bg-card);
-    padding: 2.5rem;
+.scroller-3d {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroller-track {
+    position: relative;
+    width: 100%;
+    height: 480px; /* Height of a single flyer */
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scroller-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    margin-top: -240px; /* half height */
+    margin-left: -50%; /* half width */
     border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: grab;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroller-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scroller-item.active {
+    border-color: var(--primary);
+    box-shadow: 0 30px 80px var(--primary-glow);
+    z-index: 10;
+}
+
+/* Indicators */
+.scroller-dots {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    cursor: pointer;
     transition: var(--transition);
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    background: rgba(30, 30, 35, 0.8);
-    border-color: var(--primary);
-}
-
-.feature-card i {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary);
+.dot.active {
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+    transform: scale(1.3);
 }
 
 /* Download Section */
@@ -296,7 +374,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero-content h1 { font-size: 3rem; }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -305,6 +385,14 @@ footer {
         text-align: center;
         padding-top: 120px;
     }
-    .hero-content h1 { font-size: 2.5rem; }
-    .nav-links { display: none; } /* Add mobile menu later if needed */
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Add mobile menu later if needed */
 }
