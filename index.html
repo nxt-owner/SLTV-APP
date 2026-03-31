@@ -86,47 +86,45 @@
             </p>
         </div>
 
-        <div class="scroller-3d">
-            <div class="scroller-track">
-                <div class="scroller-item active" data-index="0">
-                    <img src="images/doc/introducing.jpg" alt="Introducing SLTV">
-                </div>
-                <div class="scroller-item" data-index="1">
-                    <img src="images/doc/ultimate_stream_platform.jpg" alt="Ultimate Stream Platform">
-                </div>
-                <div class="scroller-item" data-index="2">
-                    <img src="images/doc/unlimited_live_tv_&_films.jpg" alt="Unlimited Content">
-                </div>
-                <div class="scroller-item" data-index="3">
-                    <img src="images/doc/Stream_with_confidance.jpg" alt="Stream with Confidence">
-                </div>
-                <div class="scroller-item" data-index="4">
-                    <img src="images/doc/bigscreen_smart_control.jpg" alt="Smart Control">
-                </div>
-                <div class="scroller-item" data-index="5">
-                    <img src="images/doc/poword_at_your_fingerprints.jpg" alt="Player Control">
-                </div>
-                <div class="scroller-item" data-index="6">
-                    <img src="images/doc/find_it_in_flash.jpg" alt="Fast Search">
-                </div>
-                <div class="scroller-item" data-index="7">
-                    <img src="images/doc/yourstyle_yourstatus.jpg" alt="Personalization">
-                </div>
-                <div class="scroller-item" data-index="8">
-                    <img src="images/doc/always_improving.jpg" alt="Regular Updates">
-                </div>
+        <div class="zoom-viewport">
+            <div class="zoom-item active" data-index="0">
+                <img src="images/doc/introducing.jpg" alt="Introducing SLTV">
+            </div>
+            <div class="zoom-item" data-index="1">
+                <img src="images/doc/ultimate_stream_platform.jpg" alt="Ultimate Stream Platform">
+            </div>
+            <div class="zoom-item" data-index="2">
+                <img src="images/doc/unlimited_live_tv_&_films.jpg" alt="Unlimited Content">
+            </div>
+            <div class="zoom-item" data-index="3">
+                <img src="images/doc/Stream_with_confidance.jpg" alt="Stream with Confidence">
+            </div>
+            <div class="zoom-item" data-index="4">
+                <img src="images/doc/bigscreen_smart_control.jpg" alt="Smart Control">
+            </div>
+            <div class="zoom-item" data-index="5">
+                <img src="images/doc/poword_at_your_fingerprints.jpg" alt="Player Control">
+            </div>
+            <div class="zoom-item" data-index="6">
+                <img src="images/doc/find_it_in_flash.jpg" alt="Fast Search">
+            </div>
+            <div class="zoom-item" data-index="7">
+                <img src="images/doc/yourstyle_yourstatus.jpg" alt="Personalization">
+            </div>
+            <div class="zoom-item" data-index="8">
+                <img src="images/doc/always_improving.jpg" alt="Regular Updates">
             </div>
 
-            <div class="scroller-dots">
-                <div class="dot active" data-index="0"></div>
-                <div class="dot" data-index="1"></div>
-                <div class="dot" data-index="2"></div>
-                <div class="dot" data-index="3"></div>
-                <div class="dot" data-index="4"></div>
-                <div class="dot" data-index="5"></div>
-                <div class="dot" data-index="6"></div>
-                <div class="dot" data-index="7"></div>
-                <div class="dot" data-index="8"></div>
+            <div class="zoom-controls">
+                <div class="zoom-dot active" data-index="0"></div>
+                <div class="zoom-dot" data-index="1"></div>
+                <div class="zoom-dot" data-index="2"></div>
+                <div class="zoom-dot" data-index="3"></div>
+                <div class="zoom-dot" data-index="4"></div>
+                <div class="zoom-dot" data-index="5"></div>
+                <div class="zoom-dot" data-index="6"></div>
+                <div class="zoom-dot" data-index="7"></div>
+                <div class="zoom-dot" data-index="8"></div>
             </div>
         </div>
 
@@ -263,90 +261,88 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.scroller-item, .dl-card, .section-title').forEach(el => {
+        document.querySelectorAll('.zoom-item, .dl-card, .section-title').forEach(el => {
             el.style.opacity = "0";
             el.style.transform = "translateY(30px)";
             el.style.transition = "all 0.6s ease-out";
             observer.observe(el);
         });
 
-        // 3D Vertical Scroller Logic
-        const track = document.querySelector('.scroller-track');
-        const items = document.querySelectorAll('.scroller-item');
-        const dots = document.querySelectorAll('.dot');
-        const scrollerArea = document.querySelector('.features');
-        let index = 0;
-        let isScrolling = false;
+        // 3D Zoom Tunnel Logic
+        const zoomItems = document.querySelectorAll('.zoom-item');
+        const zoomDots = document.querySelectorAll('.zoom-dot');
+        const zoomSection = document.querySelector('.features');
+        let zoomIndex = 0;
+        let isZooming = false;
 
-        function updateScroller() {
-            items.forEach((item, i) => {
-                const offset = i - index;
-                const absOffset = Math.abs(offset);
-                
-                // 3D Drum Transform calculation
-                const rotateX = offset * -25;
-                const translateZ = 400 - (absOffset * 150);
-                const translateY = offset * 120;
-                const scale = 1 - (absOffset * 0.15);
-                const opacity = 1 - (absOffset * 0.4);
+        function updateZoom() {
+            zoomItems.forEach((item, i) => {
+                const diff = i - zoomIndex;
+                let z = diff * -400; // items in the distance
+                let opacity = 1 - (Math.abs(diff) * 0.4);
+                let filter = `blur(${Math.abs(diff) * 4}px)`;
 
-                item.style.transform = `rotateX(${rotateX}deg) translateZ(${translateZ}px) translateY(${translateY}px) scale(${scale})`;
-                item.style.opacity = opacity;
-                item.style.visibility = absOffset > 2 ? 'hidden' : 'visible';
-                
-                item.classList.toggle('active', i === index);
+                if (diff < 0) {
+                    // Item has "zoomed past" the camera
+                    z = Math.abs(diff) * 800;
+                    opacity = 1 - (Math.abs(diff) * 0.8);
+                }
+
+                item.style.transform = `translateZ(${z}px)`;
+                item.style.opacity = Math.max(0, opacity);
+                item.style.filter = filter;
+                item.classList.toggle('active', i === zoomIndex);
+                item.style.zIndex = 100 - Math.abs(diff);
+                item.style.visibility = opacity <= 0 ? 'hidden' : 'visible';
             });
 
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+            zoomDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === zoomIndex);
             });
         }
 
-        function nextItem() {
-            if (index < items.length - 1) {
-                index++;
-                updateScroller();
+        function nextZoom() {
+            if (zoomIndex < zoomItems.length - 1) {
+                zoomIndex++;
+                updateZoom();
             }
         }
 
-        function prevItem() {
-            if (index > 0) {
-                index--;
-                updateScroller();
+        function prevZoom() {
+            if (zoomIndex > 0) {
+                zoomIndex--;
+                updateZoom();
             }
         }
 
-        // Wheel Event handling with debounce
-        scrollerArea.addEventListener('wheel', (e) => {
+        zoomSection.addEventListener('wheel', (e) => {
             e.preventDefault();
-            if (isScrolling) return;
+            if (isZooming) return;
 
-            isScrolling = true;
-            if (e.deltaY > 0) nextItem();
-            else prevItem();
+            isZooming = true;
+            if (e.deltaY > 0) nextZoom();
+            else prevZoom();
 
-            setTimeout(() => { isScrolling = false; }, 800);
+            setTimeout(() => { isZooming = false; }, 600);
         }, { passive: false });
 
-        // Dot Navigation
-        dots.forEach(dot => {
+        zoomDots.forEach(dot => {
             dot.addEventListener('click', () => {
-                index = parseInt(dot.dataset.index);
-                updateScroller();
+                zoomIndex = parseInt(dot.dataset.index);
+                updateZoom();
             });
         });
 
-        // Touch Support for Mobile
-        let touchStartY = 0;
-        scrollerArea.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; });
-        scrollerArea.addEventListener('touchend', e => {
-            const touchEndY = e.changedTouches[0].clientY;
-            if (touchStartY - touchEndY > 50) nextItem();
-            if (touchEndY - touchStartY > 50) prevItem();
+        // Touch Support
+        let zoomTouchY = 0;
+        zoomSection.addEventListener('touchstart', e => { zoomTouchY = e.touches[0].clientY; });
+        zoomSection.addEventListener('touchend', e => {
+            const endY = e.changedTouches[0].clientY;
+            if (zoomTouchY - endY > 50) nextZoom();
+            if (endY - zoomTouchY > 50) prevZoom();
         });
 
-        // Initialize Scroller
-        updateScroller();
+        updateZoom();
     </script>
 </body>
 
