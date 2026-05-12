@@ -10,30 +10,33 @@
 
 <body>
 
-    <div class="video-wrapper">
-        <video id="video" poster="https://via.placeholder.com/1280x720?text=SL+TV" playsinline></video>
-        <div class="spinner" id="loadingSpinner"></div>
-    </div>
+    <div class="container">
 
-    <div class="header">
-        <div class="logo">SL TV</div>
-        <input type="text" class="search-box" id="searchInput" placeholder="Search channels...">
-    </div>
+        <!-- === PLAYER SECTION === -->
+        <div class="player-section">
+            <div class="video-wrapper" data-shaka-player-container>
+                <video data-shaka-player id="video" autoplay playsinline></video>
 
-    <div class="channels-container" id="channelsContainer"></div>
+                <!-- === LOADING SPINNER === -->
+                <div id="loadingSpinner" class="loading-spinner"></div>
 
-    <div class="telegram-popup" id="telegramPopup">
-        <div class="popup-content">
-            <div class="popup-icon">📺</div>
-            <div class="popup-text">
-                <h4>Join Our Telegram Channel</h4>
-                <p>Get updates about new channels and features</p>
+                <!-- === WATERMARK (bottom-left, clickable) === -->
+                <div class="watermark">
+                    <a href="#" onclick="return false;">
+                        <img src="https://raw.githubusercontent.com/nxt-owner/SLTV-APP/refs/heads/main/images/logo/logo.png"
+                            alt="Watermark Logo">
+                    </a>
+                </div>
             </div>
-            <div class="popup-buttons">
-                <a href="https://t.me/sltv_channel" id="joinTelegramBtn" class="btn-join" target="_blank">Join</a>
-                <button id="closePopup" class="btn-close">Close</button>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search channels..." autocomplete="off">
             </div>
         </div>
+
+        <!-- === CHANNEL GRID (populated by JS) === -->
+        <div class="channels-container" id="channelsContainer"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.7/dist/shaka-player.ui.js"></script>
