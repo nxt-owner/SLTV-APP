@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLTV – Use Our Official Mobile App</title>
+    <meta name="description" content="For the best viewing experience, please use our official SLTV Mobile App. Stream Sri Lankan TV channels live in HD.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SLTV – Use Our Official Mobile App">
+    <meta property="og:description" content="Get the best experience on our mobile app. Watch Hiru TV, Derana, ITN, and more.">
+    <meta property="og:image" content="../images/Og.jpg">
+    <meta property="og:url" content="https://sltvapp.techlasiya.com/livetv/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff3d00;
+            --secondary: #ff9100;
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, var(--primary) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 70%, var(--secondary) 0%, transparent 40%);
+            opacity: 0.12;
+            filter: blur(80px);
+            animation: move 25s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes move {
+            from { transform: translate(-5%, -5%) rotate(0deg); }
+            to { transform: translate(5%, 5%) rotate(10deg); }
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            animation: containerAppear 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes containerAppear {
+            from { opacity: 0; transform: scale(0.9) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px rgba(255, 61, 0, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .og-image {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(255, 61, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(255, 61, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2.5;
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Specific Refinement */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 32px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            p {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+            .logo {
+                width: 80px;
+                margin-bottom: 20px;
+            }
+            .og-image {
+                border-radius: 18px;
+                margin-bottom: 20px;
+            }
+            .btn {
+                padding: 16px 20px;
+                font-size: 1rem;
+                border-radius: 18px;
+            }
+        }
+
+        /* Handle very small heights */
+        @media (max-height: 650px) {
+            body {
+                align-items: flex-start;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            .container {
+                padding: 25px 20px;
+            }
+            .og-image {
+                display: none; /* Hide image on very small viewports to prioritize text/button */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://raw.githubusercontent.com/nxt-owner/SLTV-APP/refs/heads/main/images/logo/logo.png" alt="SLTV Logo" class="logo">
+        
+        <img src="../images/Og.jpg" alt="App Preview" class="og-image">
+
+        <h1>Please Use Our Official Mobile App</h1>
+        <p>For the best live streaming experience with lower latency and exclusive features, please download and use our official mobile application.</p>
+
+        <a href="https://sltvapp.techlasiya.com/" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Official App
+        </a>
+
+        <div class="footer">
+            &copy; 2026 SLTV. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>

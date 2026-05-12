@@ -3,243 +3,307 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLTV – Use Our Official Mobile App</title>
-    <meta name="description" content="For the best viewing experience, please use our official SLTV Mobile App. Stream Sri Lankan TV channels live in HD.">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="SLTV – Use Our Official Mobile App">
-    <meta property="og:description" content="Get the best experience on our mobile app. Watch Hiru TV, Derana, ITN, and more.">
-    <meta property="og:image" content="../images/Og.jpg">
-    <meta property="og:url" content="https://sltvapp.techlasiya.com/livetv/">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>SL TV - Live Streaming</title>
     <style>
-        :root {
-            --primary: #ff3d00;
-            --secondary: #ff9100;
-            --bg: #0a0a0a;
-            --text: #ffffff;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            position: relative;
-            overflow-x: hidden;
+            user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 30%, var(--primary) 0%, transparent 40%),
-                        radial-gradient(circle at 70% 70%, var(--secondary) 0%, transparent 40%);
-            opacity: 0.12;
-            filter: blur(80px);
-            animation: move 25s infinite alternate ease-in-out;
-            z-index: -1;
+        body {
+            background: #0f0f0f;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
         }
 
-        @keyframes move {
-            from { transform: translate(-5%, -5%) rotate(0deg); }
-            to { transform: translate(5%, 5%) rotate(10deg); }
-        }
-
-        .container {
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            padding: 40px 30px;
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
-            animation: containerAppear 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        /* Video Container */
+        .video-wrapper {
             position: relative;
-            overflow: hidden;
+            width: 100%;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
         }
 
-        @keyframes containerAppear {
-            from { opacity: 0; transform: scale(0.9) translateY(30px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+            z-index: 10;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Header */
+        .header {
+            padding: 15px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 15px rgba(255, 61, 0, 0.4));
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .og-image {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            margin-bottom: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.1;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
         }
 
-        p {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.5;
-            margin-bottom: 35px;
-            padding: 0 10px;
+        .search-box {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
         }
 
-        .btn {
-            display: inline-flex;
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .search-box:focus {
+            border-color: #0056b3;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Channels Container */
+        .channels-container {
+            padding: 15px;
+            padding-bottom: 30px;
+        }
+
+        .cat-section {
+            margin-bottom: 25px;
+        }
+
+        .cat-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-left: 5px;
+            border-left: 3px solid #0056b3;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+        }
+
+        .channel-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 5px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .channel-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .channel-card.active {
+            background: rgba(0, 86, 179, 0.3);
+            border-color: #0056b3;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #1a1a1a;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .icon-box img {
             width: 100%;
-            padding: 18px 30px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .channel-card span {
+            font-size: 12px;
+            text-align: center;
+            line-height: 1.3;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Telegram Popup */
+        .telegram-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 16px;
+            padding: 18px;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .popup-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .popup-icon {
+            font-size: 40px;
+        }
+
+        .popup-text {
+            flex: 1;
+        }
+
+        .popup-text h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .popup-text p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-join {
+            background: #0088cc;
             color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 20px 40px rgba(255, 61, 0, 0.3);
+            display: inline-block;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(255, 61, 0, 0.5);
+        .btn-close {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        .btn:active {
-            transform: translateY(-2px) scale(0.98);
-        }
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 8px;
+            }
 
-        .btn svg {
-            width: 22px;
-            height: 22px;
-            stroke-width: 2.5;
-        }
+            .icon-box {
+                width: 55px;
+                height: 55px;
+            }
 
-        .footer {
-            margin-top: 35px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        /* Mobile Specific Refinement */
-        @media (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-            .container {
-                padding: 35px 20px;
-                border-radius: 32px;
-            }
-            h1 {
-                font-size: 1.75rem;
-            }
-            p {
-                font-size: 0.95rem;
-                margin-bottom: 30px;
-            }
-            .logo {
-                width: 80px;
-                margin-bottom: 20px;
-            }
-            .og-image {
-                border-radius: 18px;
-                margin-bottom: 20px;
-            }
-            .btn {
-                padding: 16px 20px;
-                font-size: 1rem;
-                border-radius: 18px;
-            }
-        }
-
-        /* Handle very small heights */
-        @media (max-height: 650px) {
-            body {
-                align-items: flex-start;
-                padding-top: 30px;
-                padding-bottom: 30px;
-            }
-            .container {
-                padding: 25px 20px;
-            }
-            .og-image {
-                display: none; /* Hide image on very small viewports to prioritize text/button */
+            .channel-card span {
+                font-size: 10px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/nxt-owner/SLTV-APP/refs/heads/main/images/logo/logo.png" alt="SLTV Logo" class="logo">
-        
-        <img src="../images/Og.jpg" alt="App Preview" class="og-image">
 
-        <h1>Please Use Our Official Mobile App</h1>
-        <p>For the best live streaming experience with lower latency and exclusive features, please download and use our official mobile application.</p>
+    <div class="video-wrapper">
+        <video id="video" poster="https://via.placeholder.com/1280x720?text=SL+TV" playsinline></video>
+        <div class="spinner" id="loadingSpinner"></div>
+    </div>
 
-        <a href="https://sltvapp.techlasiya.com/" class="btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Download Official App
-        </a>
+    <div class="header">
+        <div class="logo">SL TV</div>
+        <input type="text" class="search-box" id="searchInput" placeholder="Search channels...">
+    </div>
 
-        <div class="footer">
-            &copy; 2026 SLTV. All rights reserved.
+    <div class="channels-container" id="channelsContainer"></div>
+
+    <div class="telegram-popup" id="telegramPopup">
+        <div class="popup-content">
+            <div class="popup-icon">📺</div>
+            <div class="popup-text">
+                <h4>Join Our Telegram Channel</h4>
+                <p>Get updates about new channels and features</p>
+            </div>
+            <div class="popup-buttons">
+                <a href="https://t.me/sltv_channel" id="joinTelegramBtn" class="btn-join" target="_blank">Join</a>
+                <button id="closePopup" class="btn-close">Close</button>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/shaka-player@4.7.7/dist/shaka-player.ui.js"></script>
+
+    <script>const _0x149c4c = _0x246a; (function (_0x4bd8d4, _0x1809b3) { const _0x1da7d4 = _0x246a, _0x5ba856 = _0x4bd8d4(); while (!![]) { try { const _0x58413f = parseInt(_0x1da7d4(0x27c)) / 0x1 + -parseInt(_0x1da7d4(0x374)) / 0x2 * (-parseInt(_0x1da7d4(0x25a)) / 0x3) + parseInt(_0x1da7d4(0x304)) / 0x4 * (-parseInt(_0x1da7d4(0x36f)) / 0x5) + parseInt(_0x1da7d4(0x320)) / 0x6 * (parseInt(_0x1da7d4(0x1da)) / 0x7) + parseInt(_0x1da7d4(0x376)) / 0x8 + -parseInt(_0x1da7d4(0x369)) / 0x9 * (-parseInt(_0x1da7d4(0x1d8)) / 0xa) + -parseInt(_0x1da7d4(0x2db)) / 0xb; if (_0x58413f === _0x1809b3) break; else _0x5ba856['push'](_0x5ba856['shift']()); } catch (_0x3cebbf) { _0x5ba856['push'](_0x5ba856['shift']()); } } }(_0x4e29, 0x4bf72), (!(function () { const _0x41f8f1 = _0x246a, _0x13c624 = [_0x41f8f1(0x321), _0x41f8f1(0x341)], _0x4b6b36 = window[_0x41f8f1(0x2b3)][_0x41f8f1(0x215)]; let _0x32dfef = !0x1; for (let _0x2d73ab = 0x0; _0x2d73ab < _0x13c624[_0x41f8f1(0x1e3)]; _0x2d73ab++)if (_0x4b6b36 === _0x13c624[_0x2d73ab] || _0x4b6b36[_0x41f8f1(0x278)]('.' + _0x13c624[_0x2d73ab])) { _0x32dfef = !0x0; break; } if (!_0x32dfef) throw document[_0x41f8f1(0x1e8)][_0x41f8f1(0x2fa)] = _0x41f8f1(0x361), new Error(_0x41f8f1(0x1d7)); }()), document[_0x149c4c(0x2e4)]('contextmenu', function (_0x4d4cbf) { const _0x7cf580 = _0x149c4c; return _0x4d4cbf[_0x7cf580(0x26c)](), !0x1; }), document[_0x149c4c(0x2e4)]('keydown', function (_0x55ec40) { const _0xf7a009 = _0x149c4c; if (_0xf7a009(0x250) === _0x55ec40[_0xf7a009(0x2e0)] || _0x55ec40[_0xf7a009(0x33d)] && _0x55ec40['shiftKey'] && 'I' === _0x55ec40[_0xf7a009(0x2e0)] || _0x55ec40[_0xf7a009(0x33d)] && _0x55ec40['shiftKey'] && 'C' === _0x55ec40['key'] || _0x55ec40[_0xf7a009(0x33d)] && 'U' === _0x55ec40['key'] || _0x55ec40[_0xf7a009(0x33d)] && _0x55ec40['shiftKey'] && 'J' === _0x55ec40[_0xf7a009(0x2e0)]) return _0x55ec40[_0xf7a009(0x26c)](), !0x1; }), window[_0x149c4c(0x31c)] && window[_0x149c4c(0x31c)][_0x149c4c(0x243)] && (window['console']['log'] = function () { }, window[_0x149c4c(0x31c)][_0x149c4c(0x336)] = function () { }, window['console'][_0x149c4c(0x2c5)] = function () { }, window['console'][_0x149c4c(0x22c)] = function () { }), Object[_0x149c4c(0x1e6)](window, _0x149c4c(0x33e), { 'get': function () { return null; }, 'set': function () { } }))); const CHANNEL_CATEGORIES = [{ 'id': _0x149c4c(0x21e), 'title': _0x149c4c(0x38e), 'channels': [{ 'id': _0x149c4c(0x2c2), 'name': _0x149c4c(0x390), 'image': _0x149c4c(0x303) }, { 'id': _0x149c4c(0x27a), 'name': _0x149c4c(0x379), 'image': _0x149c4c(0x318) }, { 'id': _0x149c4c(0x2a2), 'name': _0x149c4c(0x30a), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25675?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'hirutv', 'name': _0x149c4c(0x289), 'image': _0x149c4c(0x1ff) }, { 'id': _0x149c4c(0x1df), 'name': 'ITN', 'image': _0x149c4c(0x2b4) }, { 'id': 'jayatv', 'name': _0x149c4c(0x261), 'image': _0x149c4c(0x293) }, { 'id': 'nethratv', 'name': _0x149c4c(0x1d9), 'image': _0x149c4c(0x2f3) }, { 'id': _0x149c4c(0x1f7), 'name': 'Rangiri\x20Sri\x20Lanka', 'image': _0x149c4c(0x2ad) }, { 'id': _0x149c4c(0x2de), 'name': _0x149c4c(0x2a5), 'image': _0x149c4c(0x30e) }, { 'id': _0x149c4c(0x254), 'name': 'Rupavahini', 'image': _0x149c4c(0x306) }, { 'id': _0x149c4c(0x37e), 'name': _0x149c4c(0x2d9), 'image': _0x149c4c(0x2cc) }, { 'id': _0x149c4c(0x22f), 'name': _0x149c4c(0x1e0), 'image': _0x149c4c(0x234) }, { 'id': 'siyathatv', 'name': _0x149c4c(0x228), 'image': _0x149c4c(0x29e) }, { 'id': _0x149c4c(0x362), 'name': _0x149c4c(0x301), 'image': _0x149c4c(0x33c) }, { 'id': 'tv1', 'name': _0x149c4c(0x31f), 'image': _0x149c4c(0x212) }, { 'id': 'tvderana', 'name': _0x149c4c(0x356), 'image': _0x149c4c(0x34c) }, { 'id': _0x149c4c(0x275), 'name': 'TV\x20Didula', 'image': _0x149c4c(0x224) }, { 'id': 'supreme', 'name': _0x149c4c(0x299), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25679?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x2f8), 'name': 'Vasantham\x20TV', 'image': _0x149c4c(0x26a) }] }, { 'id': _0x149c4c(0x232), 'title': 'News', 'channels': [{ 'id': _0x149c4c(0x34d), 'name': _0x149c4c(0x1e4), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25673?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x2c0), 'name': _0x149c4c(0x375), 'image': _0x149c4c(0x264) }, { 'id': _0x149c4c(0x346), 'name': _0x149c4c(0x2dc), 'image': _0x149c4c(0x1ea) }, { 'id': _0x149c4c(0x223), 'name': _0x149c4c(0x382), 'image': _0x149c4c(0x351) }, { 'id': _0x149c4c(0x2eb), 'name': _0x149c4c(0x2eb), 'image': _0x149c4c(0x1f5) }, { 'id': 'cnbc', 'name': _0x149c4c(0x207), 'image': _0x149c4c(0x26b) }, { 'id': 'cnn', 'name': _0x149c4c(0x315), 'image': _0x149c4c(0x302) }, { 'id': _0x149c4c(0x241), 'name': _0x149c4c(0x227), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25696?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x23f), 'name': _0x149c4c(0x202), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25695?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x389), 'name': _0x149c4c(0x380), 'image': _0x149c4c(0x2fb) }] }, { 'id': 'cat-3', 'title': _0x149c4c(0x1f9), 'channels': [{ 'id': _0x149c4c(0x25b), 'name': 'Eurosport', 'image': _0x149c4c(0x32e) }, { 'id': _0x149c4c(0x279), 'name': _0x149c4c(0x2f5), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25724?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x203), 'name': 'Sony\x20Sports\x202', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25726?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'sonysports2hd', 'name': _0x149c4c(0x28f), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25781?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'sonysports5hd', 'name': _0x149c4c(0x288), 'image': _0x149c4c(0x1fa) }, { 'id': 'starsports1', 'name': _0x149c4c(0x265), 'image': _0x149c4c(0x27b) }, { 'id': 'starsports2', 'name': _0x149c4c(0x33a), 'image': _0x149c4c(0x340) }, { 'id': _0x149c4c(0x220), 'name': _0x149c4c(0x282), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25725?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'paparetv1', 'name': _0x149c4c(0x291), 'image': _0x149c4c(0x20f) }, { 'id': _0x149c4c(0x256), 'name': _0x149c4c(0x391), 'image': _0x149c4c(0x2c1) }, { 'id': 'starsportshd1', 'name': _0x149c4c(0x22b), 'image': _0x149c4c(0x2be) }, { 'id': _0x149c4c(0x245), 'name': _0x149c4c(0x360), 'image': _0x149c4c(0x20e) }, { 'id': _0x149c4c(0x36b), 'name': _0x149c4c(0x1ec), 'image': _0x149c4c(0x2a8) }, { 'id': _0x149c4c(0x295), 'name': _0x149c4c(0x25e), 'image': _0x149c4c(0x297) }, { 'id': 'thepaparehd', 'name': _0x149c4c(0x2c6), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25784?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x28d), 'name': _0x149c4c(0x1f3), 'image': _0x149c4c(0x38d) }] }, { 'id': _0x149c4c(0x26f), 'title': _0x149c4c(0x29b), 'channels': [{ 'id': _0x149c4c(0x2d6), 'name': '&flix', 'image': _0x149c4c(0x349) }, { 'id': 'axn', 'name': _0x149c4c(0x307), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25737?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x20c), 'name': _0x149c4c(0x384), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25749?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x1f6), 'name': 'Channel\x20C', 'image': _0x149c4c(0x210) }, { 'id': 'colors', 'name': _0x149c4c(0x30d), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25747?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x347), 'name': _0x149c4c(0x1f0), 'image': 'https://api3.viu.lk/api/client/v1/global/images/71893?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x32b), 'name': _0x149c4c(0x1ef), 'image': _0x149c4c(0x236) }, { 'id': _0x149c4c(0x219), 'name': _0x149c4c(0x352), 'image': 'https://api3.viu.lk/api/client/v1/global/images/174286?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x277), 'name': _0x149c4c(0x272), 'image': _0x149c4c(0x37d) }, { 'id': _0x149c4c(0x280), 'name': _0x149c4c(0x201), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25714?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x22d), 'name': 'HBO\x20Family', 'image': _0x149c4c(0x337) }, { 'id': _0x149c4c(0x2e6), 'name': _0x149c4c(0x273), 'image': _0x149c4c(0x258) }, { 'id': _0x149c4c(0x235), 'name': _0x149c4c(0x392), 'image': _0x149c4c(0x2bc) }, { 'id': _0x149c4c(0x305), 'name': 'Hi\x20TV', 'image': _0x149c4c(0x359) }, { 'id': _0x149c4c(0x316), 'name': _0x149c4c(0x357), 'image': _0x149c4c(0x328) }, { 'id': _0x149c4c(0x25d), 'name': _0x149c4c(0x36c), 'image': _0x149c4c(0x309) }, { 'id': _0x149c4c(0x29f), 'name': _0x149c4c(0x2aa), 'image': _0x149c4c(0x38f) }, { 'id': 'jayamovies', 'name': _0x149c4c(0x34a), 'image': _0x149c4c(0x229) }, { 'id': _0x149c4c(0x20a), 'name': _0x149c4c(0x2f1), 'image': _0x149c4c(0x354) }, { 'id': _0x149c4c(0x1eb), 'name': _0x149c4c(0x1ee), 'image': _0x149c4c(0x331) }, { 'id': _0x149c4c(0x317), 'name': _0x149c4c(0x35d), 'image': _0x149c4c(0x204) }, { 'id': _0x149c4c(0x249), 'name': _0x149c4c(0x385), 'image': _0x149c4c(0x34e) }, { 'id': _0x149c4c(0x1e9), 'name': _0x149c4c(0x233), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25708?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x329), 'name': _0x149c4c(0x257), 'image': _0x149c4c(0x296) }, { 'id': _0x149c4c(0x24d), 'name': _0x149c4c(0x2ee), 'image': _0x149c4c(0x363) }, { 'id': _0x149c4c(0x24f), 'name': _0x149c4c(0x32d), 'image': _0x149c4c(0x2e7) }, { 'id': _0x149c4c(0x27f), 'name': 'Star\x20Gold\x20Romance', 'image': _0x149c4c(0x322) }, { 'id': _0x149c4c(0x269), 'name': _0x149c4c(0x239), 'image': _0x149c4c(0x2d0) }, { 'id': 'starvijay', 'name': 'Star\x20Vijay', 'image': _0x149c4c(0x2b0) }, { 'id': 'jayatvind', 'name': _0x149c4c(0x2fd), 'image': _0x149c4c(0x1fc) }, { 'id': _0x149c4c(0x335), 'name': _0x149c4c(0x28c), 'image': _0x149c4c(0x2ba) }, { 'id': _0x149c4c(0x32a), 'name': _0x149c4c(0x373), 'image': _0x149c4c(0x200) }, { 'id': _0x149c4c(0x33f), 'name': 'Zee\x20Cinema', 'image': _0x149c4c(0x36d) }, { 'id': _0x149c4c(0x33b), 'name': _0x149c4c(0x323), 'image': _0x149c4c(0x20d) }, { 'id': _0x149c4c(0x23e), 'name': _0x149c4c(0x21f), 'image': _0x149c4c(0x32f) }, { 'id': _0x149c4c(0x31a), 'name': _0x149c4c(0x283), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25704?accessKey=WkVjNWNscFhORDBLCg==' }] }, { 'id': 'cat-5', 'title': 'Kids', 'channels': [{ 'id': 'aplus', 'name': 'A\x20Plus\x20Kids\x20TV', 'image': _0x149c4c(0x217) }, { 'id': _0x149c4c(0x34b), 'name': _0x149c4c(0x22a), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25711?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x2f0), 'name': _0x149c4c(0x2cb), 'image': _0x149c4c(0x267) }, { 'id': _0x149c4c(0x1db), 'name': _0x149c4c(0x342), 'image': _0x149c4c(0x2ec) }, { 'id': 'davinci', 'name': 'Da\x20Vinci', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25705?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x292), 'name': 'Disney\x20Jr', 'image': _0x149c4c(0x2a9) }, { 'id': _0x149c4c(0x37c), 'name': _0x149c4c(0x312), 'image': _0x149c4c(0x378) }, { 'id': _0x149c4c(0x327), 'name': _0x149c4c(0x387), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25713?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x237), 'name': _0x149c4c(0x2e2), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25710?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x1fd), 'name': _0x149c4c(0x25c), 'image': _0x149c4c(0x2cd) }] }, { 'id': _0x149c4c(0x308), 'title': _0x149c4c(0x244), 'channels': [{ 'id': _0x149c4c(0x2e1), 'name': _0x149c4c(0x2c7), 'image': _0x149c4c(0x339) }, { 'id': _0x149c4c(0x222), 'name': _0x149c4c(0x259), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25717?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x35a), 'name': _0x149c4c(0x386), 'image': _0x149c4c(0x324) }, { 'id': 'discoveryturbo', 'name': _0x149c4c(0x287), 'image': _0x149c4c(0x370) }, { 'id': 'historytv18', 'name': 'History\x20TV\x2018', 'image': _0x149c4c(0x1dc) }, { 'id': _0x149c4c(0x246), 'name': _0x149c4c(0x1ed), 'image': _0x149c4c(0x2d3) }, { 'id': _0x149c4c(0x2e5), 'name': _0x149c4c(0x2e9), 'image': _0x149c4c(0x350) }, { 'id': _0x149c4c(0x206), 'name': 'Sony\x20BBC\x20Earth', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25742?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x247), 'name': _0x149c4c(0x31b), 'image': _0x149c4c(0x343) }] }, { 'id': _0x149c4c(0x28e), 'title': _0x149c4c(0x23a), 'channels': [{ 'id': 'damsathara', 'name': _0x149c4c(0x31d), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25683?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'godtv', 'name': _0x149c4c(0x2c3), 'image': _0x149c4c(0x248) }, { 'id': _0x149c4c(0x271), 'name': 'Pragna\x20TV', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25682?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x2f2), 'name': 'Shraddha\x20TV', 'image': _0x149c4c(0x36e) }, { 'id': 'buddhisttv', 'name': _0x149c4c(0x214), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25685?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x260), 'name': _0x149c4c(0x26e), 'image': _0x149c4c(0x213) }] }, { 'id': _0x149c4c(0x1f4), 'title': _0x149c4c(0x36a), 'channels': [{ 'id': 'B4UMusic', 'name': 'B4U\x20Music', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25700?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x371), 'name': _0x149c4c(0x268), 'image': _0x149c4c(0x2ac) }, { 'id': _0x149c4c(0x344), 'name': _0x149c4c(0x242), 'image': 'https://api3.viu.lk/api/client/v1/global/images/161765?accessKey=WkVjNWNscFhORDBLCg==' }] }, { 'id': _0x149c4c(0x2d8), 'title': 'Education', 'channels': [{ 'id': _0x149c4c(0x284), 'name': _0x149c4c(0x1e2), 'image': _0x149c4c(0x338) }, { 'id': 'nenasasinhalagrade6to9', 'name': _0x149c4c(0x27d), 'image': _0x149c4c(0x333) }, { 'id': _0x149c4c(0x24c), 'name': _0x149c4c(0x208), 'image': _0x149c4c(0x285) }, { 'id': _0x149c4c(0x30f), 'name': 'Nenasa\x20Tamil\x20Grade\x206-9', 'image': 'https://api3.viu.lk/api/client/v1/global/images/25763?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x2a6), 'name': _0x149c4c(0x35e), 'image': _0x149c4c(0x29d) }] }, { 'id': _0x149c4c(0x276), 'title': 'International', 'channels': [{ 'id': _0x149c4c(0x2d2), 'name': 'ABC\x20Australia', 'image': _0x149c4c(0x263) }, { 'id': _0x149c4c(0x290), 'name': 'DW', 'image': _0x149c4c(0x266) }, { 'id': 'kbskorea', 'name': _0x149c4c(0x2b5), 'image': _0x149c4c(0x35f) }, { 'id': _0x149c4c(0x1fe), 'name': 'Phoenix\x20Info\x20News', 'image': _0x149c4c(0x32c) }, { 'id': _0x149c4c(0x372), 'name': _0x149c4c(0x209), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25790?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x37a), 'name': _0x149c4c(0x300), 'image': _0x149c4c(0x1e5) }, { 'id': 'tv5monde', 'name': _0x149c4c(0x28b), 'image': _0x149c4c(0x37b) }] }, { 'id': 'cat-11', 'title': _0x149c4c(0x2f6), 'channels': [{ 'id': 'animalplanethd', 'name': _0x149c4c(0x2a3), 'image': _0x149c4c(0x286) }, { 'id': _0x149c4c(0x22e), 'name': _0x149c4c(0x2b9), 'image': _0x149c4c(0x2d7) }, { 'id': _0x149c4c(0x298), 'name': _0x149c4c(0x35b), 'image': _0x149c4c(0x1f2) }, { 'id': 'cinemaxhd', 'name': _0x149c4c(0x240), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25775?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': 'discoveryhdworld', 'name': _0x149c4c(0x205), 'image': _0x149c4c(0x388) }, { 'id': _0x149c4c(0x21a), 'name': _0x149c4c(0x29c), 'image': _0x149c4c(0x367) }, { 'id': _0x149c4c(0x21d), 'name': _0x149c4c(0x221), 'image': 'https://api3.viu.lk/api/client/v1/global/images/25776?accessKey=WkVjNWNscFhORDBLCg==' }, { 'id': _0x149c4c(0x294), 'name': _0x149c4c(0x2a7), 'image': _0x149c4c(0x2f4) }, { 'id': _0x149c4c(0x1e7), 'name': _0x149c4c(0x37f), 'image': _0x149c4c(0x2b7) }, { 'id': _0x149c4c(0x2a4), 'name': 'Star\x20Movies\x20HD', 'image': _0x149c4c(0x21c) }, { 'id': _0x149c4c(0x2da), 'name': 'Star\x20Movies\x20Select\x20HD', 'image': _0x149c4c(0x30c) }] }], B_A_A_T = String[_0x149c4c(0x2f9)](0x68, 0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f, 0x77, 0x65, 0x62, 0x74, 0x76, 0x2e, 0x74, 0x68, 0x75, 0x6e, 0x64, 0x65, 0x72, 0x63, 0x61, 0x74, 0x2e, 0x77, 0x6f, 0x72, 0x6b, 0x65, 0x72, 0x73, 0x2e, 0x64, 0x65, 0x76, 0x2f); function _0x4e29() { const _0x469686 = ['https://api3.viu.lk/api/client/v1/global/images/25720?accessKey=WkVjNWNscFhORDBLCg==', 'none', 'SW_SECURE_CRYPTO', 'itn', 'Sirasa\x20TV', '\x22></div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>', 'Nenasa\x20Sinhala\x20Grade\x201-5', 'length', 'Ada\x20Derana\x2024', 'https://api3.viu.lk/api/client/v1/global/images/25787?accessKey=WkVjNWNscFhORDBLCg==', 'defineProperty', 'rockentertainmenthd', 'body', 'sonypix', 'https://api3.viu.lk/api/client/v1/global/images/25691?accessKey=WkVjNWNscFhORDBLCg==', 'kalaignartv', 'Star\x20Sports\x20Select\x201\x20HD', 'Nat\x20Geo\x20Wild', 'Kalaignar\x20TV', 'Colors\x20Tamil', 'Colors\x20Cineplex', 'drm', 'https://api3.viu.lk/api/client/v1/global/images/25774?accessKey=WkVjNWNscFhORDBLCg==', 'The\x20Papare\x20TV\x202\x20HD', 'cat-8', 'https://api3.viu.lk/api/client/v1/global/images/25692?accessKey=WkVjNWNscFhORDBLCg==', 'channelc', 'rangiri', 'classList', 'Sports', 'https://api3.viu.lk/api/client/v1/global/images/25782?accessKey=WkVjNWNscFhORDBLCg==', 'load', 'https://api3.viu.lk/api/client/v1/global/images/25753?accessKey=WkVjNWNscFhORDBLCg==', 'pogo', 'phoenixinfo', 'https://api3.viu.lk/api/client/v1/global/images/25670?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25735?accessKey=WkVjNWNscFhORDBLCg==', 'Food\x20Network', 'France\x2024', 'sonysports2', 'https://api3.viu.lk/api/client/v1/global/images/25745?accessKey=WkVjNWNscFhORDBLCg==', 'Discovery\x20HD', 'bbcearth', 'CNBC', 'Nenasa\x20Sinhala\x20O/L', 'RAI\x20Italia', 'jayaplus', '</div></section>', 'b4umovies', 'https://api3.viu.lk/api/client/v1/global/images/25757?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25783?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/130717?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25702?accessKey=WkVjNWNscFhORDBLCg==', 'Origin', 'https://api3.viu.lk/api/client/v1/global/images/25669?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25688?accessKey=WkVjNWNscFhORDBLCg==', 'The\x20Buddhist\x20TV', 'hostname', '\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22icon-box\x22><img\x20src=\x22', 'https://api3.viu.lk/api/client/v1/global/images/25709?accessKey=WkVjNWNscFhORDBLCg==', 'play', 'disneyint', 'hbohd', 'playing', 'https://api3.viu.lk/api/client/v1/global/images/25773?accessKey=WkVjNWNscFhORDBLCg==', 'hbohitshd', 'cat-1', 'Zee\x20Thirai', 'tencricket', 'HBO\x20Hits\x20HD', 'discovery', 'bloomberg', 'https://api3.viu.lk/api/client/v1/global/images/25676?accessKey=WkVjNWNscFhORDBLCg==', '.cat-section', 'name', 'Euro\x20News', 'Siyatha\x20TV', 'https://api3.viu.lk/api/client/v1/global/images/185459?accessKey=WkVjNWNscFhORDBLCg==', 'Baby\x20TV', 'Star\x20Sports\x20HD\x201', 'warn', 'hbofamily', 'axnhd', 'sirasatv', 'Stream\x20ready', 'hirutv', 'cat-2', 'Sony\x20PIX', 'https://api3.viu.lk/api/client/v1/global/images/25667?accessKey=WkVjNWNscFhORDBLCg==', 'hgtv', 'https://api3.viu.lk/api/client/v1/global/images/25752?accessKey=WkVjNWNscFhORDBLCg==', 'nickelodeon', 'overflow_menu', 'Star\x20Plus', 'Religious', 'fullscreenchange', 'unlock', 'orientation', 'zeethirai', 'france24', 'Cinemax\x20HD', 'euronews', 'MTV\x2090s', 'log', 'Documentary', 'premiersports', 'ngcwild', 'tlc', 'https://api3.viu.lk/api/client/v1/global/images/25687?accessKey=WkVjNWNscFhORDBLCg==', 'siripollitv', 'Loading\x20stream...', '.channel-card[data-channel-id=\x22', 'nenasasinhalaol', 'starbharath', 'flex', 'stargold', 'F12', 'getNetworkingEngine', 'true', 'display', 'rupavahini', 'toLowerCase', 'paparesd', 'Sony\x20SET', 'https://api3.viu.lk/api/client/v1/global/images/25730?accessKey=WkVjNWNscFhORDBLCg==', 'Discovery', '41865EgQUCW', 'eurosport', 'Pogo', 'hitsmovies', 'Star\x20Sports\x20Select\x202\x20HD', 'active', 'ewtn', 'Jaya\x20TV', 'play_pause', 'https://api3.viu.lk/api/client/v1/global/images/25690?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25689?accessKey=WkVjNWNscFhORDBLCg==', 'Star\x20Sports\x201', 'https://api3.viu.lk/api/client/v1/global/images/25789?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25707?accessKey=WkVjNWNscFhORDBLCg==', 'Citi\x20Hitz', 'starplus', 'https://api3.viu.lk/api/client/v1/global/images/25664?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25699?accessKey=WkVjNWNscFhORDBLCg==', 'preventDefault', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22channel-card\x22\x20data-channel-id=\x22', 'Verbum\x20TV', 'cat-4', 'block', 'pragna', 'Fashion\x20TV', 'HBO\x20Signature', 'trim', 'tvdidula', 'cat-10', 'fashiontv', 'endsWith', 'sonysports1', 'channelone', 'https://api3.viu.lk/api/client/v1/global/images/25728?accessKey=WkVjNWNscFhORDBLCg==', '315089LVaCqh', 'Nenasa\x20Sinhala\x20Grade\x206-9', 'getElementById', 'stargoldromance', 'foodnetwork', 'playback_rate', 'Ten\x20Cricket', 'Zing\x20TV', 'nenasasinhalaal', 'https://api3.viu.lk/api/client/v1/global/images/25764?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25769?accessKey=WkVjNWNscFhORDBLCg==', 'Discovery\x20Turbo', 'Sony\x20Sports\x205\x20HD', 'Hiru\x20TV', '</div><div\x20class=\x22app-grid\x22>', 'TV5\x20Monde\x20Asie', 'Warner\x20TV', 'thepapare2hd', 'cat-7', 'Sony\x20Sports\x202\x20HD', 'dwenglish', 'The\x20Papare\x20TV\x201', 'disneyjr', 'https://api3.viu.lk/api/client/v1/global/images/25684?accessKey=WkVjNWNscFhORDBLCg==', 'hitsnow', 'starsselecthd2', 'https://api3.viu.lk/api/client/v1/global/images/25744?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25780?accessKey=WkVjNWNscFhORDBLCg==', 'cinemaworldhd', 'TV\x20Supreme', 'querySelectorAll', 'Entertainment', 'HBO\x20HD', 'https://api3.viu.lk/api/client/v1/global/images/25765?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25674?accessKey=WkVjNWNscFhORDBLCg==', 'jayamax', 'status-msg', 'Player\x20failed\x20to\x20initialize.', 'harithatv', 'Animal\x20Planet\x20HD', 'starmovieshd', 'Ridee\x20TV', 'nenasatamilol', 'HITS\x20NOW\x20HD', 'https://api3.viu.lk/api/client/v1/global/images/25779?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25712?accessKey=WkVjNWNscFhORDBLCg==', 'Jaya\x20Max', 'Playback\x20error', 'https://api3.viu.lk/api/client/v1/global/images/25678?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25680?accessKey=WkVjNWNscFhORDBLCg==', '.video-wrapper', 'backgroundColor', 'https://api3.viu.lk/api/client/v1/global/images/25755?accessKey=WkVjNWNscFhORDBLCg==', 'setItem', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20top:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20right:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20500;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x201000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20animation:\x20slideIn\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x2012px\x20rgba(0,0,0,0.3);\x0a\x20\x20\x20\x20\x20\x20\x20\x20', 'location', 'https://api3.viu.lk/api/client/v1/global/images/25663?accessKey=WkVjNWNscFhORDBLCg==', 'KBS\x20Korea', 'click', 'https://api3.viu.lk/api/client/v1/global/images/25794?accessKey=WkVjNWNscFhORDBLCg==', 'widevine', 'AXN\x20HD', 'https://api3.viu.lk/api/client/v1/global/images/25736?accessKey=WkVjNWNscFhORDBLCg==', 'volume', 'https://api3.viu.lk/api/client/v1/global/images/25722?accessKey=WkVjNWNscFhORDBLCg==', 'querySelector', 'https://api3.viu.lk/api/client/v1/global/images/25778?accessKey=WkVjNWNscFhORDBLCg==', 'getItem', 'aljazeera', 'https://api3.viu.lk/api/client/v1/global/images/130719?accessKey=WkVjNWNscFhORDBLCg==', 'arttelevision', 'GOD\x20TV', 'sltv_telegram_joined', 'debug', 'The\x20Papare\x20TV\x201\x20HD', 'Animal\x20Planet', 'remove', 'scrollIntoView', '.channel-card', 'Cartoon\x20Network', 'https://api3.viu.lk/api/client/v1/global/images/25668?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/47360?accessKey=WkVjNWNscFhORDBLCg==', 'appendChild', 'Mozilla/5.0', 'https://api3.viu.lk/api/client/v1/global/images/25748?accessKey=WkVjNWNscFhORDBLCg==', '</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>', 'abcaustralia', 'https://api3.viu.lk/api/client/v1/global/images/25715?accessKey=WkVjNWNscFhORDBLCg==', 'image', 'telegramPopup', 'andflix', 'https://api3.viu.lk/api/client/v1/global/images/25770?accessKey=WkVjNWNscFhORDBLCg==', 'cat-9', 'Shakthi\x20TV', 'starmoviesselecthd', '8781113wGPtWd', 'BBC\x20World', '\x22\x20loading=\x22lazy\x22\x20alt=\x22', 'rideetv', 'channelName', 'key', 'animalplanet', 'Nickelodeon', 'fullscreen', 'addEventListener', 'natgeo', 'hbosignature', 'https://api3.viu.lk/api/client/v1/global/images/25746?accessKey=WkVjNWNscFhORDBLCg==', '#0056b3', 'National\x20Geographic', 'channelImage', 'CGTN', 'https://api3.viu.lk/api/client/v1/global/images/25706?accessKey=WkVjNWNscFhORDBLCg==', 'headers', 'Star\x20Bharath', 'data', 'cartoonnetwork', 'Jaya\x20Plus', 'shraddhatv', 'https://api3.viu.lk/api/client/v1/global/images/25662?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25771?accessKey=WkVjNWNscFhORDBLCg==', 'Sony\x20Sports\x201', 'HD\x20Channels', 'url', 'vasanthamtv', 'fromCharCode', 'innerHTML', 'https://api3.viu.lk/api/client/v1/global/images/25694?accessKey=WkVjNWNscFhORDBLCg==', 'loadingSpinner', 'Sun\x20TV', 'User-Agent', '\x22\x20data-channel-image=\x22', 'TRT\x20World', 'Swarnavahini', 'https://api3.viu.lk/api/client/v1/global/images/25693?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25672?accessKey=WkVjNWNscFhORDBLCg==', '408196dWJfqv', 'hitv', 'https://api3.viu.lk/api/client/v1/global/images/25661?accessKey=WkVjNWNscFhORDBLCg==', 'AXN', 'cat-6', 'https://api3.viu.lk/api/client/v1/global/images/25733?accessKey=WkVjNWNscFhORDBLCg==', 'Haritha\x20TV', '*/*', 'https://api3.viu.lk/api/client/v1/global/images/25777?accessKey=WkVjNWNscFhORDBLCg==', 'Colors', 'https://api3.viu.lk/api/client/v1/global/images/25677?accessKey=WkVjNWNscFhORDBLCg==', 'nenasatamilal', 'polyfill', 'Referer', 'Moonbug', 'textContent', '<section\x20class=\x22cat-section\x22><div\x20class=\x22cat-title\x22>', 'CNN', 'hits', 'setmax', 'https://api3.viu.lk/api/client/v1/global/images/25660?accessKey=WkVjNWNscFhORDBLCg==', 'Player\x20library\x20failed\x20to\x20load.', 'zingtv', 'TLC', 'console', 'Damsathara\x20TV', 'json', 'TV\x201', '3792SKcCkv', 'sltvapp.techlasiya.com', 'https://api3.viu.lk/api/client/v1/global/images/25750?accessKey=WkVjNWNscFhORDBLCg==', 'Zee\x20Tamil', 'https://api3.viu.lk/api/client/v1/global/images/25718?accessKey=WkVjNWNscFhORDBLCg==', 'picture_in_picture', 'channelId', 'nickjr', 'https://api3.viu.lk/api/client/v1/global/images/25734?accessKey=WkVjNWNscFhORDBLCg==', 'sonyset', 'zeecafe', 'colorstamil', 'https://api3.viu.lk/api/client/v1/global/images/25791?accessKey=WkVjNWNscFhORDBLCg==', 'Star\x20Gold', 'https://api3.viu.lk/api/client/v1/global/images/25727?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/188921?accessKey=WkVjNWNscFhORDBLCg==', 'catch', 'https://api3.viu.lk/api/client/v1/global/images/25756?accessKey=WkVjNWNscFhORDBLCg==', 'waiting', 'https://api3.viu.lk/api/client/v1/global/images/25762?accessKey=WkVjNWNscFhORDBLCg==', 'dataset', 'warnertv', 'info', 'https://api3.viu.lk/api/client/v1/global/images/25731?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25760?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25716?accessKey=WkVjNWNscFhORDBLCg==', 'Star\x20Sports\x202', 'zeetamil', 'https://api3.viu.lk/api/client/v1/global/images/25666?accessKey=WkVjNWNscFhORDBLCg==', 'ctrlKey', 'onkeydown', 'zeecinema', 'https://api3.viu.lk/api/client/v1/global/images/25729?accessKey=WkVjNWNscFhORDBLCg==', 'techlasiya.com', 'CBeebies', 'https://api3.viu.lk/api/client/v1/global/images/25194?accessKey=WkVjNWNscFhORDBLCg==', 'romantico', '\x22\x20data-channel-name=\x22', 'bbcworld', 'colorsinfinity', 'https://watch.dialog.lk/', 'https://api3.viu.lk/api/client/v1/global/images/25732?accessKey=WkVjNWNscFhORDBLCg==', 'Jaya\x20Movies', 'babytv', 'https://api3.viu.lk/api/client/v1/global/images/25665?accessKey=WkVjNWNscFhORDBLCg==', 'adaderana24', 'https://api3.viu.lk/api/client/v1/global/images/25795?accessKey=WkVjNWNscFhORDBLCg==', 'isBrowserSupported', 'https://api3.viu.lk/api/client/v1/global/images/25719?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25698?accessKey=WkVjNWNscFhORDBLCg==', 'Disney\x20International', 'lock', 'https://api3.viu.lk/api/client/v1/global/images/185452?accessKey=WkVjNWNscFhORDBLCg==', 'div', 'TV\x20Derana', 'HITS', 'closePopup', 'https://api3.viu.lk/api/client/v1/global/images/25681?accessKey=WkVjNWNscFhORDBLCg==', 'discoveryscience', 'CinemaWorld\x20HD', 'add', 'SET\x20Max', 'Nenasa\x20Tamil\x20O/L', 'https://api3.viu.lk/api/client/v1/global/images/25793?accessKey=WkVjNWNscFhORDBLCg==', 'Premier\x20Sports\x20HD', '<div\x20style=\x22position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:99999;font-family:monospace\x22><h1>Access\x20Denied</h1><p>This\x20application\x20is\x20not\x20available\x20from\x20this\x20domain.</p></div>', 'swarnavahini', 'https://api3.viu.lk/api/client/v1/global/images/25743?accessKey=WkVjNWNscFhORDBLCg==', 'style', 'forEach', 'quality', 'https://api3.viu.lk/api/client/v1/global/images/25772?accessKey=WkVjNWNscFhORDBLCg==', 'searchInput', '18tGrHFg', 'Music', 'starsselecthd1', 'HITS\x20MOVIES', 'https://api3.viu.lk/api/client/v1/global/images/25751?accessKey=WkVjNWNscFhORDBLCg==', 'https://api3.viu.lk/api/client/v1/global/images/25686?accessKey=WkVjNWNscFhORDBLCg==', '5lCOAfB', 'https://api3.viu.lk/api/client/v1/global/images/47362?accessKey=WkVjNWNscFhORDBLCg==', 'citihitz', 'raiitalia', 'Zee\x20Cafe', '44woXqvi', 'Al\x20Jazeera', '3866184Hxjyjn', 'configure', 'https://api3.viu.lk/api/client/v1/global/images/101113?accessKey=WkVjNWNscFhORDBLCg==', 'Channel\x20One', 'trtworld', 'https://api3.viu.lk/api/client/v1/global/images/25792?accessKey=WkVjNWNscFhORDBLCg==', 'moonbug', 'https://api3.viu.lk/api/client/v1/global/images/25739?accessKey=WkVjNWNscFhORDBLCg==', 'shakthitv', 'ROCK\x20Entertainment\x20HD', 'NDTV', 'video', 'Bloomberg', 'mute', 'B4U\x20Movies', 'Sirippoli\x20TV', 'Discovery\x20Science', 'Nick\x20Jr', 'https://api3.viu.lk/api/client/v1/global/images/25768?accessKey=WkVjNWNscFhORDBLCg==', 'ndtv', 'buffering', 'Cannot\x20play\x20channel', 'Player', 'https://api3.viu.lk/api/client/v1/global/images/25785?accessKey=WkVjNWNscFhORDBLCg==', 'Local', 'https://api3.viu.lk/api/client/v1/global/images/185457?accessKey=WkVjNWNscFhORDBLCg==', 'ART\x20Television', 'The\x20Papare\x20TV\x202', 'HGTV', 'channels', 'Domain\x20validation\x20failed', '309370OgNaEp', 'Nethra\x20TV', '490GBdCkI', 'cbeebies']; _0x4e29 = function () { return _0x469686; }; return _0x4e29(); } let statusElement = null; function buildChannelGrid() { const _0x2e591f = _0x149c4c; let _0x5ec058 = ''; CHANNEL_CATEGORIES['forEach'](_0x3dc9d4 => { const _0x1b80cd = _0x246a; _0x5ec058 += _0x1b80cd(0x314) + _0x3dc9d4['title'] + _0x1b80cd(0x28a), _0x3dc9d4[_0x1b80cd(0x1d6)][_0x1b80cd(0x365)](_0xb9d1e => { const _0x318e75 = _0x1b80cd; _0x5ec058 += _0x318e75(0x26d) + _0xb9d1e['id'] + _0x318e75(0x345) + _0xb9d1e[_0x318e75(0x226)] + _0x318e75(0x2ff) + _0xb9d1e[_0x318e75(0x2d4)] + _0x318e75(0x216) + _0xb9d1e[_0x318e75(0x2d4)] + _0x318e75(0x2dd) + _0xb9d1e[_0x318e75(0x226)] + _0x318e75(0x1e1) + _0xb9d1e['name'] + _0x318e75(0x2d1); }), _0x5ec058 += _0x1b80cd(0x20b); }), document[_0x2e591f(0x27e)]('channelsContainer')[_0x2e591f(0x2fa)] = _0x5ec058; } function updateStatus(_0xd84d17, _0x1ddb71 = !0x1) { const _0x1a564f = _0x149c4c; statusElement || (statusElement = document['createElement'](_0x1a564f(0x355)), statusElement['id'] = _0x1a564f(0x2a0), statusElement['style']['cssText'] = _0x1a564f(0x2b2), document['body'][_0x1a564f(0x2ce)](statusElement)), statusElement[_0x1a564f(0x313)] = _0xd84d17, statusElement[_0x1a564f(0x364)][_0x1a564f(0x2af)] = _0x1ddb71 ? '#e50914' : _0x1a564f(0x2e8), statusElement[_0x1a564f(0x364)][_0x1a564f(0x253)] = _0x1a564f(0x270), _0x1ddb71 || setTimeout(() => { const _0x373512 = _0x1a564f; statusElement['style'][_0x373512(0x253)] = 'none'; }, 0xbb8); } function showError(_0x48a4f9) { updateStatus(_0x48a4f9, !0x0); } async function initApp() { const _0x58fa19 = _0x149c4c; if (!shaka) return void showError(_0x58fa19(0x319)); if (shaka[_0x58fa19(0x310)]['installAll'](), !shaka['Player'][_0x58fa19(0x34f)]()) return void showError('Browser\x20does\x20not\x20support\x20playback.'); const _0x2ecdc1 = document['getElementById'](_0x58fa19(0x381)), _0x4cd8da = document[_0x58fa19(0x2bd)](_0x58fa19(0x2ae)), _0x6ff14e = new shaka[(_0x58fa19(0x38c))](_0x2ecdc1); new shaka['ui']['Overlay'](_0x6ff14e, _0x4cd8da, _0x2ecdc1)[_0x58fa19(0x377)]({ 'controlPanelElements': [_0x58fa19(0x262), 'time_and_duration', 'spacer', _0x58fa19(0x383), _0x58fa19(0x2bb), _0x58fa19(0x2e3), _0x58fa19(0x238)], 'overflowMenuButtons': [_0x58fa19(0x366), _0x58fa19(0x281), _0x58fa19(0x325)] }), _0x6ff14e[_0x58fa19(0x251)]()['registerRequestFilter']((_0x16a923, _0x38b731) => { const _0x38f889 = _0x58fa19; _0x38b731[_0x38f889(0x2ed)][_0x38f889(0x2fe)] = _0x38f889(0x2cf), _0x38b731['headers'][_0x38f889(0x311)] = _0x38f889(0x348), _0x38b731[_0x38f889(0x2ed)][_0x38f889(0x211)] = 'https://watch.dialog.lk/', _0x38b731[_0x38f889(0x2ed)]['Accept'] = _0x38f889(0x30b); }); const _0x16f586 = document[_0x58fa19(0x27e)](_0x58fa19(0x2fc)); function _0x74875d() { const _0x560a9e = _0x58fa19; _0x16f586 && (_0x16f586[_0x560a9e(0x364)][_0x560a9e(0x253)] = _0x560a9e(0x270)); } function _0x2ce086() { const _0x5aa418 = _0x58fa19; _0x16f586 && (_0x16f586[_0x5aa418(0x364)][_0x5aa418(0x253)] = 'none'); } _0x6ff14e['addEventListener'](_0x58fa19(0x38a), _0x406f65 => { _0x406f65['buffering'] ? _0x74875d() : _0x2ce086(); }), _0x2ecdc1[_0x58fa19(0x2e4)](_0x58fa19(0x21b), _0x2ce086), _0x2ecdc1[_0x58fa19(0x2e4)](_0x58fa19(0x332), _0x74875d), _0x6ff14e[_0x58fa19(0x2e4)]('error', _0x1f5b83 => { const _0x16b963 = _0x58fa19; showError(_0x16b963(0x2ab)), _0x2ce086(); }); const _0x25266e = document[_0x58fa19(0x27e)](_0x58fa19(0x368)); async function _0x434ba5(_0x451fba, _0x3a319a = null, _0x1753f8 = null) { const _0x570a0a = _0x58fa19; _0x451fba || (_0x451fba = _0x570a0a(0x231)), _0x74875d(), updateStatus(_0x570a0a(0x24a)); try { const _0x24ea81 = '' + B_A_A_T + _0x451fba, _0x2bdb77 = await fetch(_0x24ea81); if (!_0x2bdb77['ok']) throw new Error('Network\x20error\x20' + _0x2bdb77['status']); const _0x2f1043 = await _0x2bdb77[_0x570a0a(0x31e)](); if (!_0x2f1043[_0x570a0a(0x2ef)] || !_0x2f1043['data'][_0x570a0a(0x2f7)]) throw new Error('Invalid\x20API\x20response'); const _0x2a193a = _0x2f1043[_0x570a0a(0x2ef)][_0x570a0a(0x2f7)], _0x1a13df = _0x2f1043[_0x570a0a(0x2ef)]['wv_license_proxy_url']; _0x2f1043[_0x570a0a(0x2ef)][_0x570a0a(0x1f1)] && _0x2f1043['data'][_0x570a0a(0x1f1)][_0x570a0a(0x2b8)] && _0x1a13df && _0x6ff14e[_0x570a0a(0x377)]({ 'drm': { 'servers': { 'com.widevine.alpha': _0x1a13df }, 'advanced': { 'com.widevine.alpha': { 'videoRobustness': _0x570a0a(0x1de), 'audioRobustness': _0x570a0a(0x1de) } } } }), document[_0x570a0a(0x29a)](_0x570a0a(0x2ca))[_0x570a0a(0x365)](_0x5f4de8 => { const _0x342f19 = _0x570a0a; _0x5f4de8['classList'][_0x342f19(0x2c8)](_0x342f19(0x25f)); }); const _0x552073 = document[_0x570a0a(0x2bd)](_0x570a0a(0x24b) + _0x451fba + '\x22]'); _0x552073 && (_0x552073[_0x570a0a(0x1f8)][_0x570a0a(0x35c)]('active'), _0x552073[_0x570a0a(0x2c9)]({ 'behavior': 'smooth', 'block': 'nearest' })), await _0x6ff14e[_0x570a0a(0x1fb)](_0x2a193a), await _0x2ecdc1[_0x570a0a(0x218)]()[_0x570a0a(0x330)](() => { }), updateStatus(_0x570a0a(0x230)); } catch (_0x5a3d53) { showError(_0x570a0a(0x38b)), _0x2ce086(); } } _0x25266e && _0x25266e['addEventListener']('input', _0x24ee37 => { const _0x4f57ac = _0x58fa19, _0x46da72 = _0x24ee37['target']['value'][_0x4f57ac(0x255)]()[_0x4f57ac(0x274)](); document[_0x4f57ac(0x29a)](_0x4f57ac(0x225))[_0x4f57ac(0x365)](_0x3bcbb4 => { const _0x22b817 = _0x4f57ac, _0x11b531 = _0x3bcbb4['querySelectorAll'](_0x22b817(0x2ca)); let _0x2a0a22 = !0x1; _0x11b531['forEach'](_0x572e80 => { const _0x110fc2 = _0x22b817; _0x572e80[_0x110fc2(0x334)][_0x110fc2(0x2df)][_0x110fc2(0x255)]()['includes'](_0x46da72) ? (_0x572e80['style'][_0x110fc2(0x253)] = _0x110fc2(0x24e), _0x2a0a22 = !0x0) : _0x572e80[_0x110fc2(0x364)][_0x110fc2(0x253)] = _0x110fc2(0x1dd); }), _0x3bcbb4[_0x22b817(0x364)][_0x22b817(0x253)] = _0x2a0a22 ? _0x22b817(0x270) : 'none'; }); }), document[_0x58fa19(0x29a)](_0x58fa19(0x2ca))['forEach'](_0xb89501 => { const _0x2420a8 = _0x58fa19; _0xb89501[_0x2420a8(0x2e4)]('click', _0x211472 => { const _0x5533d9 = _0x2420a8; _0x211472['preventDefault'](), _0x434ba5(_0xb89501[_0x5533d9(0x334)][_0x5533d9(0x326)], _0xb89501[_0x5533d9(0x334)]['channelName'], _0xb89501[_0x5533d9(0x334)][_0x5533d9(0x2ea)]); }); }), document[_0x58fa19(0x2e4)](_0x58fa19(0x23b), async () => { const _0x4a4c12 = _0x58fa19; if (document['fullscreenElement']) { if (screen[_0x4a4c12(0x23d)] && screen['orientation'][_0x4a4c12(0x353)]) try { await screen[_0x4a4c12(0x23d)][_0x4a4c12(0x353)]('landscape'); } catch (_0x17710b) { } } else { if (screen[_0x4a4c12(0x23d)] && screen[_0x4a4c12(0x23d)][_0x4a4c12(0x23c)]) try { screen['orientation'][_0x4a4c12(0x23c)](); } catch (_0x32c5d0) { } } }), await _0x434ba5(_0x58fa19(0x231)); } function initTelegramPopup() { const _0x3adfc6 = _0x149c4c, _0x34a0b9 = document[_0x3adfc6(0x27e)](_0x3adfc6(0x2d5)), _0x536b01 = document[_0x3adfc6(0x27e)](_0x3adfc6(0x358)), _0x2ed19e = document[_0x3adfc6(0x27e)]('joinTelegramBtn'); function _0x2726c0() { const _0x4cacde = _0x3adfc6; _0x34a0b9 && (_0x34a0b9['style'][_0x4cacde(0x253)] = _0x4cacde(0x1dd), localStorage[_0x4cacde(0x2b1)](_0x4cacde(0x2c4), _0x4cacde(0x252))); } !localStorage[_0x3adfc6(0x2bf)](_0x3adfc6(0x2c4)) && _0x34a0b9 && setTimeout(() => { const _0x473969 = _0x3adfc6; _0x34a0b9['style']['display'] = _0x473969(0x24e); }, 0x7d0), _0x536b01 && _0x536b01[_0x3adfc6(0x2e4)](_0x3adfc6(0x2b6), _0x2726c0), _0x2ed19e && _0x2ed19e['addEventListener'](_0x3adfc6(0x2b6), () => { setTimeout(_0x2726c0, 0x1f4); }), window['addEventListener']('click', _0x25877a => { _0x25877a['target'] === _0x34a0b9 && _0x2726c0(); }); } function _0x246a(_0x5d382a, _0x34bc2e) { _0x5d382a = _0x5d382a - 0x1d6; const _0x4e2981 = _0x4e29(); let _0x246a18 = _0x4e2981[_0x5d382a]; return _0x246a18; } document[_0x149c4c(0x2e4)]('DOMContentLoaded', () => { buildChannelGrid(), initTelegramPopup(), initApp()['catch'](() => { const _0x54cacf = _0x246a; showError(_0x54cacf(0x2a1)); }); });</script>
+
+
 </body>
 
 </html>
