@@ -1,264 +1,282 @@
-const a0_0x1b8c6c=a0_0x17b2;(function(_0x26329c,_0x12f3ab){const _0x18e00d=a0_0x17b2,_0x39d242=_0x26329c();while(!![]){try{const _0x29b641=-parseInt(_0x18e00d(0x2cc))/0x1+-parseInt(_0x18e00d(0x276))/0x2*(-parseInt(_0x18e00d(0x286))/0x3);if(_0x29b641===_0x12f3ab)break;else _0x39d242['push'](_0x39d242['shift']());}catch(_0x39aaf1){_0x39d242['push'](_0x39d242['shift']());}}}(a0_0x4278,0x93d84),(function(){const _0x1dfaa2=['techlasiya.com','thundercat.workers.dev'],_0x577819=window.location.hostname;let _0x10fc2f=![];for(let _0xd47d0d=0x0;_0xd47d0d<_0x1dfaa2.length;_0xd47d0d++){if(_0x577819===_0x1dfaa2[_0xd47d0d]||_0x577819.endsWith('.'+_0x1dfaa2[_0xd47d0d])){_0x10fc2f=!![];break;}}if(!_0x10fc2f){document.body.innerHTML='Domain validation failed';throw new Error('Domain validation failed');}}()),(function(){document.addEventListener('contextmenu',function(e){return e.preventDefault(),![];}),document.addEventListener('keydown',function(e){if(e.key==='F12'||e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='C'||e.key==='U'||e.key==='J'))return e.preventDefault(),![];});setInterval(function(){debugger;},100);}));function a0_0x17b2(_0x44110e){_0x44110e=_0x44110e-0x1b0;const _0x4278a2=a0_0x4278();let _0x17b237=_0x4278a2[_0x44110e];if(a0_0x17b2['cache']===undefined){a0_0x17b2['cache']={};}if(a0_0x17b2['cache'][_0x44110e]){return a0_0x17b2['cache'][_0x44110e];}const decoded=decodeURIComponent(atob(_0x17b237).split('').map(function(c){return '%'+('00'+c.charCodeAt(0).toString(16)).slice(-2);}).join(''));a0_0x17b2['cache'][_0x44110e]=decoded;return decoded;}function a0_0x4278(){const _0x3d949a=["aWQ=","Y2F0LTE=","dGl0bGU=","TG9jYWw=","Y2hhbm5lbHM=","YXJ0dGVsZXZpc2lvbg==","bmFtZQ==","QVJUIFRlbGV2aXNpb24=","aW1hZ2U=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2hhbm5lbG9uZQ==","Q2hhbm5lbCBPbmU=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGFyaXRoYXR2","SGFyaXRoYSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGlydXR2","SGlydSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aXRu","SVRO","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","amF5YXR2","SmF5YSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmV0aHJhdHY=","TmV0aHJhIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cmFuZ2lyaQ==","UmFuZ2lyaSBTcmkgTGFua2E=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cmlkZWV0dg==","UmlkZWUgVFY=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Nzc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cnVwYXZhaGluaQ==","UnVwYXZhaGluaQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2hha3RoaXR2","U2hha3RoaSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Njg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2lyYXNhdHY=","U2lyYXNhIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Njc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2l5YXRoYXR2","U2l5YXRoYSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3dhcm5hdmFoaW5p","U3dhcm5hdmFoaW5p","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dHYx","VFYgMQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Njk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dHZkZXJhbmE=","VFYgRGVyYW5h","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dHZkaWR1bGE=","VFYgRGlkdWxh","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3VwcmVtZQ==","VFYgU3VwcmVtZQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Nzk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dmFzYW50aGFtdHY=","VmFzYW50aGFtIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NjQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTI=","TmV3cw==","YWRhZGVyYW5hMjQ=","QWRhIERlcmFuYSAyNA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2NzM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YWxqYXplZXJh","QWwgSmF6ZWVyYQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YmJjd29ybGQ=","QkJDIFdvcmxk","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Ymxvb21iZXJn","Qmxvb21iZXJn","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Q0dUTg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y25iYw==","Q05CQw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y25u","Q05O","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZXVyb25ld3M=","RXVybyBOZXdz","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZnJhbmNlMjQ=","RnJhbmNlIDI0","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmR0dg==","TkRUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTM=","U3BvcnRz","ZXVyb3Nwb3J0","RXVyb3Nwb3J0","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Mjc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXNwb3J0czE=","U29ueSBTcG9ydHMgMQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MjQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXNwb3J0czI=","U29ueSBTcG9ydHMgMg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MjY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXNwb3J0czJoZA==","U29ueSBTcG9ydHMgMiBIRA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXNwb3J0czVoZA==","U29ueSBTcG9ydHMgNSBIRA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnNwb3J0czE=","U3RhciBTcG9ydHMgMQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Mjg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnNwb3J0czI=","U3RhciBTcG9ydHMgMg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Mjk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnNwb3J0czM=","U3RhciBTcG9ydHMgMw==","aHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMC5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjUmxPNjY0XzVBQVV0QTdtYldaTXhBcEVrOWthSnlLWFhPc3J3UDJqQUFGMENJc2ZpQUViNHB3aUtBJnM9MTA=","dGVuY3JpY2tldA==","VGVuIENyaWNrZXQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MjU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cGFwYXJldHYx","VGhlIFBhcGFyZSBUViAx","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTMwNzE3P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","cGFwYXJlc2Q=","VGhlIFBhcGFyZSBUViAy","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTMwNzE5P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","c3RhcnNwb3J0c2hkMQ==","U3RhciBTcG9ydHMgSEQgMQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Nzg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cHJlbWllcnNwb3J0cw==","UHJlbWllciBTcG9ydHMgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnNzZWxlY3RoZDE=","U3RhciBTcG9ydHMgU2VsZWN0IDEgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Nzk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnNzZWxlY3RoZDI=","U3RhciBTcG9ydHMgU2VsZWN0IDIgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dGhlcGFwYXJlaGQ=","VGhlIFBhcGFyZSBUViAxIEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dGhlcGFwYXJlMmhk","VGhlIFBhcGFyZSBUViAyIEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTQ=","RW50ZXJ0YWlubWVudA==","YW5kZmxpeA==","JmZsaXg=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YXhu","QVhO","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Mzc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YjR1bW92aWVz","QjRVIE1vdmllcw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2hhbm5lbGM=","Q2hhbm5lbCBD","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y29sb3Jz","Q29sb3Jz","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y29sb3JzaW5maW5pdHk=","Q29sb3JzIENpbmVwbGV4","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvNzE4OTM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y29sb3JzdGFtaWw=","Q29sb3JzIFRhbWls","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzbmV5aW50","RGlzbmV5IEludGVybmF0aW9uYWw=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTc0Mjg2P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","ZmFzaGlvbnR2","RmFzaGlvbiBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Mzk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Zm9vZG5ldHdvcms=","Rm9vZCBOZXR3b3Jr","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGJvZmFtaWx5","SEJPIEZhbWlseQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGJvc2lnbmF0dXJl","SEJPIFNpZ25hdHVyZQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGd0dg==","SEdUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MjI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGl0dg==","SGkgVFY=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGl0cw==","SElUUw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGl0c21vdmllcw==","SElUUyBNT1ZJRVM=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","amF5YW1heA==","SmF5YSBNYXg=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTg1NDU3P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","amF5YW1vdmllcw==","SmF5YSBNb3ZpZXM=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTg1NDU5P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","amF5YXBsdXM=","SmF5YSBQbHVz","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTg1NDUyP2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","a2FsYWlnbmFydHY=","S2FsYWlnbmFyIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2V0bWF4","U0VUIE1heA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2lyaXBvbGxpdHY=","U2lyaXBwb2xpIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXBpeA==","U29ueSBQSVg=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c29ueXNldA==","U29ueSBTRVQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcmJoYXJhdGg=","U3RhciBCaGFyYXRo","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcmdvbGQ=","U3RhciBHb2xk","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcmdvbGRyb21hbmNl","U3RhciBHb2xkIFJvbWFuY2U=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnBsdXM=","U3RhciBQbHVz","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3RhcnZpamF5","U3RhciBWaWpheQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","amF5YXR2aW5k","U3VuIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","d2FybmVydHY=","V2FybmVyIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","emVlY2FmZQ==","WmVlIENhZmU=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MzU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","emVlY2luZW1h","WmVlIENpbmVtYQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","emVldGFtaWw=","WmVlIFRhbWls","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NTc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","emVldGhpcmFp","WmVlIFRoaXJhaQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTg4OTIxP2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","emluZ3R2","WmluZyBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTU=","S2lkcw==","YXBsdXM=","QSBQbHVzIEtpZHMgVFY=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YmFieXR2","QmFieSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2FydG9vbm5ldHdvcms=","Q2FydG9vbiBOZXR3b3Jr","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2JlZWJpZXM=","Q0JlZWJpZXM=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGF2aW5jaQ==","RGEgVmluY2k=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzbmV5anI=","RGlzbmV5IEpy","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bW9vbmJ1Zw==","TW9vbmJ1Zw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTAxMTEzP2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","bmlja2py","TmljayBKcg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmlja2Vsb2Rlb24=","Tmlja2Vsb2Rlb24=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cG9nbw==","UG9nbw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvNDczNjA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTY=","RG9jdW1lbnRhcnk=","YW5pbWFscGxhbmV0","QW5pbWFsIFBsYW5ldA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzY292ZXJ5","RGlzY292ZXJ5","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzY292ZXJ5c2NpZW5jZQ==","RGlzY292ZXJ5IFNjaWVuY2U=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzY292ZXJ5dHVyYm8=","RGlzY292ZXJ5IFR1cmJv","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvNDczNjI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGlzdG9yeXR2MTg=","SGlzdG9yeSBUViAxOA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MjA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmdjd2lsZA==","TmF0IEdlbyBXaWxk","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmF0Z2Vv","TmF0aW9uYWwgR2VvZ3JhcGhpYw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MTk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YmJjZWFydGg=","U29ueSBCQkMgRWFydGg=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NDI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dGxj","VExD","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjUxOTQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTc=","UmVsaWdpb3Vz","ZGFtc2F0aGFyYQ==","RGFtc2F0aGFyYSBUVg==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Z29kdHY=","R09EIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cHJhZ25h","UHJhZ25hIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c2hyYWRkaGF0dg==","U2hyYWRkaGEgVFY=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YnVkZGhpc3R0dg==","VGhlIEJ1ZGRoaXN0IFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZXd0bg==","VmVyYnVtIFRW","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2ODg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTg=","TXVzaWM=","QjRVTXVzaWM=","QjRVIE11c2lj","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3MDA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2l0aWhpdHo=","Q2l0aSBIaXR6","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2Nzg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cm9tYW50aWNv","TVRWIDkwcw==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMTYxNzY1P2FjY2Vzc0tleT1Xa1ZqTldOc2NGaE9SREJMQ2c9PQ==","Y2F0LTk=","RWR1Y2F0aW9u","bmVuYXNhc2luaGFsYWFs","TmVuYXNhIFNpbmhhbGEgR3JhZGUgMS01","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NjA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmVuYXNhc2luaGFsYWdyYWRlNnRvOQ==","TmVuYXNhIFNpbmhhbGEgR3JhZGUgNi05","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NjI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmVuYXNhc2luaGFsYW9s","TmVuYXNhIFNpbmhhbGEgTy9M","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NjQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmVuYXNhdGFtaWxhbA==","TmVuYXNhIFRhbWlsIEdyYWRlIDYtOQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NjM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","bmVuYXNhdGFtaWxvbA==","TmVuYXNhIFRhbWlsIE8vTA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NjU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTEw","SW50ZXJuYXRpb25hbA==","YWJjYXVzdHJhbGlh","QUJDIEF1c3RyYWxpYQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU2OTA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZHdlbmdsaXNo","RFc=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","a2Jza29yZWE=","S0JTIEtvcmVh","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cGhvZW5peGluZm8=","UGhvZW5peCBJbmZvIE5ld3M=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cmFpaXRhbGlh","UkFJIEl0YWxpYQ==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dHJ0d29ybGQ=","VFJUIFdvcmxk","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3ODc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","dHY1bW9uZGU=","VFY1IE1vbmRlIEFzaWU=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2F0LTEx","SEQgQ2hhbm5lbHM=","YW5pbWFscGxhbmV0aGQ=","QW5pbWFsIFBsYW5ldCBIRA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Njk/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","YXhuaGQ=","QVhOIEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzA/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2luZW1hd29ybGRoZA==","Q2luZW1hV29ybGQgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","Y2luZW1heGhk","Q2luZW1heCBIRA==","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzU/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","ZGlzY292ZXJ5aGR3b3JsZA==","RGlzY292ZXJ5IEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Njg/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGJvaGQ=","SEJPIEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzI/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGJvaGl0c2hk","SEJPIEhpdHMgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzY/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","aGl0c25vdw==","SElUUyBOT1cgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzE/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","cm9ja2VudGVydGFpbm1lbnRoZA==","Uk9DSyBFbnRlcnRhaW5tZW50IEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3OTQ/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3Rhcm1vdmllc2hk","U3RhciBNb3ZpZXMgSEQ=","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3NzM/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","c3Rhcm1vdmllc3NlbGVjdGhk","U3RhciBNb3ZpZXMgU2VsZWN0IEhE","aHR0cHM6Ly9hcGkzLnZpdS5say9hcGkvY2xpZW50L3YxL2dsb2JhbC9pbWFnZXMvMjU3Nzc/YWNjZXNzS2V5PVdrVmpOV05zY0ZoT1JEQkxDZz09","","Y2F0LXNlY3Rpb24=","Y2F0LXRpdGxl","YXBwLWdyaWQ=","Y2hhbm5lbC1jYXJk","JyArIGNoYW5uZWwuaWQgKyAn","JyArIGNoYW5uZWwubmFtZSArICc=","JyArIGNoYW5uZWwuaW1hZ2UgKyAn","aWNvbi1ib3g=","bGF6eQ==","Y2hhbm5lbHNDb250YWluZXI=","ZGl2","c3RhdHVzLW1zZw==","XG4gICAgICAgICAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgICAgICAgICB0b3A6IDIwcHg7XG4gICAgICAgICAgICByaWdodDogMjBweDtcbiAgICAgICAgICAgIHBhZGRpbmc6IDEycHggMjRweDtcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgICAgICAgICB6LWluZGV4OiAxMDAwO1xuICAgICAgICAgICAgYW5pbWF0aW9uOiBzbGlkZUluIDAuM3MgZWFzZTtcbiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgNHB4IDEycHggcmdiYSgwLDAsMCwwLjMpO1xuICAgICAgICA=","c3R5bGU=","XG4gICAgICAgICAgICBAa2V5ZnJhbWVzIHNsaWRlSW4ge1xuICAgICAgICAgICAgICAgIGZyb20geyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwJSk7IG9wYWNpdHk6IDA7IH1cbiAgICAgICAgICAgICAgICB0byB7IHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTsgb3BhY2l0eTogMTsgfVxuICAgICAgICAgICAgfVxuICAgICAgICA=","I2U1MDkxNA==","IzAwNTZiMw==","YmxvY2s=","bm9uZQ==","UGxheWVyIGxpYnJhcnkgZmFpbGVkIHRvIGxvYWQu","QnJvd3NlciBkb2VzIG5vdCBzdXBwb3J0IERSTSBwbGF5YmFjay4=","dmlkZW8=","LnZpZGVvLXdyYXBwZXI=","cGxheV9wYXVzZQ==","dGltZV9hbmRfZHVyYXRpb24=","c3BhY2Vy","bXV0ZQ==","dm9sdW1l","ZnVsbHNjcmVlbg==","b3ZlcmZsb3dfbWVudQ==","cXVhbGl0eQ==","cGxheWJhY2tfcmF0ZQ==","cGljdHVyZV9pbl9waWN0dXJl","VXNlci1BZ2VudA==","TW96aWxsYS81LjA=","UmVmZXJlcg==","aHR0cHM6Ly93YXRjaC5kaWFsb2cubGsv","T3JpZ2lu","QWNjZXB0","Ki8q","bG9hZGluZ1NwaW5uZXI=","YnVmZmVyaW5n","cGxheWluZw==","d2FpdGluZw==","ZXJyb3I=","UGxheWJhY2sgZXJyb3I=","c2VhcmNoSW5wdXQ=","aW5wdXQ=","LmNhdC1zZWN0aW9u","LmNoYW5uZWwtY2FyZA==","ZmxleA==","RmV0Y2hpbmcgc3RyZWFtIGRhdGEuLi4=","TmV0d29yayBlcnJvciA=","SW52YWxpZCBBUEkgcmVzcG9uc2U=","Y29tLndpZGV2aW5lLmFscGhh","U1dfU0VDVVJFX0NSWVBUTw==","TG9hZGluZyBzdHJlYW0uLi4=","YWN0aXZl","JyArIGNoYW5uZWxJZCArICc=","c21vb3Ro","bmVhcmVzdA==","U3RyZWFtIGxvYWRlZCBzdWNjZXNzZnVsbHk=","Q2Fubm90IHBsYXkgY2hhbm5lbA==","Y2xpY2s=","ZnVsbHNjcmVlbmNoYW5nZQ==","bGFuZHNjYXBl","dGVsZWdyYW1Qb3B1cA==","Y2xvc2VQb3B1cA==","am9pblRlbGVncmFtQnRu","c2x0dl90ZWxlZ3JhbV9qb2luZWQ=","dHJ1ZQ==","RE9NQ29udGVudExvYWRlZA==","UGxheWVyIGZhaWxlZCB0byBpbml0aWFsaXplLg=="];a0_0x4278=function(){return _0x3d949a;};return a0_0x4278();}
-const B_A_A_T = (function () {
-    const p1 = [0x68, 0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f];
-    const p2 = [0x77, 0x65, 0x62, 0x74, 0x76, 0x2e];
-    const p3 = [0x74, 0x68, 0x75, 0x6e, 0x64, 0x65, 0x72, 0x63, 0x61, 0x74, 0x2e];
-    const p4 = [0x77, 0x6f, 0x72, 0x6b, 0x65, 0x72, 0x73, 0x2e];
-    const p5 = [0x64, 0x65, 0x76, 0x2f];
-    let url = '';
-    for(let i=0; i<p1.length; i++) url += String.fromCharCode(p1[i]);
-    for(let i=0; i<p2.length; i++) url += String.fromCharCode(p2[i]);
-    for(let i=0; i<p3.length; i++) url += String.fromCharCode(p3[i]);
-    for(let i=0; i<p4.length; i++) url += String.fromCharCode(p4[i]);
-    for(let i=0; i<p5.length; i++) url += String.fromCharCode(p5[i]);
-    return url;
-})();
+/**
+ * SLTV Live Player - Browser Script
+ */
+
+const API_BASE_URL = 'https://webtv.thundercat.workers.dev/';
 
 const CHANNEL_CATEGORIES = [
   {
-    'id': a0_0x1b8c6c(0x1b1),
-    'title': a0_0x1b8c6c(0x1b3),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x1b5), 'name': a0_0x1b8c6c(0x1b7), 'image': a0_0x1b8c6c(0x1b9) },
-      { 'id': a0_0x1b8c6c(0x1ba), 'name': a0_0x1b8c6c(0x1bb), 'image': a0_0x1b8c6c(0x1bc) },
-      { 'id': a0_0x1b8c6c(0x1bd), 'name': a0_0x1b8c6c(0x1be), 'image': a0_0x1b8c6c(0x1bf) },
-      { 'id': a0_0x1b8c6c(0x1c0), 'name': a0_0x1b8c6c(0x1c1), 'image': a0_0x1b8c6c(0x1c2) },
-      { 'id': a0_0x1b8c6c(0x1c3), 'name': a0_0x1b8c6c(0x1c4), 'image': a0_0x1b8c6c(0x1c5) },
-      { 'id': a0_0x1b8c6c(0x1c6), 'name': a0_0x1b8c6c(0x1c7), 'image': a0_0x1b8c6c(0x1c8) },
-      { 'id': a0_0x1b8c6c(0x1c9), 'name': a0_0x1b8c6c(0x1ca), 'image': a0_0x1b8c6c(0x1cb) },
-      { 'id': a0_0x1b8c6c(0x1cc), 'name': a0_0x1b8c6c(0x1cd), 'image': a0_0x1b8c6c(0x1ce) },
-      { 'id': a0_0x1b8c6c(0x1cf), 'name': a0_0x1b8c6c(0x1d0), 'image': a0_0x1b8c6c(0x1d1) },
-      { 'id': a0_0x1b8c6c(0x1d2), 'name': a0_0x1b8c6c(0x1d3), 'image': a0_0x1b8c6c(0x1d4) },
-      { 'id': a0_0x1b8c6c(0x1d5), 'name': a0_0x1b8c6c(0x1d6), 'image': a0_0x1b8c6c(0x1d7) },
-      { 'id': a0_0x1b8c6c(0x1d8), 'name': a0_0x1b8c6c(0x1d9), 'image': a0_0x1b8c6c(0x1da) },
-      { 'id': a0_0x1b8c6c(0x1db), 'name': a0_0x1b8c6c(0x1dc), 'image': a0_0x1b8c6c(0x1dd) },
-      { 'id': a0_0x1b8c6c(0x1de), 'name': a0_0x1b8c6c(0x1df), 'image': a0_0x1b8c6c(0x1e0) },
-      { 'id': a0_0x1b8c6c(0x1e1), 'name': a0_0x1b8c6c(0x1e2), 'image': a0_0x1b8c6c(0x1e3) },
-      { 'id': a0_0x1b8c6c(0x1e4), 'name': a0_0x1b8c6c(0x1e5), 'image': a0_0x1b8c6c(0x1e6) },
-      { 'id': a0_0x1b8c6c(0x1e7), 'name': a0_0x1b8c6c(0x1e8), 'image': a0_0x1b8c6c(0x1e9) },
-      { 'id': a0_0x1b8c6c(0x1ea), 'name': a0_0x1b8c6c(0x1eb), 'image': a0_0x1b8c6c(0x1ec) },
-      { 'id': a0_0x1b8c6c(0x1ed), 'name': a0_0x1b8c6c(0x1ee), 'image': a0_0x1b8c6c(0x1ef) }
+    id: 'cat-1',
+    title: 'Local',
+    channels: [
+      { id: 'arttelevision', name: 'ART Television', image: 'https://api3.viu.lk/api/client/v1/global/images/25672?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'channelone', name: 'Channel One', image: 'https://api3.viu.lk/api/client/v1/global/images/25660?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'harithatv', name: 'Haritha TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25675?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hirutv', name: 'Hiru TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25670?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'itn', name: 'ITN', image: 'https://api3.viu.lk/api/client/v1/global/images/25663?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'jayatv', name: 'Jaya TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25684?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nethratv', name: 'Nethra TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25662?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'rangiri', name: 'Rangiri Sri Lanka', image: 'https://api3.viu.lk/api/client/v1/global/images/25680?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'rideetv', name: 'Ridee TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25677?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'rupavahini', name: 'Rupavahini', image: 'https://api3.viu.lk/api/client/v1/global/images/25661?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'shakthitv', name: 'Shakthi TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25668?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sirasatv', name: 'Sirasa TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25667?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'siyathatv', name: 'Siyatha TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25674?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'swarnavahini', name: 'Swarnavahini', image: 'https://api3.viu.lk/api/client/v1/global/images/25666?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'tv1', name: 'TV 1', image: 'https://api3.viu.lk/api/client/v1/global/images/25669?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'tvderana', name: 'TV Derana', image: 'https://api3.viu.lk/api/client/v1/global/images/25665?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'tvdidula', name: 'TV Didula', image: 'https://api3.viu.lk/api/client/v1/global/images/25676?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'supreme', name: 'TV Supreme', image: 'https://api3.viu.lk/api/client/v1/global/images/25679?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'vasanthamtv', name: 'Vasantham TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25664?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x1f0),
-    'title': a0_0x1b8c6c(0x1f1),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x1f2), 'name': a0_0x1b8c6c(0x1f3), 'image': a0_0x1b8c6c(0x1f4) },
-      { 'id': a0_0x1b8c6c(0x1f5), 'name': a0_0x1b8c6c(0x1f6), 'image': a0_0x1b8c6c(0x1f7) },
-      { 'id': a0_0x1b8c6c(0x1f8), 'name': a0_0x1b8c6c(0x1f9), 'image': a0_0x1b8c6c(0x1fa) },
-      { 'id': a0_0x1b8c6c(0x1fb), 'name': a0_0x1b8c6c(0x1fc), 'image': a0_0x1b8c6c(0x1fd) },
-      { 'id': a0_0x1b8c6c(0x1fe), 'name': a0_0x1b8c6c(0x1fe), 'image': a0_0x1b8c6c(0x1ff) },
-      { 'id': a0_0x1b8c6c(0x200), 'name': a0_0x1b8c6c(0x201), 'image': a0_0x1b8c6c(0x202) },
-      { 'id': a0_0x1b8c6c(0x203), 'name': a0_0x1b8c6c(0x204), 'image': a0_0x1b8c6c(0x205) },
-      { 'id': a0_0x1b8c6c(0x206), 'name': a0_0x1b8c6c(0x207), 'image': a0_0x1b8c6c(0x208) },
-      { 'id': a0_0x1b8c6c(0x209), 'name': a0_0x1b8c6c(0x20a), 'image': a0_0x1b8c6c(0x20b) },
-      { 'id': a0_0x1b8c6c(0x20c), 'name': a0_0x1b8c6c(0x20d), 'image': a0_0x1b8c6c(0x20e) }
+    id: 'cat-2',
+    title: 'News',
+    channels: [
+      { id: 'adaderana24', name: 'Ada Derana 24', image: 'https://api3.viu.lk/api/client/v1/global/images/25673?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'aljazeera', name: 'Al Jazeera', image: 'https://api3.viu.lk/api/client/v1/global/images/25689?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'bbcworld', name: 'BBC World', image: 'https://api3.viu.lk/api/client/v1/global/images/25691?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'bloomberg', name: 'Bloomberg', image: 'https://api3.viu.lk/api/client/v1/global/images/25698?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'CGTN', name: 'CGTN', image: 'https://api3.viu.lk/api/client/v1/global/images/25692?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cnbc', name: 'CNBC', image: 'https://api3.viu.lk/api/client/v1/global/images/25699?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cnn', name: 'CNN', image: 'https://api3.viu.lk/api/client/v1/global/images/25693?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'euronews', name: 'Euro News', image: 'https://api3.viu.lk/api/client/v1/global/images/25696?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'france24', name: 'France 24', image: 'https://api3.viu.lk/api/client/v1/global/images/25695?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'ndtv', name: 'NDTV', image: 'https://api3.viu.lk/api/client/v1/global/images/25694?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x20f),
-    'title': a0_0x1b8c6c(0x210),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x211), 'name': a0_0x1b8c6c(0x212), 'image': a0_0x1b8c6c(0x213) },
-      { 'id': a0_0x1b8c6c(0x214), 'name': a0_0x1b8c6c(0x215), 'image': a0_0x1b8c6c(0x216) },
-      { 'id': a0_0x1b8c6c(0x217), 'name': a0_0x1b8c6c(0x218), 'image': a0_0x1b8c6c(0x219) },
-      { 'id': a0_0x1b8c6c(0x21a), 'name': a0_0x1b8c6c(0x21b), 'image': a0_0x1b8c6c(0x21c) },
-      { 'id': a0_0x1b8c6c(0x21d), 'name': a0_0x1b8c6c(0x21e), 'image': a0_0x1b8c6c(0x21f) },
-      { 'id': a0_0x1b8c6c(0x220), 'name': a0_0x1b8c6c(0x221), 'image': a0_0x1b8c6c(0x222) },
-      { 'id': a0_0x1b8c6c(0x223), 'name': a0_0x1b8c6c(0x224), 'image': a0_0x1b8c6c(0x225) },
-      { 'id': a0_0x1b8c6c(0x226), 'name': a0_0x1b8c6c(0x227), 'image': a0_0x1b8c6c(0x228) },
-      { 'id': a0_0x1b8c6c(0x229), 'name': a0_0x1b8c6c(0x22a), 'image': a0_0x1b8c6c(0x22b) },
-      { 'id': a0_0x1b8c6c(0x22c), 'name': a0_0x1b8c6c(0x22d), 'image': a0_0x1b8c6c(0x22e) },
-      { 'id': a0_0x1b8c6c(0x22f), 'name': a0_0x1b8c6c(0x230), 'image': a0_0x1b8c6c(0x231) },
-      { 'id': a0_0x1b8c6c(0x232), 'name': a0_0x1b8c6c(0x233), 'image': a0_0x1b8c6c(0x234) },
-      { 'id': a0_0x1b8c6c(0x235), 'name': a0_0x1b8c6c(0x236), 'image': a0_0x1b8c6c(0x237) },
-      { 'id': a0_0x1b8c6c(0x238), 'name': a0_0x1b8c6c(0x239), 'image': a0_0x1b8c6c(0x23a) },
-      { 'id': a0_0x1b8c6c(0x23b), 'name': a0_0x1b8c6c(0x23c), 'image': a0_0x1b8c6c(0x23d) },
-      { 'id': a0_0x1b8c6c(0x23e), 'name': a0_0x1b8c6c(0x23f), 'image': a0_0x1b8c6c(0x240) },
-      { 'id': a0_0x1b8c6c(0x241), 'name': a0_0x1b8c6c(0x242), 'image': a0_0x1b8c6c(0x243) }
+    id: 'cat-3',
+    title: 'Sports',
+    channels: [
+      { id: 'eurosport', name: 'Eurosport', image: 'https://api3.viu.lk/api/client/v1/global/images/25727?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonysports1', name: 'Sony Sports 1', image: 'https://api3.viu.lk/api/client/v1/global/images/25724?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonysports2', name: 'Sony Sports 2', image: 'https://api3.viu.lk/api/client/v1/global/images/25726?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonysports2hd', name: 'Sony Sports 2 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25781?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonysports5hd', name: 'Sony Sports 5 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25782?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsports1', name: 'Star Sports 1', image: 'https://api3.viu.lk/api/client/v1/global/images/25728?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsports2', name: 'Star Sports 2', image: 'https://api3.viu.lk/api/client/v1/global/images/25729?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsports3', name: 'Star Sports 3', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlO664_5AAUtA7mbWZMxApEk9kaJyKXXOsrwP2jAAF0CIsfiAEb4pwiKA&s=10' },
+      { id: 'tencricket', name: 'Ten Cricket', image: 'https://api3.viu.lk/api/client/v1/global/images/25725?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'paparetv1', name: 'The Papare TV 1', image: 'https://api3.viu.lk/api/client/v1/global/images/130717?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'paparesd', name: 'The Papare TV 2', image: 'https://api3.viu.lk/api/client/v1/global/images/130719?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsportshd1', name: 'Star Sports HD 1', image: 'https://api3.viu.lk/api/client/v1/global/images/25778?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'premiersports', name: 'Premier Sports HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25783?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsselecthd1', name: 'Star Sports Select 1 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25779?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starsselecthd2', name: 'Star Sports Select 2 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25780?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'thepaparehd', name: 'The Papare TV 1 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25784?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'thepapare2hd', name: 'The Papare TV 2 HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25785 accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x244),
-    'title': a0_0x1b8c6c(0x245),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x246), 'name': a0_0x1b8c6c(0x247), 'image': a0_0x1b8c6c(0x248) },
-      { 'id': a0_0x1b8c6c(0x249), 'name': a0_0x1b8c6c(0x24a), 'image': a0_0x1b8c6c(0x24b) },
-      { 'id': a0_0x1b8c6c(0x24c), 'name': a0_0x1b8c6c(0x24d), 'image': a0_0x1b8c6c(0x24e) },
-      { 'id': a0_0x1b8c6c(0x24f), 'name': a0_0x1b8c6c(0x250), 'image': a0_0x1b8c6c(0x251) },
-      { 'id': a0_0x1b8c6c(0x252), 'name': a0_0x1b8c6c(0x253), 'image': a0_0x1b8c6c(0x254) },
-      { 'id': a0_0x1b8c6c(0x255), 'name': a0_0x1b8c6c(0x256), 'image': a0_0x1b8c6c(0x257) },
-      { 'id': a0_0x1b8c6c(0x258), 'name': a0_0x1b8c6c(0x259), 'image': a0_0x1b8c6c(0x25a) },
-      { 'id': a0_0x1b8c6c(0x25b), 'name': a0_0x1b8c6c(0x25c), 'image': a0_0x1b8c6c(0x25d) },
-      { 'id': a0_0x1b8c6c(0x25e), 'name': a0_0x1b8c6c(0x25f), 'image': a0_0x1b8c6c(0x260) },
-      { 'id': a0_0x1b8c6c(0x261), 'name': a0_0x1b8c6c(0x262), 'image': a0_0x1b8c6c(0x263) },
-      { 'id': a0_0x1b8c6c(0x264), 'name': a0_0x1b8c6c(0x265), 'image': a0_0x1b8c6c(0x266) },
-      { 'id': a0_0x1b8c6c(0x267), 'name': a0_0x1b8c6c(0x268), 'image': a0_0x1b8c6c(0x269) },
-      { 'id': a0_0x1b8c6c(0x26a), 'name': a0_0x1b8c6c(0x26b), 'image': a0_0x1b8c6c(0x26c) },
-      { 'id': a0_0x1b8c6c(0x26d), 'name': a0_0x1b8c6c(0x26e), 'image': a0_0x1b8c6c(0x26f) },
-      { 'id': a0_0x1b8c6c(0x270), 'name': a0_0x1b8c6c(0x271), 'image': a0_0x1b8c6c(0x272) },
-      { 'id': a0_0x1b8c6c(0x273), 'name': a0_0x1b8c6c(0x274), 'image': a0_0x1b8c6c(0x275) },
-      { 'id': a0_0x1b8c6c(0x276), 'name': a0_0x1b8c6c(0x277), 'image': a0_0x1b8c6c(0x278) },
-      { 'id': a0_0x1b8c6c(0x279), 'name': a0_0x1b8c6c(0x27a), 'image': a0_0x1b8c6c(0x27b) },
-      { 'id': a0_0x1b8c6c(0x27c), 'name': a0_0x1b8c6c(0x27d), 'image': a0_0x1b8c6c(0x27e) },
-      { 'id': a0_0x1b8c6c(0x27f), 'name': a0_0x1b8c6c(0x280), 'image': a0_0x1b8c6c(0x281) },
-      { 'id': a0_0x1b8c6c(0x282), 'name': a0_0x1b8c6c(0x283), 'image': a0_0x1b8c6c(0x284) },
-      { 'id': a0_0x1b8c6c(0x285), 'name': a0_0x1b8c6c(0x286), 'image': a0_0x1b8c6c(0x287) },
-      { 'id': a0_0x1b8c6c(0x288), 'name': a0_0x1b8c6c(0x289), 'image': a0_0x1b8c6c(0x28a) },
-      { 'id': a0_0x1b8c6c(0x28b), 'name': a0_0x1b8c6c(0x28c), 'image': a0_0x1b8c6c(0x28d) },
-      { 'id': a0_0x1b8c6c(0x28e), 'name': a0_0x1b8c6c(0x28f), 'image': a0_0x1b8c6c(0x290) },
-      { 'id': a0_0x1b8c6c(0x291), 'name': a0_0x1b8c6c(0x292), 'image': a0_0x1b8c6c(0x293) },
-      { 'id': a0_0x1b8c6c(0x294), 'name': a0_0x1b8c6c(0x295), 'image': a0_0x1b8c6c(0x296) },
-      { 'id': a0_0x1b8c6c(0x297), 'name': a0_0x1b8c6c(0x298), 'image': a0_0x1b8c6c(0x299) },
-      { 'id': a0_0x1b8c6c(0x29a), 'name': a0_0x1b8c6c(0x29b), 'image': a0_0x1b8c6c(0x29c) },
-      { 'id': a0_0x1b8c6c(0x29d), 'name': a0_0x1b8c6c(0x29e), 'image': a0_0x1b8c6c(0x29f) },
-      { 'id': a0_0x1b8c6c(0x2a0), 'name': a0_0x1b8c6c(0x2a1), 'image': a0_0x1b8c6c(0x2a2) },
-      { 'id': a0_0x1b8c6c(0x2a3), 'name': a0_0x1b8c6c(0x2a4), 'image': a0_0x1b8c6c(0x2a5) },
-      { 'id': a0_0x1b8c6c(0x2a6), 'name': a0_0x1b8c6c(0x2a7), 'image': a0_0x1b8c6c(0x2a8) },
-      { 'id': a0_0x1b8c6c(0x2a9), 'name': a0_0x1b8c6c(0x2aa), 'image': a0_0x1b8c6c(0x2ab) },
-      { 'id': a0_0x1b8c6c(0x2ac), 'name': a0_0x1b8c6c(0x2ad), 'image': a0_0x1b8c6c(0x2ae) },
-      { 'id': a0_0x1b8c6c(0x2af), 'name': a0_0x1b8c6c(0x2b0), 'image': a0_0x1b8c6c(0x2b1) }
+    id: 'cat-4',
+    title: 'Entertainment',
+    channels: [
+      { id: 'andflix', name: '&flix', image: 'https://api3.viu.lk/api/client/v1/global/images/25732?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'axn', name: 'AXN', image: 'https://api3.viu.lk/api/client/v1/global/images/25737?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'b4umovies', name: 'B4U Movies', image: 'https://api3.viu.lk/api/client/v1/global/images/25749?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'channelc', name: 'Channel C', image: 'https://api3.viu.lk/api/client/v1/global/images/25702?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'colors', name: 'Colors', image: 'https://api3.viu.lk/api/client/v1/global/images/25747?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'colorsinfinity', name: 'Colors Cineplex', image: 'https://api3.viu.lk/api/client/v1/global/images/71893?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'colorstamil', name: 'Colors Tamil', image: 'https://api3.viu.lk/api/client/v1/global/images/25752?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'disneyint', name: 'Disney International', image: 'https://api3.viu.lk/api/client/v1/global/images/17428:?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'fashiontv', name: 'Fashion TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25739?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'foodnetwork', name: 'Food Network', image: 'https://api3.viu.lk/api/client/v1/global/images/25714?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hbofamily', name: 'HBO Family', image: 'https://api3.viu.lk/api/client/v1/global/images/25731?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hbosignature', name: 'HBO Signature', image: 'https://api3.viu.lk/api/client/v1/global/images/25730?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hgtv', name: 'HGTV', image: 'https://api3.viu.lk/api/client/v1/global/images/25722?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hitv', name: 'Hi TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25681?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hits', name: 'HITS', image: 'https://api3.viu.lk/api/client/v1/global/images/25734?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hitsmovies', name: 'HITS MOVIES', image: 'https://api3.viu.lk/api/client/v1/global/images/25733?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'jayamax', name: 'Jaya Max', image: 'https://api3.viu.lk/api/client/v1/global/images/185457?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'jayamovies', name: 'Jaya Movies', image: 'https://api3.viu.lk/api/client/v1/global/images/185459?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'jayaplus', name: 'Jaya Plus', image: 'https://api3.viu.lk/api/client/v1/global/images/185452?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'kalaignartv', name: 'Kalaignar TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25756?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'setmax', name: 'SET Max', image: 'https://api3.viu.lk/api/client/v1/global/images/25745?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'siripollitv', name: 'Sirippoli TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25795?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonypix', name: 'Sony PIX', image: 'https://api3.viu.lk/api/client/v1/global/images/25708?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'sonyset', name: 'Sony SET', image: 'https://api3.viu.lk/api/client/v1/global/images/25744?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starbharath', name: 'Star Bharath', image: 'https://api3.viu.lk/api/client/v1/global/images/25743?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'stargold', name: 'Star Gold', image: 'https://api3.viu.lk/api/client/v1/global/images/25746?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'stargoldromance', name: 'Star Gold Romance', image: 'https://api3.viu.lk/api/client/v1/global/images/25750?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starplus', name: 'Star Plus', image: 'https://api3.viu.lk/api/client/v1/global/images/25748?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starvijay', name: 'Star Vijay', image: 'https://api3.viu.lk/api/client/v1/global/images/25755?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'jayatvind', name: 'Sun TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25753?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'warnertv', name: 'Warner TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25736?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'zeecafe', name: 'Zee Cafe', image: 'https://api3.viu.lk/api/client/v1/global/images/25735?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'zeecinema', name: 'Zee Cinema', image: 'https://api3.viu.lk/api/client/v1/global/images/25751?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'zeetamil', name: 'Zee Tamil', image: 'https://api3.viu.lk/api/client/v1/global/images/25757?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'zeethirai', name: 'Zee Thirai', image: 'https://api3.viu.lk/api/client/v1/global/images/188921?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'zingtv', name: 'Zing TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25704?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x2b2),
-    'title': a0_0x1b8c6c(0x2b3),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x2b4), 'name': a0_0x1b8c6c(0x2b5), 'image': a0_0x1b8c6c(0x2b6) },
-      { 'id': a0_0x1b8c6c(0x2b7), 'name': a0_0x1b8c6c(0x2b8), 'image': a0_0x1b8c6c(0x2b9) },
-      { 'id': a0_0x1b8c6c(0x2ba), 'name': a0_0x1b8c6c(0x2bb), 'image': a0_0x1b8c6c(0x2bc) },
-      { 'id': a0_0x1b8c6c(0x2bd), 'name': a0_0x1b8c6c(0x2be), 'image': a0_0x1b8c6c(0x2bf) },
-      { 'id': a0_0x1b8c6c(0x2c0), 'name': a0_0x1b8c6c(0x2c1), 'image': a0_0x1b8c6c(0x2c2) },
-      { 'id': a0_0x1b8c6c(0x2c3), 'name': a0_0x1b8c6c(0x2c4), 'image': a0_0x1b8c6c(0x2c5) },
-      { 'id': a0_0x1b8c6c(0x2c6), 'name': a0_0x1b8c6c(0x2c7), 'image': a0_0x1b8c6c(0x2c8) },
-      { 'id': a0_0x1b8c6c(0x2c9), 'name': a0_0x1b8c6c(0x2ca), 'image': a0_0x1b8c6c(0x2cb) },
-      { 'id': a0_0x1b8c6c(0x2cc), 'name': a0_0x1b8c6c(0x2cd), 'image': a0_0x1b8c6c(0x2ce) },
-      { 'id': a0_0x1b8c6c(0x2cf), 'name': a0_0x1b8c6c(0x2d0), 'image': a0_0x1b8c6c(0x2d1) }
+    id: 'cat-5',
+    title: 'Kids',
+    channels: [
+      { id: 'aplus', name: 'A Plus Kids TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25709?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'babytv', name: 'Baby TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25711?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cartoonnetwork', name: 'Cartoon Network', image: 'https://api3.viu.lk/api/client/v1/global/images/25707?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cbeebies', name: 'CBeebies', image: 'https://api3.viu.lk/api/client/v1/global/images/25706?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'davinci', name: 'Da Vinci', image: 'https://api3.viu.lk/api/client/v1/global/images/25705?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'disneyjr', name: 'Disney Jr', image: 'https://api3.viu.lk/api/client/v1/global/images/25712?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'moonbug', name: 'Moonbug', image: 'https://api3.viu.lk/api/client/v1/global/images/101113?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nickjr', name: 'Nick Jr', image: 'https://api3.viu.lk/api/client/v1/global/images/25713?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nickelodeon', name: 'Nickelodeon', image: 'https://api3.viu.lk/api/client/v1/global/images/25710?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'pogo', name: 'Pogo', image: 'https://api3.viu.lk/api/client/v1/global/images/47360?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x2d2),
-    'title': a0_0x1b8c6c(0x2d3),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x2d4), 'name': a0_0x1b8c6c(0x2d5), 'image': a0_0x1b8c6c(0x2d6) },
-      { 'id': a0_0x1b8c6c(0x2d7), 'name': a0_0x1b8c6c(0x2d8), 'image': a0_0x1b8c6c(0x2d9) },
-      { 'id': a0_0x1b8c6c(0x2da), 'name': a0_0x1b8c6c(0x2db), 'image': a0_0x1b8c6c(0x2dc) },
-      { 'id': a0_0x1b8c6c(0x2dd), 'name': a0_0x1b8c6c(0x2de), 'image': a0_0x1b8c6c(0x2df) },
-      { 'id': a0_0x1b8c6c(0x2e0), 'name': a0_0x1b8c6c(0x2e1), 'image': a0_0x1b8c6c(0x2e2) },
-      { 'id': a0_0x1b8c6c(0x2e3), 'name': a0_0x1b8c6c(0x2e4), 'image': a0_0x1b8c6c(0x2e5) },
-      { 'id': a0_0x1b8c6c(0x2e6), 'name': a0_0x1b8c6c(0x2e7), 'image': a0_0x1b8c6c(0x2e8) },
-      { 'id': a0_0x1b8c6c(0x2e9), 'name': a0_0x1b8c6c(0x2ea), 'image': a0_0x1b8c6c(0x2eb) },
-      { 'id': a0_0x1b8c6c(0x2ec), 'name': a0_0x1b8c6c(0x2ed), 'image': a0_0x1b8c6c(0x2ee) }
+    id: 'cat-6',
+    title: 'Documentary',
+    channels: [
+      { id: 'animalplanet', name: 'Animal Planet', image: 'https://api3.viu.lk/api/client/v1/global/images/25716?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'discovery', name: 'Discovery', image: 'https://api3.viu.lk/api/client/v1/global/images/25717?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'discoveryscience', name: 'Discovery Science', image: 'https://api3.viu.lk/api/client/v1/global/images/25718?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'discoveryturbo', name: 'Discovery Turbo', image: 'https://api3.viu.lk/api/client/v1/global/images/47362?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'historytv18', name: 'History TV 18', image: 'https://api3.viu.lk/api/client/v1/global/images/25720?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'ngcwild', name: 'Nat Geo Wild', image: 'https://api3.viu.lk/api/client/v1/global/images/25715?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'natgeo', name: 'National Geographic', image: 'https://api3.viu.lk/api/client/v1/global/images/25719?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'bbcearth', name: 'Sony BBC Earth', image: 'https://api3.viu.lk/api/client/v1/global/images/25742?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'tlc', name: 'TLC', image: 'https://api3.viu.lk/api/client/v1/global/images/25194?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x2ef),
-    'title': a0_0x1b8c6c(0x2f0),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x2f1), 'name': a0_0x1b8c6c(0x2f2), 'image': a0_0x1b8c6c(0x2f3) },
-      { 'id': a0_0x1b8c6c(0x2f4), 'name': a0_0x1b8c6c(0x2f5), 'image': a0_0x1b8c6c(0x2f6) },
-      { 'id': a0_0x1b8c6c(0x2f7), 'name': a0_0x1b8c6c(0x2f8), 'image': a0_0x1b8c6c(0x2f9) },
-      { 'id': a0_0x1b8c6c(0x2fa), 'name': a0_0x1b8c6c(0x2fb), 'image': a0_0x1b8c6c(0x2fc) },
-      { 'id': a0_0x1b8c6c(0x2fd), 'name': a0_0x1b8c6c(0x2fe), 'image': a0_0x1b8c6c(0x2ff) },
-      { 'id': a0_0x1b8c6c(0x300), 'name': a0_0x1b8c6c(0x301), 'image': a0_0x1b8c6c(0x302) }
+    id: 'cat-7',
+    title: 'Religious',
+    channels: [
+      { id: 'damsathara', name: 'Damsathara TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25683?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'godtv', name: 'GOD TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25687?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'pragna', name: 'Pragna TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25682?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'shraddhatv', name: 'Shraddha TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25686?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'buddhisttv', name: 'The Buddhist TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25685?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'ewtn', name: 'Verbum TV', image: 'https://api3.viu.lk/api/client/v1/global/images/25688?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x303),
-    'title': a0_0x1b8c6c(0x304),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x305), 'name': a0_0x1b8c6c(0x306), 'image': a0_0x1b8c6c(0x307) },
-      { 'id': a0_0x1b8c6c(0x308), 'name': a0_0x1b8c6c(0x309), 'image': a0_0x1b8c6c(0x30a) },
-      { 'id': a0_0x1b8c6c(0x30b), 'name': a0_0x1b8c6c(0x30c), 'image': a0_0x1b8c6c(0x30d) }
+    id: 'cat-8',
+    title: 'Music',
+    channels: [
+      { id: 'B4UMusic', name: 'B4U Music', image: 'https://api3.viu.lk/api/client/v1/global/images/25700?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'citihitz', name: 'Citi Hitz', image: 'https://api3.viu.lk/api/client/v1/global/images/25678?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'romantico', name: 'MTV 90s', image: 'https://api3.viu.lk/api/client/v1/global/images/161765?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x30e),
-    'title': a0_0x1b8c6c(0x30f),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x310), 'name': a0_0x1b8c6c(0x311), 'image': a0_0x1b8c6c(0x312) },
-      { 'id': a0_0x1b8c6c(0x313), 'name': a0_0x1b8c6c(0x314), 'image': a0_0x1b8c6c(0x315) },
-      { 'id': a0_0x1b8c6c(0x316), 'name': a0_0x1b8c6c(0x317), 'image': a0_0x1b8c6c(0x318) },
-      { 'id': a0_0x1b8c6c(0x319), 'name': a0_0x1b8c6c(0x31a), 'image': a0_0x1b8c6c(0x31b) },
-      { 'id': a0_0x1b8c6c(0x31c), 'name': a0_0x1b8c6c(0x31d), 'image': a0_0x1b8c6c(0x31e) }
+    id: 'cat-9',
+    title: 'Education',
+    channels: [
+      { id: 'nenasasinhalaal', name: 'Nenasa Sinhala Grade 1-5', image: 'https://api3.viu.lk/api/client/v1/global/images/25760?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nenasasinhalagrade6to9', name: 'Nenasa Sinhala Grade 6-9', image: 'https://api3.viu.lk/api/client/v1/global/images/25762?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nenasasinhalaol', name: 'Nenasa Sinhala O/L', image: 'https://api3.viu.lk/api/client/v1/global/images/25764?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nenasatamilal', name: 'Nenasa Tamil Grade 6-9', image: 'https://api3.viu.lk/api/client/v1/global/images/25763?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'nenasatamilol', name: 'Nenasa Tamil O/L', image: 'https://api3.viu.lk/api/client/v1/global/images/25765?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x31f),
-    'title': a0_0x1b8c6c(0x320),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x321), 'name': a0_0x1b8c6c(0x322), 'image': a0_0x1b8c6c(0x323) },
-      { 'id': a0_0x1b8c6c(0x324), 'name': a0_0x1b8c6c(0x325), 'image': a0_0x1b8c6c(0x326) },
-      { 'id': a0_0x1b8c6c(0x327), 'name': a0_0x1b8c6c(0x328), 'image': a0_0x1b8c6c(0x329) },
-      { 'id': a0_0x1b8c6c(0x32a), 'name': a0_0x1b8c6c(0x32b), 'image': a0_0x1b8c6c(0x32c) },
-      { 'id': a0_0x1b8c6c(0x32d), 'name': a0_0x1b8c6c(0x32e), 'image': a0_0x1b8c6c(0x32f) },
-      { 'id': a0_0x1b8c6c(0x330), 'name': a0_0x1b8c6c(0x331), 'image': a0_0x1b8c6c(0x332) },
-      { 'id': a0_0x1b8c6c(0x333), 'name': a0_0x1b8c6c(0x334), 'image': a0_0x1b8c6c(0x335) }
+    id: 'cat-10',
+    title: 'International',
+    channels: [
+      { id: 'abcaustralia', name: 'ABC Australia', image: 'https://api3.viu.lk/api/client/v1/global/images/25690?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'dwprogram', name: 'DW', image: 'https://api3.viu.lk/api/client/v1/global/images/25789?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'kbskorea', name: 'KBS Korea', image: 'https://api3.viu.lk/api/client/v1/global/images/25793?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'phoenixinfo', name: 'Phoenix Info News', image: 'https://api3.viu.lk/api/client/v1/global/images/25791?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'raiitalia', name: 'RAI Italia', image: 'https://api3.viu.lk/api/client/v1/global/images/25790?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'trtworld', name: 'TRT World', image: 'https://api3.viu.lk/api/client/v1/global/images/25787?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'tv5monde', name: 'TV5 Monde Asie', image: 'https://api3.viu.lk/api/client/v1/global/images/25792?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   },
   {
-    'id': a0_0x1b8c6c(0x336),
-    'title': a0_0x1b8c6c(0x337),
-    'channels': [
-      { 'id': a0_0x1b8c6c(0x338), 'name': a0_0x1b8c6c(0x339), 'image': a0_0x1b8c6c(0x33a) },
-      { 'id': a0_0x1b8c6c(0x33b), 'name': a0_0x1b8c6c(0x33c), 'image': a0_0x1b8c6c(0x33d) },
-      { 'id': a0_0x1b8c6c(0x33e), 'name': a0_0x1b8c6c(0x33f), 'image': a0_0x1b8c6c(0x340) },
-      { 'id': a0_0x1b8c6c(0x341), 'name': a0_0x1b8c6c(0x342), 'image': a0_0x1b8c6c(0x343) },
-      { 'id': a0_0x1b8c6c(0x344), 'name': a0_0x1b8c6c(0x345), 'image': a0_0x1b8c6c(0x346) },
-      { 'id': a0_0x1b8c6c(0x347), 'name': a0_0x1b8c6c(0x348), 'image': a0_0x1b8c6c(0x349) },
-      { 'id': a0_0x1b8c6c(0x34a), 'name': a0_0x1b8c6c(0x34b), 'image': a0_0x1b8c6c(0x34c) },
-      { 'id': a0_0x1b8c6c(0x34d), 'name': a0_0x1b8c6c(0x34e), 'image': a0_0x1b8c6c(0x34f) },
-      { 'id': a0_0x1b8c6c(0x350), 'name': a0_0x1b8c6c(0x351), 'image': a0_0x1b8c6c(0x352) },
-      { 'id': a0_0x1b8c6c(0x353), 'name': a0_0x1b8c6c(0x354), 'image': a0_0x1b8c6c(0x355) },
-      { 'id': a0_0x1b8c6c(0x356), 'name': a0_0x1b8c6c(0x357), 'image': a0_0x1b8c6c(0x358) }
+    id: 'cat-11',
+    title: 'HD Channels',
+    channels: [
+      { id: 'animalplanethd', name: 'Animal Planet HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25769?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'axnhd', name: 'AXN HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25770?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cinemaworldhd', name: 'CinemaWorld HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25774?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'cinemaxhd', name: 'Cinemax HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25775?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'discoveryhdworld', name: 'Discovery HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25768?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hbohd', name: 'HBO HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25772?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hbohitshd', name: 'HBO Hits HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25776?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'hitsnow', name: 'HITS NOW HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25771?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'rockentertainmenthd', name: 'ROCK Entertainment HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25794?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starmovieshd', name: 'Star Movies HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25773?accessKey=WkVjNWNscFhORDBLCg==' },
+      { id: 'starmoviesselecthd', name: 'Star Movies Select HD', image: 'https://api3.viu.lk/api/client/v1/global/images/25777?accessKey=WkVjNWNscFhORDBLCg==' }
     ]
   }
 ];
 
 let statusElement = null;
 
+/**
+ * Builds and renders the channel grid categorized by domain
+ */
 function buildChannelGrid() {
-  let html = a0_0x1b8c6c(0x359);
+  const container = document.getElementById('channelsContainer');
+  if (!container) return;
+
+  let html = '';
   CHANNEL_CATEGORIES.forEach(category => {
-    html += '<section class=a0_0x1b8c6c(0x35a)>' +
-      '<div class=a0_0x1b8c6c(0x35b)>' + category.title + '</div>' +
-      '<div class=a0_0x1b8c6c(0x35c)>';
+    html += `
+      <section class="cat-section">
+        <div class="cat-title">${category.title}</div>
+        <div class="app-grid">`;
     category.channels.forEach(channel => {
-      html += '\n            <div class=a0_0x1b8c6c(0x35d) data-channel-id=a0_0x1b8c6c(0x35e) data-channel-name=a0_0x1b8c6c(0x35f) data-channel-image=a0_0x1b8c6c(0x360)>' +
-        '\n              <div class=a0_0x1b8c6c(0x361)><img src=a0_0x1b8c6c(0x360) loading=a0_0x1b8c6c(0x362) alt=a0_0x1b8c6c(0x35f)></div>' +
-        '\n              <span>' + channel.name + '</span>' +
-        '\n            </div>';
+      html += `
+          <div class="channel-card" data-channel-id="${channel.id}" data-channel-name="${channel.name}" data-channel-image="${channel.image}">
+            <div class="icon-box">
+              <img src="${channel.image}" loading="lazy" alt="${channel.name}">
+            </div>
+            <span>${channel.name}</span>
+          </div>`;
     });
-    html += '</div></section>';
+    html += `
+        </div>
+      </section>`;
   });
 
-  const container = document.getElementById(a0_0x1b8c6c(0x363));
-  if (container) {
-    container.innerHTML = html;
-  }
+  container.innerHTML = html;
 }
 
+/**
+ * Displays fixed status notification bar
+ */
 function updateStatus(message, isError = false) {
   if (!statusElement) {
-    statusElement = document.createElement(a0_0x1b8c6c(0x364));
-    statusElement.id = a0_0x1b8c6c(0x365);
-    statusElement.style.cssText = a0_0x1b8c6c(0x366);
+    statusElement = document.createElement('div');
+    statusElement.id = 'status-msg';
+    statusElement.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      z-index: 1000;
+      animation: slideIn 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    `;
     document.body.appendChild(statusElement);
 
-    const style = document.createElement(a0_0x1b8c6c(0x367));
-    style.textContent = a0_0x1b8c6c(0x368);
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+    `;
     document.head.appendChild(style);
   }
 
   statusElement.textContent = message;
-  statusElement.style.backgroundColor = isError ? '#e50914': a0_0x1b8c6c(0x36a);
-  statusElement.style.display = a0_0x1b8c6c(0x36b);
+  statusElement.style.backgroundColor = isError ? '#e50914' : '#0056b3';
+  statusElement.style.display = 'block';
 
   if (!isError) {
     setTimeout(() => {
       if (statusElement) {
-        statusElement.style.display = a0_0x1b8c6c(0x36c);
+        statusElement.style.display = 'none';
       }
     }, 3000);
   }
@@ -268,113 +286,117 @@ function showError(message) {
   updateStatus(message, true);
 }
 
+/**
+ * Initializes Shaka Player and sets up event listeners
+ */
 async function initApp() {
   if (!window.shaka) {
-    showError(a0_0x1b8c6c(0x36d));
+    showError('Player library failed to load.');
     return;
   }
 
   shaka.polyfill.installAll();
 
   if (!shaka.Player.isBrowserSupported()) {
-    showError(a0_0x1b8c6c(0x36e));
+    showError('Browser does not support DRM playback.');
     return;
   }
 
-  const videoElement = document.getElementById(a0_0x1b8c6c(0x36f));
-  const videoWrapper = document.querySelector(a0_0x1b8c6c(0x370));
+  const videoElement = document.getElementById('video');
+  const videoWrapper = document.querySelector('.video-wrapper');
   const player = new shaka.Player(videoElement);
   const ui = new shaka.ui.Overlay(player, videoWrapper, videoElement);
 
   ui.configure({
     controlPanelElements: [
-      a0_0x1b8c6c(0x371),
-      a0_0x1b8c6c(0x372),
-      a0_0x1b8c6c(0x373),
-      a0_0x1b8c6c(0x374),
-      a0_0x1b8c6c(0x375),
-      a0_0x1b8c6c(0x376),
-      a0_0x1b8c6c(0x377)
+      'play_pause',
+      'time_and_duration',
+      'spacer',
+      'mute',
+      'volume',
+      'fullscreen',
+      'overflow_menu'
     ],
     overflowMenuButtons: [
-      a0_0x1b8c6c(0x378),
-      a0_0x1b8c6c(0x379),
-      a0_0x1b8c6c(0x37a)
+      'quality',
+      'playback_rate',
+      'picture_in_picture'
     ]
   });
 
   player.getNetworkingEngine().registerRequestFilter((type, request) => {
-    request.headers[a0_0x1b8c6c(0x37b)] = a0_0x1b8c6c(0x37c);
-    request.headers[a0_0x1b8c6c(0x37d)] = a0_0x1b8c6c(0x37e);
-    request.headers[a0_0x1b8c6c(0x37f)] = a0_0x1b8c6c(0x37e);
-    request.headers[a0_0x1b8c6c(0x380)] = a0_0x1b8c6c(0x381);
+    request.headers['User-Agent'] = 'Mozilla/5.0';
+    request.headers['Referer'] = 'https://watch.dialog.lk/';
+    request.headers['Origin'] = 'https://watch.dialog.lk/';
+    request.headers['Accept'] = '*/*';
   });
 
-  const loadingSpinner = document.getElementById(a0_0x1b8c6c(0x382));
+  const loadingSpinner = document.getElementById('loadingSpinner');
 
   function showSpinner() {
-    if (loadingSpinner) loadingSpinner.style.display = a0_0x1b8c6c(0x36b);
+    if (loadingSpinner) loadingSpinner.style.display = 'block';
   }
 
   function hideSpinner() {
-    if (loadingSpinner) loadingSpinner.style.display = a0_0x1b8c6c(0x36c);
+    if (loadingSpinner) loadingSpinner.style.display = 'none';
   }
 
-  player.addEventListener(a0_0x1b8c6c(0x383), (event) => {
+  player.addEventListener('buffering', (event) => {
     event.buffering ? showSpinner() : hideSpinner();
   });
 
-  videoElement.addEventListener(a0_0x1b8c6c(0x384), hideSpinner);
-  videoElement.addEventListener(a0_0x1b8c6c(0x385), showSpinner);
+  videoElement.addEventListener('playing', hideSpinner);
+  videoElement.addEventListener('waiting', showSpinner);
 
-  player.addEventListener(a0_0x1b8c6c(0x386), (event) => {
-    showError(a0_0x1b8c6c(0x387));
+  player.addEventListener('error', (event) => {
+    showError('Playback error');
     hideSpinner();
   });
 
-  const searchInput = document.getElementById(a0_0x1b8c6c(0x388));
+  // Setup Search Input Filter
+  const searchInput = document.getElementById('searchInput');
   if (searchInput) {
-    searchInput.addEventListener(a0_0x1b8c6c(0x389), (e) => {
+    searchInput.addEventListener('input', (e) => {
       const searchTerm = e.target.value.toLowerCase().trim();
-      const catSections = document.querySelectorAll(a0_0x1b8c6c(0x38a));
+      const catSections = document.querySelectorAll('.cat-section');
 
       catSections.forEach(section => {
-        const channelCards = section.querySelectorAll(a0_0x1b8c6c(0x38b));
+        const channelCards = section.querySelectorAll('.channel-card');
         let hasVisibleChannel = false;
 
         channelCards.forEach(card => {
-          const channelName = card.dataset.channelName.toLowerCase();
+          const channelName = (card.dataset.channelName || '').toLowerCase();
           if (channelName.includes(searchTerm)) {
-            card.style.display = a0_0x1b8c6c(0x38c);
+            card.style.display = 'flex';
             hasVisibleChannel = true;
           } else {
-            card.style.display = a0_0x1b8c6c(0x36c);
+            card.style.display = 'none';
           }
         });
 
-        section.style.display = hasVisibleChannel ? 'block': a0_0x1b8c6c(0x36c);
+        section.style.display = hasVisibleChannel ? 'block' : 'none';
       });
     });
   }
 
-  async function loadChannel(channelId = a0_0x1b8c6c(0x1c0), channelName = null, channelImage = null) {
-    if (!channelId) channelId = a0_0x1b8c6c(0x1c0);
+  async function loadChannel(channelId = 'hirutv', channelName = null, channelImage = null) {
+    if (!channelId) channelId = 'hirutv';
 
     showSpinner();
-    updateStatus(a0_0x1b8c6c(0x38d));
+    updateStatus('Fetching stream data...');
 
     try {
-      const endpointUrl = B_A_A_T + channelId;
+      const endpointUrl = API_BASE_URL + channelId;
       const response = await fetch(endpointUrl);
 
       if (!response.ok) {
-        throw new Error(a0_0x1b8c6c(0x38e) + response.status);
+        throw new Error('Network error ' + response.status);
       }
 
       const responseData = await response.json();
 
       if (!responseData.data || !responseData.data.url) {
-        throw new Error(a0_0x1b8c6c(0x38f));
+        throw new Error('Invalid API response');
       }
 
       const streamUrl = responseData.data.url;
@@ -388,37 +410,38 @@ async function initApp() {
             },
             advanced: {
               'com.widevine.alpha': {
-                videoRobustness: a0_0x1b8c6c(0x391),
-                audioRobustness: a0_0x1b8c6c(0x391)
+                videoRobustness: 'SW_SECURE_CRYPTO',
+                audioRobustness: 'SW_SECURE_CRYPTO'
               }
             }
           }
         });
       }
 
-      updateStatus(a0_0x1b8c6c(0x392));
+      updateStatus('Loading stream...');
 
-      document.querySelectorAll(a0_0x1b8c6c(0x38b)).forEach(card => {
-        card.classList.remove(a0_0x1b8c6c(0x393));
+      document.querySelectorAll('.channel-card').forEach(card => {
+        card.classList.remove('active');
       });
 
-      const activeCard = document.querySelector('.channel-card[data-channel-id=a0_0x1b8c6c(0x394)]');
+      const activeCard = document.querySelector(`.channel-card[data-channel-id="${channelId}"]`);
       if (activeCard) {
-        activeCard.classList.add(a0_0x1b8c6c(0x393));
-        activeCard.scrollIntoView({ behavior: a0_0x1b8c6c(0x395), block: a0_0x1b8c6c(0x396) });
+        activeCard.classList.add('active');
+        activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
 
       await player.load(streamUrl);
       await videoElement.play().catch(() => {});
-      updateStatus(a0_0x1b8c6c(0x397));
+      updateStatus('Stream loaded successfully');
     } catch (err) {
-      showError(a0_0x1b8c6c(0x398));
+      showError('Cannot play channel');
       hideSpinner();
     }
   }
 
-  document.querySelectorAll(a0_0x1b8c6c(0x38b)).forEach(card => {
-    card.addEventListener(a0_0x1b8c6c(0x399), (e) => {
+  // Bind click handlers to channel cards
+  document.querySelectorAll('.channel-card').forEach(card => {
+    card.addEventListener('click', (e) => {
       e.preventDefault();
       const channelId = card.dataset.channelId;
       const channelName = card.dataset.channelName;
@@ -427,11 +450,12 @@ async function initApp() {
     });
   });
 
-  document.addEventListener(a0_0x1b8c6c(0x39a), async () => {
+  // Handle Fullscreen Screen Orientation Lock
+  document.addEventListener('fullscreenchange', async () => {
     if (document.fullscreenElement) {
       if (screen.orientation && screen.orientation.lock) {
         try {
-          await screen.orientation.lock(a0_0x1b8c6c(0x39b));
+          await screen.orientation.lock('landscape');
         } catch (err) {}
       }
     } else {
@@ -443,47 +467,52 @@ async function initApp() {
     }
   });
 
-  await loadChannel(a0_0x1b8c6c(0x1c0));
+  // Load default channel
+  await loadChannel('hirutv');
 }
 
+/**
+ * Handles optional Telegram modal popup logic
+ */
 function initTelegramPopup() {
-  const telegramPopup = document.getElementById(a0_0x1b8c6c(0x39c));
-  const closePopup = document.getElementById(a0_0x1b8c6c(0x39d));
-  const joinTelegramBtn = document.getElementById(a0_0x1b8c6c(0x39e));
-  const isJoined = localStorage.getItem(a0_0x1b8c6c(0x39f));
+  const telegramPopup = document.getElementById('telegramPopup');
+  const closePopup = document.getElementById('closePopup');
+  const joinTelegramBtn = document.getElementById('joinTelegramBtn');
+  const isJoined = localStorage.getItem('sltv_telegram_joined');
 
   if (!isJoined && telegramPopup) {
     setTimeout(() => {
-      telegramPopup.style.display = a0_0x1b8c6c(0x38c);
+      telegramPopup.style.display = 'flex';
     }, 2000);
   }
 
   function dismissPopup() {
     if (telegramPopup) {
-      telegramPopup.style.display = a0_0x1b8c6c(0x36c);
-      localStorage.setItem(a0_0x1b8c6c(0x39f), a0_0x1b8c6c(0x3a0));
+      telegramPopup.style.display = 'none';
+      localStorage.setItem('sltv_telegram_joined', 'true');
     }
   }
 
-  if (closePopup) closePopup.addEventListener(a0_0x1b8c6c(0x399), dismissPopup);
+  if (closePopup) closePopup.addEventListener('click', dismissPopup);
 
   if (joinTelegramBtn) {
-    joinTelegramBtn.addEventListener(a0_0x1b8c6c(0x399), () => {
+    joinTelegramBtn.addEventListener('click', () => {
       setTimeout(dismissPopup, 500);
     });
   }
 
-  window.addEventListener(a0_0x1b8c6c(0x399), (e) => {
+  window.addEventListener('click', (e) => {
     if (e.target === telegramPopup) {
       dismissPopup();
     }
   });
 }
 
-document.addEventListener(a0_0x1b8c6c(0x3a1), () => {
+// Kickstart application on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
   buildChannelGrid();
   initTelegramPopup();
   initApp().catch(() => {
-    showError(a0_0x1b8c6c(0x3a2));
+    showError('Player failed to initialize.');
   });
 });
